@@ -1,0 +1,108 @@
+/* 通用 */
+header, section, footer, aside, nav, main, article, figure {display: block;}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: light-dark(rgb(229, 220, 255), rgb(36, 36, 36));
+  color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
+}
+
+/* 链接 */
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(73, 23, 167);
+    text-decoration: underline;
+}
+
+/* 置顶水平导航栏 */
+header, nav.header-nav {
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    float: none;
+}
+header {
+    position: sticky;
+    top: 0;
+    left: 50;
+}
+nav.header-nav strong, nav.header-nav p  {
+    display: block;
+    margin: 10px;
+    padding: 0;
+}
+nav.header-nav {
+    position: absolute;
+    overflow: hidden;
+
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.158);
+}
+nav.header-nav, nav.header-nav div, nav.header-nav li, nav.header-nav a {float: left;}
+nav.header-nav ul {
+  margin: 0;
+  padding: 0 1em;
+  position: relative;
+
+  list-style-type: none;
+}
+nav.header-nav li > a, #about-host {
+  display: inline-block;
+  padding: 25px 1em 24px 1em;
+
+  text-align: center;
+}
+nav.header-nav li > a:hover, #about-host:hover {background-color: rgba(0, 0, 0, 0.11);}
+#about-host {float: right;}
+
+/* 卡片 */
+.card-1, .card-2 {
+  padding: 30px;
+  max-width: 1000px;
+
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center; 
+}
+
+.card-1 {
+  width: 80%; 
+  margin: 20px auto; 
+}
+
+.card-2-parent {
+  width: 80%; 
+  gap: 20px; 
+  /* 设置两个卡片之间的间距 */
+  display: flex; 
+  /* 将容器设置为Flex布局 */
+  margin: 40px auto;
+  max-width: 1060px;
+}
+.card-2 {
+  flex: 1; 
+  /* 关键属性：让每个卡片自动伸展，平分容器宽度 */
+}
+
+/* 浮动卡片 */
+.floating {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.floating:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+.floating:active {
+  transform: translateY(4px); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 页脚 */
+footer, footer a {color: gray;}
+footer {margin: 20px}
