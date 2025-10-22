@@ -17,7 +17,7 @@ hr {border-color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));}
 
 /* 链接 */
 a {
-    color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
+    color: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
     text-decoration: none;
 }
 a:hover {
