@@ -6,14 +6,13 @@ header, section, footer, aside, nav, main, article, figure {display: block;}
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
 
   background-color: light-dark(rgb(229, 220, 255), rgb(39, 27, 66));
   color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
 }
-
-main {padding-top: 60px;}
 
 hr {border-color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));}
 
@@ -87,6 +86,27 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgb
   position: fixed;
   height: 20px;
   width: 150px;
+}
+.back-place {
+  position: relative;
+  height: 20px;
+  padding: 7px;
+  margin: 20px;
+}
+
+/* 侧边栏导航 */
+.with-sidebar {padding-right: 15%;}
+aside.sidebar-nav {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  margin: 20px;
+  padding: 20px;
+  width: 15%;
+  
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* 卡片 */
