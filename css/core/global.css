@@ -87,7 +87,7 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgb
   margin: 20px;
   padding: 7px;
 
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+  background-color: light-dark(rgba(193, 146, 255, 0.4), rgba(57, 0, 133, 0.5));
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -96,8 +96,11 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgb
   position: fixed;
   height: 20px;
   width: 150px;
+  
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 }
 .back-place {
+  z-index: -1000;
   position: relative;
   height: 20px;
   padding: 7px;
@@ -120,14 +123,14 @@ aside.sidebar-nav {
 }
 
 /* 卡片 */
-.card-1, .card-2 {
+.card-1, .card-2, .card-3 {
   padding: 30px;
   max-width: 1000px;
 
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+.card-1, .card-2 {background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));}
 
 .card-1 {
   width: 80%; 
@@ -143,10 +146,11 @@ aside.sidebar-nav {
   margin: 40px auto;
   max-width: 1060px;
 }
-.card-2 {
+.card-2, .card-3 {
   flex: 1; 
   /* 关键属性：让每个卡片自动伸展，平分容器宽度 */
 }
+.card-3 {background-color: light-dark(rgba(193, 146, 255, 0.4), rgba(57, 0, 133, 0.5));}
 
 /* 浮动卡片 */
 .floating {
