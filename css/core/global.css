@@ -16,8 +16,18 @@ body {
 
 hr {border-color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));}
 
+dt {
+  font-size: larger;
+  font-weight: 500;
+  margin: 8px;
+}
+
 .center {text-align: center;}
 .left {text-align: left;}
+
+.proper {
+  font-weight: bold;
+}
 
 /* 链接 */
 a {
