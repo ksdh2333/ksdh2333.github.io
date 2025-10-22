@@ -1,21 +1,27 @@
 /* 通用 */
 header, section, footer, aside, nav, main, article, figure {display: block;}
 
+:root{
+  color-scheme: light dark
+}
+
 body {
   margin: 0;
   padding: 0;
 
-  background-color: light-dark(rgb(229, 220, 255), rgb(36, 36, 36));
+  background-color: light-dark(rgb(229, 220, 255), rgb(39, 27, 66));
   color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
 }
 
+hr {border-color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));}
+
 /* 链接 */
 a {
-    color: black;
+    color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
     text-decoration: none;
 }
 a:hover {
-    color: rgb(73, 23, 167);
+    color: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
     text-decoration: underline;
 }
 
@@ -25,6 +31,7 @@ header, nav.header-nav {
     height: 72px;
     margin: 0;
     float: none;
+    z-index: 1000;
 }
 header {
     position: sticky;
@@ -40,7 +47,7 @@ nav.header-nav {
     position: absolute;
     overflow: hidden;
 
-    background-color: white;
+    background-color: light-dark(white, black);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.158);
 }
 nav.header-nav, nav.header-nav div, nav.header-nav li, nav.header-nav a {float: left;}
@@ -57,7 +64,7 @@ nav.header-nav li > a, #about-host {
 
   text-align: center;
 }
-nav.header-nav li > a:hover, #about-host:hover {background-color: rgba(0, 0, 0, 0.11);}
+nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));}
 #about-host {float: right;}
 
 /* 卡片 */
@@ -65,7 +72,7 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: rgba(0, 0, 0, 
   padding: 30px;
   max-width: 1000px;
 
-  background-color: white;
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center; 
@@ -104,5 +111,5 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: rgba(0, 0, 0, 
 }
 
 /* 页脚 */
-footer, footer a {color: gray;}
+footer, footer a {color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3))}
 footer {margin: 20px}
