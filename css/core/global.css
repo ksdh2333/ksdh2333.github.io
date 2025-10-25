@@ -1,20 +1,11 @@
 /* 通用 */
 header, section, footer, aside, nav, main, article, figure {display: block;}
 
-:root{
-  color-scheme: light dark
-}
-
 body {
   position: relative;
   margin: 0;
   padding: 0;
-
-  background-color: light-dark(rgb(229, 220, 255), rgb(39, 27, 66));
-  color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
 }
-
-hr {border-color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));}
 
 dt {
   font-size: larger;
@@ -24,7 +15,6 @@ dt {
 
 table, th, td {
   border: 1px solid;
-  border-color: light-dark(rgb(210, 188, 233), rgb(56, 40, 95));
   margin: 0;
   padding: 7px;
   border-collapse: collapse;
@@ -38,15 +28,101 @@ th {text-align: center;}
   font-weight: bold;
 }
 
+/* 颜色 */
+/* 深色模式支持 */
+/* 媒体查询定义 */
+:root {
+  color-scheme: light dark;
+
+  --background-color: rgb(229, 220, 255);
+  --text-color: rgb(0, 0, 0);
+
+  --border-color-hr: rgba(0, 0, 0, 0.3);
+  --border-color-table: rgb(210, 188, 233);
+
+  --text-color-link: rgb(62, 27, 119);
+  --text-color-link-hover: rgb(73, 23, 167);
+
+  --background-color-header-nav: white;
+  --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
+
+  --background-color-botton: rgba(193, 146, 255, 0.4);
+  --background-color-botton-back: rgba(255, 255, 255, 0.8);
+
+  --background-color-card-level1: rgba(255, 255, 255, 0.8);
+
+  --text-color-footer: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgb(39, 27, 66);
+    --text-color: rgb(226, 212, 241);
+
+    --border-color-hr: rgba(0, 0, 0, 0.3);
+    --border-color-table: rgb(56, 40, 95);
+
+    --text-color-link: rgb(173, 141, 207);
+    --text-color-link-hover: rgb(172, 143, 253);
+
+    --background-color-header-nav: black;
+    --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
+
+    --background-color-botton: rgba(57, 0, 133, 0.5);
+    --background-color-botton-back: rgba(0, 0, 0, 0.7);
+
+    --background-color-card-level1: rgba(0, 0, 0, 0.7);
+
+    --text-color-footer: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* light-dark() */
+@supports (color: light-dark(white, black)) {
+  :root {
+    --background-color: light-dark(rgb(229, 220, 255), rgb(39, 27, 66));
+    --text-color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
+
+    --border-color-hr: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+    --border-color-table: light-dark(rgb(210, 188, 233), rgb(56, 40, 95));
+
+    --text-color-link: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
+    --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
+
+    --background-color-header-nav: light-dark(white, black);
+    --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
+
+    --background-color-botton: light-dark(rgba(193, 146, 255, 0.4), rgba(57, 0, 133, 0.5));
+    --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+
+    --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+
+    --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+hr {border-color: var(--border-color-hr);}
+table, th, td {border-color: var(--border-color-table);}
+
+a {color: var(--text-color-link);}
+a:hover {color: var(--text-color-link-hover);}
+
+nav.header-nav {background-color: var(--background-color-header-nav);}
+nav.header-nav li > a:hover, #about-host:hover {background-color: var(--background-color-header-nav-hover);}
+
+.botton, .card-3 {background-color: var(--background-color-botton);}
+.back {background-color: var(--background-color-botton-back);}
+
+.card-1, .card-2, aside.sidebar-nav {background-color: var(--background-color-card-level1);}
+
 /* 链接 */
-a {
-    color: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
-    text-decoration: none;
-}
-a:hover {
-    color: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
-    text-decoration: underline;
-}
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
 
 /* 置顶水平导航栏 */
 header, nav.header-nav {
@@ -70,7 +146,6 @@ nav.header-nav {
     position: absolute;
     overflow: hidden;
 
-    background-color: light-dark(white, black);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.158);
 }
 nav.header-nav, nav.header-nav div, nav.header-nav li, nav.header-nav a {float: left;}
@@ -87,7 +162,6 @@ nav.header-nav li > a, #about-host {
 
   text-align: center;
 }
-nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));}
 #about-host {float: right;}
 
 /* 按钮 */
@@ -96,7 +170,6 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgb
   margin: 20px;
   padding: 7px;
 
-  background-color: light-dark(rgba(193, 146, 255, 0.4), rgba(57, 0, 133, 0.5));
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -105,8 +178,6 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: light-dark(rgb
   position: fixed;
   height: 20px;
   width: 150px;
-  
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 }
 .back-place {
   z-index: -1000;
@@ -127,7 +198,6 @@ aside.sidebar-nav {
   width: 15%;
   z-index: 990;
   
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -141,7 +211,6 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.card-1, .card-2 {background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));}
 
 .card-1 {
   width: 80%; 
@@ -161,7 +230,6 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
   flex: 1; 
   /* 关键属性：让每个卡片自动伸展，平分容器宽度 */
 }
-.card-3 {background-color: light-dark(rgba(193, 146, 255, 0.4), rgba(57, 0, 133, 0.5));}
 
 /* 浮动卡片 */
 .floating {
@@ -177,5 +245,5 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
 }
 
 /* 页脚 */
-footer, footer a {color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3))}
+/* footer, footer a {color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));} */
 footer {margin: 20px}
