@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 提问
+    url: https://github.com/ksdh2333/ksdh2333.github.io/discussions/new?category=q-a
+    about: 提出一些与此项目有关的问题
+  - name: 讨论
+    url: https://github.com/ksdh2333/ksdh2333.github.io/discussions/new?category=general
+    about: 讨论一些与此项目有关的话题

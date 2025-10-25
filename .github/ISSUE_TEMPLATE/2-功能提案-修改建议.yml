@@ -1,0 +1,40 @@
+name: 功能提案/修改建议
+description: 请求添加新功能或提出修改建议
+labels: enhancement
+body:
+  - type: checkboxes
+    id: "yml-1"
+    attributes:
+      label: "检查项"
+      description: "请检查此项目，并勾选确认"
+      options:
+      - label: "我已在 [Issues 页面](https://github.com/ksdh2333/ksdh2333.github.io/issues) 中搜索, 确认了这一提案或建议未被提交且未被关闭"
+        required: true
+  - type: textarea
+    id: "yml-2"
+    attributes:
+      label: 您提出该请求/建议的原因
+      description: "您是在什么情况下遇到了什么问题, 所以需要新功能或进行修改修改"
+    validations:
+      required: true
+  - type: textarea
+    id: "yml-3"
+    attributes:
+      label: 您希望呈现的样子
+      description: "详细描述新功能的实现或需要修改的内容"
+    validations:
+      required: true
+  - type: textarea
+    id: "yml-4"
+    attributes:
+      label: 类似的案例
+      description: "说明您所知晓的类似方案以帮助项目改进"
+    validations:
+      required: false
+  - type: textarea
+    id: "yml-5"
+    attributes:
+      label: 补充信息
+      description: "补充其他信息以及截图等内容"
+    validations:
+      required: false

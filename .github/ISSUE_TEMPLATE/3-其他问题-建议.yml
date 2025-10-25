@@ -1,0 +1,18 @@
+name: 其他问题/建议
+description: 除错误、功能和建议以外的报告
+body:
+  - type: checkboxes
+    id: "yml-1"
+    attributes:
+      label: "检查项"
+      description: "请检查此项目，并勾选确认"
+      options:
+      - label: "我已在 [Issues 页面](https://github.com/ksdh2333/ksdh2333.github.io/issues) 中搜索, 确认了这一问题或建议未被提交且未被关闭"
+        required: true
+  - type: textarea
+    id: "yml-2"
+    attributes:
+      label: 描述
+      description: "请清晰详细地进行描述"
+    validations:
+      required: true

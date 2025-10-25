@@ -1,0 +1,64 @@
+name: 错误报告
+description: 报告项目的有关错误以督促改进
+labels: bug
+body:
+  - type: checkboxes
+    id: "yml-1"
+    attributes:
+      label: "检查项"
+      description: "请逐个检查下列项目，并勾选确认"
+      options:
+      - label: "请在提交问题之前确认问题不是由于自己的特殊浏览器设置或软件内置浏览器导致的, 尝试 **清理浏览器缓存** , 检查是否 **手动设置** 了CSS样式"
+        required: true
+      - label: "我已在 [Issues 页面](https://github.com/ksdh2333/ksdh2333.github.io/issues) 中搜索, 确认了这一 Bug 未被提交且未被关闭"
+        required: true
+  - type: textarea
+    id: "yml-2"
+    attributes: 
+      label: 错误描述
+      description: "简洁描述发现的错误"
+    validations: 
+      required: true
+  - type: textarea
+    id: "yml-3"
+    attributes:
+      label: 复现步骤
+      description: "完整精确地描述错误是如何出现的"
+      placeholder: 
+        "1. 打开网页主页
+        2. 点击导航栏的主页链接
+        3. 出现404错误"
+    validations:
+      required: true
+  - type: textarea
+    id: "yml-4"
+    attributes:
+      label: 预期行为
+      description: "如果没有出现错误应当是怎样的情况"
+    validations:
+      required: true
+  - type: textarea
+    id: "yml-5"
+    attributes:
+      label: 截图
+      description: "尽量附上截图以精确错误描述"
+    validations:
+      required: false
+  - type: textarea
+    id: "yml-6"
+    attributes:
+      label: 环境
+      description: "描述系统和浏览器及其版本"
+      placeholder: 
+        "- 系统 [e.g. Windows11]
+        - 浏览器 [e.g. edge]
+        - 浏览器版本 [e.g. 138.0.3351.95]"
+    validations: 
+      required: true
+  - type: textarea
+    id: "yml-7"
+    attributes: 
+      label: 补充信息
+      description: "补充其他信息或说明您认为可能造成错误的因素"
+    validations:
+      required: false
