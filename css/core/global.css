@@ -203,14 +203,16 @@ nav.header-nav li > a, #about-host {
 }
 
 /* 侧边栏导航 */
-.with-sidebar {padding-right: 15%;}
+.with-sidebar {padding-right: 20%;}
 aside.sidebar-nav {
+  display: block;
   position: fixed;
-  top: 80px;
+  top: 72px;
   right: 0;
   margin: 20px;
   padding: 20px;
-  width: 15%;
+  width: 20%;
+  min-width: 170px;
   z-index: 990;
   
   border-radius: 12px;
@@ -228,12 +230,12 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
 }
 
 .card-1 {
-  width: 80%; 
+  width: 85%; 
   margin: 20px auto; 
 }
 
 .card-2-parent {
-  width: 80%; 
+  width: 85%; 
   gap: 20px; 
   /* 设置两个卡片之间的间距 */
   display: flex; 
