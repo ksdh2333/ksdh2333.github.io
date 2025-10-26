@@ -37,9 +37,8 @@ th {text-align: center;}
 .center {text-align: center;}
 .left {text-align: left;}
 
-.proper {
-  font-weight: bold;
-}
+span {font-weight: bold;}
+span::before, span::after {content: " ";}
 
 /* 颜色 */
 /* 深色模式支持 */
@@ -55,6 +54,8 @@ th {text-align: center;}
 
   --text-color-link: rgb(62, 27, 119);
   --text-color-link-hover: rgb(73, 23, 167);
+
+  --text-color-span: rgb(103, 38, 255);
 
   --background-color-header-nav: white;
   --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
@@ -77,6 +78,8 @@ th {text-align: center;}
 
     --text-color-link: rgb(173, 141, 207);
     --text-color-link-hover: rgb(172, 143, 253);
+
+    --text-color-span: rgb(150, 107, 250);
 
     --background-color-header-nav: black;
     --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
@@ -102,6 +105,8 @@ th {text-align: center;}
     --text-color-link: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
     --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
 
+    --text-color-span: light-dark(rgb(103, 38, 255), rgb(150, 107, 250));
+
     --background-color-header-nav: light-dark(white, black);
     --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
 
@@ -124,6 +129,8 @@ table, th, td {border-color: var(--border-color-table);}
 
 a {color: var(--text-color-link);}
 a:hover {color: var(--text-color-link-hover);}
+
+span {color: var(--text-color-span);}
 
 nav.header-nav {background-color: var(--background-color-header-nav);}
 nav.header-nav li > a:hover, #about-host:hover {background-color: var(--background-color-header-nav-hover);}
