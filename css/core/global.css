@@ -1,10 +1,23 @@
 /* 通用 */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+/* 宽度与高度将包括内容, 内边距, 边框 */
+
 header, section, footer, aside, nav, main, article, figure {display: block;}
 
 body {
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 dt {
