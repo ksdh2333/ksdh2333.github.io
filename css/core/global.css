@@ -120,6 +120,8 @@ nav.header-nav li > a:hover, #about-host:hover {background-color: var(--backgrou
 
 .card-1, .card-2, aside.sidebar-nav {background-color: var(--background-color-card-level1);}
 
+footer, footer a {color: var(--text-color-footer);}
+
 /* 链接 */
 a {text-decoration: none;}
 a:hover {text-decoration: underline;}
