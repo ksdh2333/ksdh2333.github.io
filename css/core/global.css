@@ -161,7 +161,7 @@ nav.header-nav {
     position: absolute;
     overflow: hidden;
 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.158);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.158);
 }
 nav.header-nav, nav.header-nav div, nav.header-nav li, nav.header-nav a {float: left;}
 nav.header-nav ul {
