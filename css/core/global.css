@@ -219,6 +219,10 @@ aside.sidebar-nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 aside.sidebar-nav ul {padding: 0 0 0 30px;}
+@media screen and (max-width: 800px) {
+  .with-sidebar {padding-right: 0;}
+  aside.sidebar-nav {display: none;}
+}
 
 /* 卡片 */
 .card-1, .card-2, .card-3 {
