@@ -226,12 +226,20 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
   display: flex; 
   /* 将容器设置为Flex布局 */
   margin: 40px auto;
-  max-width: 1060px;
+  max-width: 1000px;
+  flex-direction: row;
+}
+/* 移动端适配 */
+@media screen and (max-width: 800px) {
+    .card-2-parent {
+        flex-direction: column;
+    }
 }
 .card-2, .card-3 {
+  display: block;
   flex: 1; 
-  /* 关键属性：让每个卡片自动伸展，平分容器宽度 */
 }
+/* 关键属性：让每个卡片自动伸展，平分容器宽度 */
 
 /* 浮动卡片 */
 .floating {
