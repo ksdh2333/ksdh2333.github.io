@@ -37,6 +37,8 @@ th {text-align: center;}
 .center {text-align: center;}
 .left {text-align: left;}
 
+a::before, a::after {content: " ";}
+
 span {font-weight: bold;}
 span::before, span::after {content: " ";}
 
@@ -198,7 +200,6 @@ nav.header-nav li > a, #about-host {
 }
 .back {
   position: fixed;
-  height: 20px;
   width: 150px;
 }
 .back-place {
