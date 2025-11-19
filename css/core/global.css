@@ -315,7 +315,17 @@ aside.sidebar-nav ul {
   }
 
   aside.sidebar-nav {
-    display: none;
+    background-color: var(--background-color-card-level1);
+    display: block;
+    position: relative;
+    top: var(--header-height);
+    float: none;
+    width: 85%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
 
