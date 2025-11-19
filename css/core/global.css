@@ -272,16 +272,9 @@ main {
 
 .back {
   background-color: var(--background-color-botton-back);
-  position: fixed;
+  position: sticky;
   width: 150px;
-}
-
-.back-place {
-  z-index: -1000;
-  position: relative;
-  height: 20px;
-  padding: 7px;
-  margin: 20px;
+  top: calc(var(--header-height) + 20px);
 }
 
 /* 侧边栏导航 */
