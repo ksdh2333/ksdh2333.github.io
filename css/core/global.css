@@ -1,46 +1,4 @@
 /* 通用 */
-html {
-  box-sizing: border-box;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-/* 宽度与高度将包括内容, 内边距, 边框 */
-
-header, section, footer, aside, nav, main, article, figure {display: block;}
-
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-dt {
-  font-size: larger;
-  font-weight: 500;
-  margin: 8px;
-}
-
-table, th, td {
-  border: 1px solid;
-  margin: 0;
-  padding: 7px;
-  border-collapse: collapse;
-}
-th {text-align: center;}
-
-.center {text-align: center;}
-.left {text-align: left;}
-
-a::before, a::after {content: " ";}
-
-span {font-weight: bold;}
-span::before, span::after {content: " ";}
 
 /* 颜色 */
 /* 深色模式支持 */
@@ -75,7 +33,7 @@ span::before, span::after {content: " ";}
     --background-color: rgb(39, 27, 66);
     --text-color: rgb(226, 212, 241);
 
-    --border-color-hr: rgba(0, 0, 0, 0.3);
+    --border-color-hr: rgba(255, 255, 255, 0.3);
     --border-color-table: rgb(56, 40, 95);
 
     --text-color-link: rgb(173, 141, 207);
@@ -121,58 +79,151 @@ span::before, span::after {content: " ";}
   }
 }
 
-body {
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* 宽度与高度将包括内容, 内边距, 边框 */
+
+/* HTML5 元素 */
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+
+body,
+html {
   background-color: var(--background-color);
   color: var(--text-color);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
 
-hr {border-color: var(--border-color-hr);}
-table, th, td {border-color: var(--border-color-table);}
+hr {
+  border-color: var(--border-color-hr);
+}
 
-a {color: var(--text-color-link);}
-a:hover {color: var(--text-color-link-hover);}
+table,
+th,
+td {
+  border-color: var(--border-color-table);
+  border: 1px solid;
+  margin: 0;
+  padding: 7px;
+  border-collapse: collapse;
+}
 
-span {color: var(--text-color-span);}
+th {
+  text-align: center;
+}
 
-nav.header-nav {background-color: var(--background-color-header-nav);}
-nav.header-nav li > a:hover, #about-host:hover {background-color: var(--background-color-header-nav-hover);}
+.center {
+  text-align: center;
+}
 
-.botton, .card-3 {background-color: var(--background-color-botton);}
-.back {background-color: var(--background-color-botton-back);}
+.left {
+  text-align: left;
+}
 
-.card-1, .card-2, aside.sidebar-nav {background-color: var(--background-color-card-level1);}
+a::before,
+a::after {
+  content: " ";
+}
 
-footer, footer a {color: var(--text-color-footer);}
+span {
+  color: var(--text-color-span);
+  font-weight: bold;
+}
+
+span::before,
+span::after {
+  content: " ";
+}
+
+hr {
+  border-color: var(--border-color-hr);
+}
 
 /* 链接 */
-a {text-decoration: none;}
-a:hover {text-decoration: underline;}
+a {
+  color: var(--text-color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color-link-hover);
+  text-decoration: underline;
+}
 
 /* 置顶水平导航栏 */
-header, nav.header-nav {
-    width: 100%;
-    height: 72px;
-    margin: 0;
-    float: none;
-    z-index: 1000;
+:root {
+  /* 定义导航栏高度变量 */
+  --header-height: clamp(40px, 8vh, 100vh);
 }
-header {
-    position: sticky;
-    top: 0;
-    left: 50;
-}
-nav.header-nav strong, nav.header-nav p  {
-    display: block;
-    margin: 10px;
-    padding: 0;
-}
-nav.header-nav {
-    position: absolute;
-    overflow: hidden;
 
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.158);
+header,
+nav.header-nav {
+  width: 100%;
+  margin: 0;
+  float: none;
+  z-index: 1000;
 }
-nav.header-nav, nav.header-nav div, nav.header-nav li, nav.header-nav a {float: left;}
+
+header {
+  position: fixed;
+  height: var(--header-height);
+  top: 0;
+}
+
+nav.header-nav {
+  background-color: var(--background-color-header-nav);
+  height: 100%;
+}
+
+nav.header-nav img {
+  height: 100%;
+  width: auto;
+}
+
+nav.header-nav strong,
+nav.header-nav p {
+  display: flex;
+  margin: 0 10px;
+  padding: 0;
+  height: 50%;
+  align-items: center;
+}
+
+nav.header-nav {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.158);
+}
+
+nav.header-nav li,
+nav.header-nav div,
+nav.header-nav ul,
+nav.header-nav a {
+  height: 100%;
+  float: left;
+}
+
 nav.header-nav ul {
   margin: 0;
   padding: 0 1em;
@@ -180,16 +231,36 @@ nav.header-nav ul {
 
   list-style-type: none;
 }
-nav.header-nav li > a, #about-host {
-  display: inline-block;
-  padding: 25px 1em 24px 1em;
 
+nav.header-nav li>a,
+#about-host {
+  display: flex;
+  /* padding: 25px 1em 24px 1em; */
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 60px;
+
+  align-items: center;
   text-align: center;
 }
-#about-host {float: right;}
+
+#about-host {
+  float: right;
+}
+
+nav.header-nav li>a:hover,
+#about-host:hover {
+  background-color: var(--background-color-header-nav-hover);
+}
+
+/* 主要内容区域添加顶部边距，避免被导航栏遮挡 */
+main {
+  margin-top: calc(var(--header-height) + 20px);
+}
 
 /* 按钮 */
 .botton {
+  background-color: var(--background-color-botton);
   display: block;
   margin: 20px;
   padding: 7px;
@@ -198,42 +269,63 @@ nav.header-nav li > a, #about-host {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
+
 .back {
-  position: fixed;
+  background-color: var(--background-color-botton-back);
+  position: sticky;
   width: 150px;
-}
-.back-place {
-  z-index: -1000;
-  position: relative;
-  height: 20px;
-  padding: 7px;
-  margin: 20px;
+  top: calc(var(--header-height) + 20px);
 }
 
 /* 侧边栏导航 */
-.with-sidebar {padding-right: 20%;}
+.with-sidebar {
+  padding-right: 0;
+}
+
 aside.sidebar-nav {
+  background-color: var(--background-color-card-level1);
   display: block;
-  position: fixed;
-  top: 72px;
-  right: 0;
-  margin: 20px;
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  float: right;
+  margin: 0 20px;
   padding: 20px;
-  width: 20%;
-  min-width: 170px;
+  width: auto;
+  /* min-width: 200px; */
   z-index: 990;
-  
+
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-aside.sidebar-nav ul {padding: 0 0 0 30px;}
+
+aside.sidebar-nav ul {
+  padding: 0 0 0 30px;
+}
+
 @media screen and (max-width: 800px) {
-  .with-sidebar {padding-right: 0;}
-  aside.sidebar-nav {display: none;}
+  .with-sidebar {
+    padding-right: 0;
+  }
+
+  aside.sidebar-nav {
+    background-color: var(--background-color-card-level1);
+    display: block;
+    position: relative;
+    top: var(--header-height);
+    float: none;
+    width: 85%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* 卡片 */
-.card-1, .card-2, .card-3 {
+.card-1,
+.card-2,
+.card-3 {
   padding: 30px;
   max-width: 1000px;
 
@@ -241,46 +333,66 @@ aside.sidebar-nav ul {padding: 0 0 0 30px;}
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.card-1,
+.card-2 {
+  background-color: var(--background-color-card-level1);
+}
+
+.card-3 {
+  background-color: var(--background-color-botton);
+}
+
 .card-1 {
-  width: 85%; 
-  margin: 20px auto; 
+  width: 85%;
+  margin: 20px auto;
 }
 
 .card-2-parent {
-  width: 85%; 
-  gap: 20px; 
+  width: 85%;
+  gap: 20px;
   /* 设置两个卡片之间的间距 */
-  display: flex; 
+  display: flex;
   /* 将容器设置为Flex布局 */
   margin: 40px auto;
   max-width: 1000px;
   flex-direction: row;
 }
+
 /* 移动端适配 */
 @media screen and (max-width: 800px) {
-    .card-2-parent {
-        flex-direction: column;
-    }
+  .card-2-parent {
+    flex-direction: column;
+  }
 }
-.card-2, .card-3 {
+
+.card-2,
+.card-3 {
   display: block;
-  flex: 1; 
+  flex: 1;
 }
-/* 关键属性：让每个卡片自动伸展，平分容器宽度 */
 
 /* 浮动卡片 */
 .floating {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .floating:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
 .floating:active {
-  transform: translateY(4px); 
+  transform: translateY(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* 页脚 */
 /* footer, footer a {color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));} */
-footer {margin: 20px}
+footer {
+  margin: 20px
+}
+
+footer,
+footer a {
+  color: var(--text-color-footer);
+}
