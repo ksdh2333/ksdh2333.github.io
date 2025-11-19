@@ -22,10 +22,13 @@ figure {
   display: block;
 }
 
-body {
+body,
+html {
   position: relative;
   margin: 0;
   padding: 0;
+  top: 0;
+  height: 100%;
 }
 
 img {
@@ -219,26 +222,41 @@ a:hover {
 }
 
 /* 置顶水平导航栏 */
+:root {
+  /* 定义导航栏高度变量 */
+  --header-height: clamp(40px, 8vh, 100vh);
+}
+
 header,
 nav.header-nav {
   width: 100%;
-  height: 72px;
   margin: 0;
   float: none;
   z-index: 1000;
 }
 
 header {
-  position: sticky;
+  position: fixed;
+  height: var(--header-height);
   top: 0;
-  left: 50;
+}
+
+nav.header-nav {
+  height: 100%;
+}
+
+nav.header-nav img{
+  height: 100%;
+  width: auto;
 }
 
 nav.header-nav strong,
 nav.header-nav p {
-  display: block;
-  margin: 10px;
+  display: flex;
+  margin: 0 10px;
   padding: 0;
+  height: 50%;
+  align-items: center;
 }
 
 nav.header-nav {
@@ -251,8 +269,15 @@ nav.header-nav {
 nav.header-nav,
 nav.header-nav div,
 nav.header-nav li,
+nav.header-nav ul,
 nav.header-nav a {
   float: left;
+}
+nav.header-nav li,
+nav.header-nav div,
+nav.header-nav ul,
+nav.header-nav a {
+  height: 100%;
 }
 
 nav.header-nav ul {
@@ -265,14 +290,23 @@ nav.header-nav ul {
 
 nav.header-nav li>a,
 #about-host {
-  display: inline-block;
-  padding: 25px 1em 24px 1em;
+  display: flex;
+  /* padding: 25px 1em 24px 1em; */
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 60px;
 
+  align-items: center;
   text-align: center;
 }
 
 #about-host {
   float: right;
+}
+
+/* 主要内容区域添加顶部边距，避免被导航栏遮挡 */
+main {
+  margin-top: calc(var(--header-height) + 20px);
 }
 
 /* 按钮 */
