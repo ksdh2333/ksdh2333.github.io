@@ -111,7 +111,6 @@ html {
   margin: 0;
   padding: 0;
   top: 0;
-  height: 100%;
 }
 
 hr {
@@ -287,15 +286,15 @@ main {
 
 /* 侧边栏导航 */
 .with-sidebar {
-  padding-right: 20%;
+  padding-right: 0;
 }
 
 aside.sidebar-nav {
   background-color: var(--background-color-card-level1);
   display: block;
-  position: fixed;
+  position: sticky;
   top: calc(var(--header-height) + 20px);
-  right: 0;
+  float: right;
   margin: 0 20px;
   padding: 20px;
   width: auto;
