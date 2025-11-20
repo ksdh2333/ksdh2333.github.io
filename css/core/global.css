@@ -181,6 +181,10 @@ a:hover {
   --header-height: clamp(40px, 8vh, 100vh);
 }
 
+html {
+  scroll-padding-top: calc(var(--header-height) + 20px);
+}
+
 header,
 nav.header-nav {
   width: 100%;
