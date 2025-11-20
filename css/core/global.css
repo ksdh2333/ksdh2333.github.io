@@ -113,6 +113,12 @@ html {
   top: 0;
 }
 
+dt {
+  font-size: larger;
+  font-weight: 500;
+  margin: 8px;
+}
+
 hr {
   border-color: var(--border-color-hr);
 }
