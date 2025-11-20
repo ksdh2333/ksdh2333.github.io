@@ -158,6 +158,17 @@ code {
   white-space: nowrap;
 }
 
+code:has(pre) {
+  display: block;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+code > pre {
+  font-family: Consolas, Monaco, monospace;
+  margin: 0;
+}
+
 code::-webkit-scrollbar {
   height: 8px;
 }
