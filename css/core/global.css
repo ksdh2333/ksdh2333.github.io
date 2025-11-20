@@ -24,6 +24,8 @@
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
+  --background-color-block-cite: rgba(0, 0, 0, 0.1);
+  --background-color-code: rgba(0, 0, 0, 0.1);
 
   --text-color-footer: rgba(0, 0, 0, 0.3);
 }
@@ -48,6 +50,8 @@
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
+    --background-color-block-cite: rgba(255, 255, 255, 0.1);
+    --background-color-code: rgba(255, 255, 255, 0.1);
 
     --text-color-footer: rgba(255, 255, 255, 0.3);
   }
@@ -74,6 +78,8 @@
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+    --background-color-block-cite: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    --background-color-code: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 
     --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
   }
@@ -113,14 +119,63 @@ html {
   top: 0;
 }
 
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
 dt {
   font-size: larger;
   font-weight: 500;
   margin: 8px;
 }
 
-hr {
-  border-color: var(--border-color-hr);
+code {
+  background-color: var(--background-color-code);
+  font-family: Consolas, Monaco, monospace;
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+code:has(pre) {
+  display: block;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+code > pre {
+  font-family: Consolas, Monaco, monospace;
+  margin: 0;
+}
+
+code::-webkit-scrollbar {
+  height: 8px;
+}
+
+code::-webkit-scrollbar-thumb {
+  background-color: var(--border-color-hr);
+  border-radius: 4px;
 }
 
 table,
@@ -394,6 +449,15 @@ aside.sidebar-nav ul {
 .floating:active {
   transform: translateY(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 块引用 */
+.block-cite {
+  display: block;
+  background-color: var(--background-color-block-cite);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  margin: 6px 0;
 }
 
 /* 页脚 */
