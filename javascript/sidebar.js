@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 设置main元素右侧外边距为侧边栏宽度
         main.style.marginRight = sidebarWidth + 'px';
       } else {
-        // 当侧边栏不浮动时，将右边距设为0
+        // 当侧边栏不浮动时, 将右边距设为0
         main.style.marginRight = '0px';
       }
     }

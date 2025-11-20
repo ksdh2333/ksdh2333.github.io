@@ -6,7 +6,7 @@ body:
     id: "yml-1"
     attributes:
       label: "检查项"
-      description: "请检查此项目，并勾选确认"
+      description: "请检查此项目, 并勾选确认"
       options:
       - label: "我已在 [Issues 页面](https://github.com/ksdh2333/ksdh2333.github.io/issues) 中搜索, 确认了这一提案或建议未被提交且未被关闭"
         required: true

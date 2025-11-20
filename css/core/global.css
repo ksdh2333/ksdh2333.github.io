@@ -15,7 +15,7 @@
   --text-color-link: rgb(62, 27, 119);
   --text-color-link-hover: rgb(73, 23, 167);
 
-  --text-color-span: rgb(103, 38, 255);
+  --text-color-strong: rgb(93, 44, 207);
 
   --background-color-header-nav: white;
   --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
@@ -41,7 +41,7 @@
     --text-color-link: rgb(173, 141, 207);
     --text-color-link-hover: rgb(172, 143, 253);
 
-    --text-color-span: rgb(150, 107, 250);
+    --text-color-strong: rgb(150, 107, 250);
 
     --background-color-header-nav: black;
     --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
@@ -69,7 +69,7 @@
     --text-color-link: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
     --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
 
-    --text-color-span: light-dark(rgb(103, 38, 255), rgb(150, 107, 250));
+    --text-color-strong: light-dark(rgb(93, 44, 207), rgb(150, 107, 250));
 
     --background-color-header-nav: light-dark(white, black);
     --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
@@ -140,6 +140,7 @@ h5 {
 }
 
 dt {
+  color: var(--text-color-strong);
   font-size: larger;
   font-weight: 500;
   margin: 8px;
@@ -188,6 +189,10 @@ td {
   border-collapse: collapse;
 }
 
+table {
+  width: 100%;
+}
+
 th {
   text-align: center;
 }
@@ -205,14 +210,9 @@ a::after {
   content: " ";
 }
 
-span {
-  color: var(--text-color-span);
-  font-weight: bold;
-}
-
-span::before,
-span::after {
-  content: " ";
+em,
+strong{
+  color: var(--text-color-strong);
 }
 
 hr {
@@ -318,7 +318,7 @@ nav.header-nav li>a:hover,
   background-color: var(--background-color-header-nav-hover);
 }
 
-/* 主要内容区域添加顶部边距，避免被导航栏遮挡 */
+/* 主要内容区域添加顶部边距, 避免被导航栏遮挡 */
 main {
   margin-top: calc(var(--header-height) + 20px);
 }

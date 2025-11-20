@@ -6,7 +6,7 @@ body:
     id: "yml-1"
     attributes:
       label: "检查项"
-      description: "请逐个检查下列项目，并勾选确认"
+      description: "请逐个检查下列项目, 并勾选确认"
       options:
       - label: "请在提交问题之前确认问题不是由于自己的特殊浏览器设置或软件内置浏览器导致的, 尝试 **清理浏览器缓存** , 检查是否 **手动设置** 了CSS样式"
         required: true
