@@ -119,6 +119,26 @@ html {
   top: 0;
 }
 
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
 dt {
   font-size: larger;
   font-weight: 500;
