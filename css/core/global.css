@@ -15,7 +15,7 @@
   --text-color-link: rgb(62, 27, 119);
   --text-color-link-hover: rgb(73, 23, 167);
 
-  --text-color-span: rgb(103, 38, 255);
+  --text-color-strong: rgb(93, 44, 207);
 
   --background-color-header-nav: white;
   --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
@@ -24,6 +24,8 @@
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
+  --background-color-block-cite: rgba(0, 0, 0, 0.1);
+  --background-color-code: rgba(0, 0, 0, 0.1);
 
   --text-color-footer: rgba(0, 0, 0, 0.3);
 }
@@ -39,7 +41,7 @@
     --text-color-link: rgb(173, 141, 207);
     --text-color-link-hover: rgb(172, 143, 253);
 
-    --text-color-span: rgb(150, 107, 250);
+    --text-color-strong: rgb(150, 107, 250);
 
     --background-color-header-nav: black;
     --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
@@ -48,6 +50,8 @@
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
+    --background-color-block-cite: rgba(255, 255, 255, 0.1);
+    --background-color-code: rgba(255, 255, 255, 0.1);
 
     --text-color-footer: rgba(255, 255, 255, 0.3);
   }
@@ -65,7 +69,7 @@
     --text-color-link: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
     --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
 
-    --text-color-span: light-dark(rgb(103, 38, 255), rgb(150, 107, 250));
+    --text-color-strong: light-dark(rgb(93, 44, 207), rgb(150, 107, 250));
 
     --background-color-header-nav: light-dark(white, black);
     --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
@@ -74,6 +78,8 @@
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+    --background-color-block-cite: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    --background-color-code: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 
     --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
   }
@@ -113,14 +119,64 @@ html {
   top: 0;
 }
 
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
 dt {
+  color: var(--text-color-strong);
   font-size: larger;
   font-weight: 500;
   margin: 8px;
 }
 
-hr {
-  border-color: var(--border-color-hr);
+code {
+  background-color: var(--background-color-code);
+  font-family: Consolas, Monaco, monospace;
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+code:has(pre) {
+  display: block;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+code > pre {
+  font-family: Consolas, Monaco, monospace;
+  margin: 0;
+}
+
+code::-webkit-scrollbar {
+  height: 8px;
+}
+
+code::-webkit-scrollbar-thumb {
+  background-color: var(--border-color-hr);
+  border-radius: 4px;
 }
 
 table,
@@ -131,6 +187,10 @@ td {
   margin: 0;
   padding: 7px;
   border-collapse: collapse;
+}
+
+table {
+  width: 100%;
 }
 
 th {
@@ -150,14 +210,9 @@ a::after {
   content: " ";
 }
 
-span {
-  color: var(--text-color-span);
-  font-weight: bold;
-}
-
-span::before,
-span::after {
-  content: " ";
+em,
+strong{
+  color: var(--text-color-strong);
 }
 
 hr {
@@ -263,7 +318,7 @@ nav.header-nav li>a:hover,
   background-color: var(--background-color-header-nav-hover);
 }
 
-/* 主要内容区域添加顶部边距，避免被导航栏遮挡 */
+/* 主要内容区域添加顶部边距, 避免被导航栏遮挡 */
 main {
   margin-top: calc(var(--header-height) + 20px);
 }
@@ -394,6 +449,15 @@ aside.sidebar-nav ul {
 .floating:active {
   transform: translateY(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 块引用 */
+.block-cite {
+  display: block;
+  background-color: var(--background-color-block-cite);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  margin: 6px 0;
 }
 
 /* 页脚 */
