@@ -24,6 +24,7 @@
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
+  --background-color-block-cite: rgba(0, 0, 0, 0.1);
   --background-color-code: rgba(0, 0, 0, 0.1);
 
   --text-color-footer: rgba(0, 0, 0, 0.3);
@@ -49,6 +50,7 @@
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
+    --background-color-block-cite: rgba(255, 255, 255, 0.1);
     --background-color-code: rgba(255, 255, 255, 0.1);
 
     --text-color-footer: rgba(255, 255, 255, 0.3);
@@ -76,6 +78,7 @@
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+    --background-color-block-cite: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
     --background-color-code: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 
     --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
@@ -411,6 +414,15 @@ aside.sidebar-nav ul {
 .floating:active {
   transform: translateY(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 块引用 */
+.block-cite {
+  display: block;
+  background-color: var(--background-color-block-cite);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  margin: 6px 0;
 }
 
 /* 页脚 */
