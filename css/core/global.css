@@ -473,6 +473,7 @@ aside.sidebar-nav ul {
 }
 
 /* 块引用 */
+blockquote, 
 .block-cite {
   display: block;
   background-color: var(--background-color-block-cite);
