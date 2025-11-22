@@ -220,12 +220,15 @@ hr {
 }
 
 /* 链接 */
-a {
+a,
+summary {
   color: var(--text-color-link);
   text-decoration: none;
+  cursor: pointer;
 }
 
-a:hover {
+a:hover,
+summary:hover {
   color: var(--text-color-link-hover);
   text-decoration: underline;
 }
