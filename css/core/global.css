@@ -24,7 +24,7 @@
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
-  --background-color-block-cite: rgba(0, 0, 0, 0.1);
+  --background-color-block-tips: rgba(0, 0, 0, 0.1);
   --background-color-code: rgba(0, 0, 0, 0.1);
 
   --text-color-footer: rgba(0, 0, 0, 0.3);
@@ -50,7 +50,7 @@
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
-    --background-color-block-cite: rgba(255, 255, 255, 0.1);
+    --background-color-block-tips: rgba(255, 255, 255, 0.1);
     --background-color-code: rgba(255, 255, 255, 0.1);
 
     --text-color-footer: rgba(255, 255, 255, 0.3);
@@ -78,7 +78,7 @@
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
-    --background-color-block-cite: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    --background-color-block-tips: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
     --background-color-code: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 
     --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
@@ -474,12 +474,20 @@ aside.sidebar-nav ul {
 
 /* 块引用 */
 blockquote, 
-.block-cite {
+.block-tips {
   display: block;
-  background-color: var(--background-color-block-cite);
+  background-color: var(--background-color-block-tips);
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 16px 20px;
   margin: 6px 0;
+}
+
+blockquote {
+  border-left: 8px solid var(--border-color-hr);
+}
+
+.block-tips {
+  border-left: 8px solid var(--border-color-table);
 }
 
 /* 页脚 */
