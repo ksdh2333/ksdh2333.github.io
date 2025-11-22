@@ -16,7 +16,7 @@ body:
       label: 您提出该请求/建议的原因
       description: "您是在什么情况下遇到了什么问题, 所以需要新功能或进行修改修改"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: "yml-3"
     attributes:

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Spyglass, SpyglassMC, Datapack, Datapack Helper Plus, DHP, 大憨批">
+  <meta name="description" content="Spyglass 插件相关使用说明">
+  <meta name="author" content="侃生电核2333">
+  <base target="_blank">
+  <link rel="icon" href="../../../resources/img/avatar-ksdh2333.png">
+  <link rel="stylesheet" href="../../../css/core/global.css">
+  <script defer src="../../../javascript/sidebar.js"></script>
+  <title>Spyglass 插件相关使用说明</title>
+</head>
+
+<body>
+  <header>
+    <nav class="header-nav">
+      <div>
+        <a href="../../../index.html" title="首页" target="_self"><img src="../../../resources/img/avatar-ksdh2333.png"
+            width="128" height="128" alt="头像"></a>
+        <div>
+          <strong>侃生电核2333</strong>
+          <p>
+            一个Minecraft玩家
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><a href="../../../index.html" target="_self">首页</a></li>
+          <li><a href="../../ks-server.html" target="_self">生电服</a></li>
+          <li><a href="../../ks-game.html" target="_self">游戏服</a></li>
+          <li><a href="../../useful-minecraftresources.html" target="_self">实用资源</a></li>
+          <li><a href="../../useful-links.html" target="_self">实用网页</a></li>
+        </ul>
+      </div>
+      <a href="../../about-host.html" target="_self" id="about-host">关于站主</a>
+    </nav>
+  </header>
+
+  <aside class="sidebar-nav">
+    <nav>
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#Spyglass插件" target="_self">Spyglass 插件</a>
+          <ul>
+            <li><a href="#安装Spyglass" target="_self">安装 Spyglass</a></li>
+            <li><a href="#配置Spyglass" target="_self">配置 Spyglass</a>
+              <ul>
+                <li><a href="#VSCode插件设置" target="_self">VSCode 插件设置</a></li>
+                <li><a href="#配置文件" target="_self">配置文件</a>
+                  <ul>
+                    <li><a href="#配置文件示例" target="_self">配置文件示例</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="with-sidebar">
+    <div class="center card-1">
+      <h1>Spyglass 插件相关使用说明</h1>
+      <p>
+        <a href="https://github.com/SPYGlassMC/SPYGlass">Spyglass (Datapack Helper Plus) </a>是一个强大的 Minecraft 开发工具,
+        提供语法高亮, 智能提示等功能。
+      </p>
+      <p>
+        <a href="https://spyglassmc.com/">https://spyglassmc.com/</a> 这里有 <em>Spyglass</em> 的官方文档, 提供了完整的使用说明。
+      </p>
+      <p>
+        <a href="spyglass-usage.md" target="_self" download="Spyglass插件用法.md">下载此页面的 Markdown 版本</a>
+      </p>
+    </div>
+
+    <div class="left card-1">
+      <a name="Spyglass插件"></a>
+      <h2 class="center">Spyglass 插件</h2>
+
+      <a name="安装Spyglass"></a>
+      <h3>安装 Spyglass</h3>
+
+      <p>
+        在 <em>VS Code</em> <strong>插件页面</strong>搜索 <code>Datapack Helper Plus by Spyglass</code> 进行安装
+      </p>
+
+      <a name="配置Spyglass"></a>
+      <h3>配置 Spyglass</h3>
+
+      <a name="VSCode插件设置"></a>
+      <h4>VS Code 插件设置</h4>
+
+      <p><em>VS Cdoe</em> 插件设置中可以调整: </p>
+      <ul>
+        <li><strong>游戏版本</strong><code>spyglassmc.env.gameVersion</code>:
+          所使用的 Minecraft 的版本。若设为自动, 则根据 <code>pack.mcmeta</code> 来推断版本。其他版本可通过配置文件指定。<ul>
+            <li><code>Auto</code> : 自动检测 <code>pack.mcmeta</code> 文件设置</li>
+            <li><code>Latest release</code> : 最新正式版</li>
+            <li><code>Latest snapshot</code> : 最新快照版</li>
+          </ul>
+        </li>
+        <li><strong>追踪语法服务器</strong><code>spyglassmc.trace.server</code>
+          追踪 <em>VS Code</em> 与 <em>Spyglass</em> 语法服务器之间的通信情况。<ul>
+            <li><code>off</code>: 关闭追踪</li>
+            <li><code>message</code>: 仅追踪消息</li>
+            <li><code>verbose</code>: 追踪所有信息</li>
+          </ul>
+        </li>
+      </ul>
+
+      <a name="配置文件"></a>
+      <h4>配置文件</h4>
+
+      <p><a href="https://spyglassmc.com/user/config.html">Spyglass 官方配置文件说明</a></p>
+      <p>
+        在<strong>工作区根目录</strong>(指用 <em>VS Ccode</em> 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件:
+      </p>
+      <ul>
+        <li><code>spyglass.json</code></li>
+        <li><code>.spyglassrc</code></li>
+        <li><code>.spyglassrc.json</code></li>
+      </ul>
+      <p>
+        配置文件使用 JSON 格式, 未指定的配置项将不启用或使用默认设置。
+        配置主要包含以下几个部分:
+      </p>
+      <h5>env 配置</h5>
+      <p>
+        <code>env</code> 对象用于配置 <em>Spyglass</em> 的<strong>运行环境</strong>, 包括:
+      </p>
+      <ul>
+        <li><code>gameVersion</code>: 指定 <strong>Minecraft 版本</strong></li>
+        <li><code>dataSource</code>: <strong>数据源</strong>, 通常为 <code>GitHub</code></li>
+        <li>
+          <code>dependencies</code>: <strong>依赖项列表</strong>, 原版包含
+          <code>
+<pre>
+[
+    "@vanilla-datapack",
+    "@vanilla-resourcepack",
+    "@vanilla-mcdoc"
+]
+</pre>
+          </code>
+          可以添加其他<strong>资源包</strong>和<strong>数据包</strong>,
+          例如<code>"file:///D:/minecraft/map/assets/resourcepacks/"</code>
+        </li>
+        <li><code>feature</code>: 控制各种<strong>功能</strong>的启用状态
+          <ul>
+            <li><code>codeActions</code>: 是否启用代码操作建议功能, 即提示、修复、重构等。</li>
+            <li><code>colors</code>: 是否启用<strong>颜色</strong>高亮显示</li>
+            <li><code>completions</code>: 是否启用自动<strong>补全</strong>功能</li>
+            <li><code>documentHighlighting</code>: 是否启用<strong>文件高亮</strong>显示</li>
+            <li><code>documentLinks</code>: 是否启用<strong>文件链接</strong>识别</li>
+            <li><code>foldingRanges</code>: 是否启用代码<strong>折叠</strong>功能</li>
+            <li><code>formatting</code>: 是否启用代码<strong>格式化</strong>功能, 使用快捷键 <code>Shift + Alt + F</code> 进行格式化</li>
+            <li><code>hover</code>: 是否启用光标<strong>悬停</strong>信息显示</li>
+            <li><code>inlayHint</code>: <strong>内联提示</strong>设置<ul>
+                <li><code>enabledNodes</code>: 启用内联提示的<strong>节点类型</strong>列表</li>
+              </ul>
+            </li>
+            <li><code>semanticColoring</code>: 是否启用<strong>语义着色</strong></li>
+            <li><code>selectionRanges</code>: 是否启用<strong>选择范围</strong>功能, 选择范围时按 <code>Shift + Alt + →</code> 扩大选择范围,
+              按<code>Shift + Alt + ←</code> 缩小选择范围</li>
+            <li><code>signatures</code>: 是否启用命令<strong>签名提示</strong>, 显示命令参数和返回值类型</li>
+          </ul>
+        </li>
+        <li><code>plugins</code>: <strong>插件</strong>列表, 用于扩展 <en>Spyglass</en> 功能</li>
+        <li><code>mcmetaSummaryOverrides</code>: mcmeta 摘要覆盖设置, 可用于自定义数据包元数据<br>
+          <div class="left block-tips">
+            <strong>需要补充</strong>: <br>
+            具体功能待补充, 已知此配置可用于<strong>自定义命令树</strong>, 用来添加原版命令以外的命令。<br>
+            参见 <a href="https://github.com/SpyglassMC/Spyglass/issues/873">Spyglass #873</a> 和 <a
+              href="https://github.com/SpyglassMC/Spyglass/issues/1899">Spyglass #1899</a>
+          </div>
+          <ul>
+            <li><code>commands</code>: 自定义<strong>命令树</strong>
+              <ul>
+                <li><code>path</code>: 自定义命令树<strong>路径</strong> (命令树写法见: <a href="#命令树">命令树</a>)</li>
+                <li><code>replace</code>: 是否<strong>替换</strong>原版命令树</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code>useFilePolling</code>: 是否使用文件<strong>轮询</strong>监测文件变化, 默认为 <code>false</code>, 启用以解决使用插件时无法重命名文件夹的问题,
+          但可能导致检查速度减慢。
+        </li>
+        <li><code>permissionLevel</code>: <strong>权限</strong>等级, 范围为 1-4, 数据包权限通常为2, 即可以使用除了玩家管理和服务器管理命令以外的命令</li>
+      </ul>
+
+      <h5>format 配置</h5>
+
+      <p><code>format</code> 对象控制代码格式化选项, 包括：</p>
+      <ul>
+        <li><code>blockStateBracketSpacing</code>: 方块状态<strong>大括号内</strong>间距设置</li>
+        <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
+        <li><code>blockStateCommaSpacing</code>: 方块状态<strong>逗号</strong>间距设置</li>
+        <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
+        <li><code>blockStateEqualSpacing</code>: 方块状态<strong>等号</strong>间距设置</li>
+        <li><code>before</code>: <strong>等号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>等号后</strong>的空格数</li>
+        <li><code>blockStateTrailingComma</code>: 方块状态<strong>末尾</strong>是否保留逗号</li>
+        <li><code>eol</code>: 行尾<strong>结束符</strong></li>
+        <li><code>nbtArrayBracketSpacing</code>: NBT 数组<strong>大括号内</strong>间距设置</li>
+        <li><code>inside</code>: <strong>大括号内</strong>侧的空格数</li>
+        <li><code>nbtArrayCommaSpacing</code>: NBT 数组<strong>逗号</strong>间距设置</li>
+        <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
+        <li><code>nbtArraySemicolonSpacing</code>: NBT 数组<strong>分号</strong>间距设置</li>
+        <li><code>after</code>: <strong>分号后</strong>的空格数</li>
+        <li><code>nbtArrayTrailingComma</code>: NBT 数组<strong>末尾</strong>是否保留逗号</li>
+        <li><code>nbtByteSuffix</code>: NBT <strong>Byte</strong> 类型后缀, 默认为 "b"</li>
+        <li><code>nbtCompoundBracketSpacing</code>: NBT 复合标签<strong>大括号内</strong>间距设置</li>
+        <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
+        <li><code>nbtCompoundColonSpacing</code>: NBT 复合标签<strong>冒号</strong>间距设置</li>
+        <li><code>before</code>: <strong>冒号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>冒号后</strong>的空格数</li>
+        <li><code>nbtCompoundCommaSpacing</code>: NBT 复合标签<strong>逗号</strong>间距设置</li>
+        <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
+        <li><code>nbtCompoundTrailingComma</code>: NBT 复合标签<strong>末尾</strong>是否保留逗号</li>
+        <li><code>nbtDoubleOmitSuffix</code>: 是否省略 NBT 双精度浮点数<strong>后缀</strong></li>
+        <li><code>nbtDoubleSuffix</code>: NBT <strong>双精度浮点数</strong>后缀, 默认为 "d"</li>
+        <li><code>nbtFloatSuffix</code>: NBT <strong>浮点数</strong>后缀, 默认为 "f"</li>
+        <li><code>nbtListBracketSpacing</code>: NBT 列表<strong>大括号内</strong>间距设置</li>
+        <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
+        <li><code>nbtListCommaSpacing</code>: NBT 列表<strong>逗号</strong>间距设置</li>
+        <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
+        <li><code>nbtListTrailingComma</code>: NBT 列表<strong>末尾</strong>是否保留逗号</li>
+        <li><code>nbtLongSuffix</code>: NBT <strong>长整型</strong>后缀, 默认为 "L"</li>
+        <li><code>nbtShortSuffix</code>: NBT <strong>整型</strong>后缀, 默认为 "s"</li>
+        <li><code>selectorBracketSpacing</code>: 选择器<strong>大括号内</strong>间距设置</li>
+        <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
+        <li><code>selectorCommaSpacing</code>: 选择器<strong>逗号</strong>间距设置</li>
+        <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
+        <li><code>selectorEqualSpacing</code>: 选择器<strong>等号</strong>间距设置</li>
+        <li><code>before</code>: <strong>等号前</strong>的空格数</li>
+        <li><code>after</code>: <strong>等号后</strong>的空格数</li>
+        <li><code>selectorTrailingComma</code>: 选择器<strong>末尾</strong>是否保留逗号</li>
+        <li><code>timeOmitTickUnit</code>: 是否省略<strong>时间单位</strong> "t"</li>
+      </ul>
+
+      <h5>lint 配置</h5>
+
+      <p><code>lint</code> 对象用于配置代码检查规则, 包括: </p>
+      <ul>
+        <li><code>blockStateSortKeys</code>: <strong>方块状态键</strong>排序规则, 可设置为null、"alphabetically"或"convention"</li>
+        <li><code>nbtCompoundSortKeys</code>: NBT <strong>复合标签键</strong>排序规则, 可设置为null、"alphabetically"或"convention"
+        </li>
+        <li><code>selectorSortKeys</code>: <strong>选择器参数</strong>排序规则, 可设置为null、"alphabetically"或"convention"</li>
+        <li><code>commandStringQuote</code>: 命令中<strong>字符串引号</strong>使用规则, 可设置为null、"always_double"或"always_single"
+        </li>
+        <li><code>nbtKeyQuote</code>: NBT <strong>键名引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
+        <li><code>nbtPathQuote</code>: NBT <strong>路径引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
+        <li><code>nbtStringQuote</code>: NBT <strong>字符串引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
+        <li><code>selectorKeyQuote</code>: <strong>选择器键名</strong>引号使用规则, 可设置为null、"always_double"或"always_single"</li>
+        <li><code>idOmitDefaultNamespace</code>: 是否<strong>省略默认命名空间</strong>("minecraft:"), 可设置为null、true或false</li>
+        <li><code>nameOfNbtKey</code>: NBT <strong>键名命名</strong>规范检查规则</li>
+        <li><code>nameOfObjective</code>: <strong>记分项命名</strong>规范检查规则</li>
+        <li><code>nameOfScoreHolder</code>: <strong>记分员持有者命名</strong>规范检查规则</li>
+        <li><code>nameOfTag</code>: <strong>标签命名</strong>规范检查规则</li>
+        <li><code>nameOfTeam</code>: <strong>队伍命名</strong>规范检查规则</li>
+        <li><code>nbtArrayLengthCheck</code>: 是否检查 NBT <strong>数组长度</strong></li>
+        <li><code>nbtBoolean</code>: NBT <strong>布尔值</strong>检查规则</li>
+        <li><code>nbtListLengthCheck</code>: 是否检查 NBT <strong>列表长度</strong></li>
+        <li><code>nbtTypeCheck</code>: NBT 类型检查<strong>严格程度</strong>, 可设置为"strictly"、"loosely"或null, 默认为"loosely"</li>
+        <li>
+          <p>
+            <code>undeclaredSymbol</code>: 未声明符号处理规则, 可以配置如何<strong>处理未声明的符号</strong>, 如自动声明为方块、物品等
+            <code>"declare": "block"</code> 表示<strong>声明</strong>为 <em>方块</em> , <code>"block"</code> 可以替换为
+            <code>file</code> (文件) 或 <code>"public"</code> (公共声明, 不作为特殊符号)
+            <code>"report": "warning"</code> 表示<strong>报告</strong>为 <em>警告</em> , <code>"warning"</code> 可以替换为
+            <code>"error"</code> (错误) , <code>"information"</code> (信息) , <code>"hint"</code> (提示) 或
+            <code>"inherit"</code> (继承默认)
+          </p>
+          <p>除了直接使用 <code>"declare"</code> 或 <code>"report"</code> , 还可以使用 <strong>if</strong> 判断: </p>
+          <code>
+<pre>
+{
+    "if": [
+        {"category": ["block", "entity_type", "item"], "namespace": "minecraft"}, 
+        {"category": ["advancement", "bossbar", "objective", "team"]}
+    ], 
+    "then": {"report": "warning"}
+}, 
+{
+    "then": {"declare": "block"},
+}
+</pre></code>
+          <p>
+            这段配置表示: 如果未声明的符号为 <em>方块, 实体, 物品</em> 且命名空间为 <code>minecraft</code> 报告为 <em>警告</em> ; 如果未声明的符号为 <em>进度,
+              bossbar, 记分项, 队伍</em> 报告为 <em>警告</em> ; 否则声明为 <em>方块</em>
+          </p>
+        </li>
+      </ul>
+
+      <h5>snippet 配置</h5>
+
+      <div class="block-tips">
+        此功能可能尚未开发完成, 实际尝试也没有成功触发补全, 见 <a href="https://github.com/SpyglassMC/Spyglass/issues/1392">Spyglass #1392</a>
+      </div>
+      <p>
+        <code>snippet</code>对象定义<strong>代码片段</strong>, 用户可以通过快捷方式快速插入常用代码。
+      </p>
+      <p>
+        <em>Snippet</em>（代码片段）是一种可以快速插入预定义代码模板的功能。在 <em>Spyglass</em> 中，你可以自定义代码片段，通过特定的触发词快速插入常用的命令或代码结构
+      </p>
+      <p>
+        每个<em>snippet</em>由一个键值对组成：
+      <ul>
+        <li>键（key）是<em>snippet</em>的名称，也是调用该<em>snippet</em>时使用的标识符</li>
+        <li>值（value）是实际的代码模板，可以包含占位符</li>
+      </ul>
+      </p>
+      <p>
+        <em>snippet</em>模板支持使用<strong>占位符</strong>来创建可编辑区域，占位符格式：
+      <ul>
+        <li><code>${1:placeholder}</code> : 第一个占位符，带有默认值 <code>placeholder</code></li>
+        <li><code>${2:text}</code> : 第二个占位符，带有默认值 <code>text</code></li>
+        <li><code>$0</code> : 最终光标位置</li>
+      </ul>
+      </p>
+      <p>
+        示例：
+      </p>
+      <code>
+<pre>
+"snippet": {
+    "executeIfScoreSet": "execute if score ${1:score_holder} ${2:objective} = ${1:score_holder} ${2:objective} $0",
+    "summonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}"
+}
+</pre>
+          </code>
+
+      <a name="配置文件示例"></a>
+      <h5>配置文件示例</h5>
+      <code>
+<pre>
+{
+    "env": {
+        "dataSource": "GitHub",
+        "dependencies": [
+            "@vanilla-mcdoc"
+            "@vanilla-datapack",
+            "@vanilla-resourcepack",
+        ],
+        "feature": {
+            "codeActions": true,
+            "colors": true,
+            "completions": true,
+            "documentHighlighting": true,
+            "documentLinks": true,
+            "foldingRanges": true,
+            "formatting": true,
+            "hover": true,
+            "inlayHint": {
+                "enabledNodes": [
+                    "mcfunction:command_child/unknown"
+                ]
+            },
+            "semanticColoring": true,
+            "selectionRanges": true,
+            "signatures": true
+        },
+        "gameVersion": "Auto",
+        "language": "Default",
+        "permissionLevel": 2,
+        "plugins": [],
+        "mcmetaSummaryOverrides": {},
+        "useFilePolling": false
+    },
+    "format": {
+        "blockStateBracketSpacing": {
+            "inside": 0
+        },
+        "blockStateCommaSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "blockStateEqualSpacing": {
+            "before": 0,
+            "after": 0
+        },
+        "blockStateTrailingComma": false,
+        "eol": "auto",
+        "nbtArrayBracketSpacing": {
+            "inside": 0
+        },
+        "nbtArrayCommaSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "nbtArraySemicolonSpacing": {
+            "after": 1
+        },
+        "nbtArrayTrailingComma": false,
+        "nbtByteSuffix": "b",
+        "nbtCompoundBracketSpacing": {
+            "inside": 0
+        },
+        "nbtCompoundColonSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "nbtCompoundCommaSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "nbtCompoundTrailingComma": false,
+        "nbtDoubleOmitSuffix": false,
+        "nbtDoubleSuffix": "d",
+        "nbtFloatSuffix": "f",
+        "nbtListBracketSpacing": {
+            "inside": 0
+        },
+        "nbtListCommaSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "nbtListTrailingComma": false,
+        "nbtLongSuffix": "L",
+        "nbtShortSuffix": "s",
+        "selectorBracketSpacing": {
+            "inside": 0
+        },
+        "selectorCommaSpacing": {
+            "before": 0,
+            "after": 1
+        },
+        "selectorEqualSpacing": {
+            "before": 0,
+            "after": 0
+        },
+        "selectorTrailingComma": false,
+        "timeOmitTickUnit": false
+    },
+    "lint": {
+        "blockStateSortKeys": null,
+        "nbtCompoundSortKeys": null,
+        "selectorSortKeys": null,
+
+        "commandStringQuote": null,
+        "nbtKeyQuote": null,
+        "nbtPathQuote": null,
+        "nbtStringQuote": null,
+        "selectorKeyQuote": null,
+
+        "idOmitDefaultNamespace": null,
+
+        "nameOfNbtKey": null,
+        "nameOfObjective": null,
+        "nameOfScoreHolder": null,
+        "nameOfTag": null,
+        "nameOfTeam": null,
+
+        "nbtArrayLengthCheck": true,
+        "nbtBoolean": null,
+        "nbtListLengthCheck": null,
+        "nbtTypeCheck": "loosely",
+
+        "undeclaredSymbol": [
+            {
+                "then": {
+                    "declare": "block"
+                }
+            }
+        ]
+    },
+    "snippet": {
+        "executeIfScoreSet": "execute if score ${1:score_holder} ${2:objective} = ${1:score_holder} ${2:objective} $0",
+        "summonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}"
+    }
+}
+</pre>
+          </code>
+  </main>
+
+  <hr>
+  <footer>
+    <p>
+      &copy; 2025 侃生电核2333 关于站主
+      <br>
+      页面由 侃生电核2333 设计
+      <br>
+      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/"
+        target="_blank">https://github.com/ksdh2333/ksdh2333.github.io/</a>
+    </p>
+  </footer>
+</body>
+
+</html>

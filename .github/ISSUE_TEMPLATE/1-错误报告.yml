@@ -29,14 +29,14 @@ body:
         2. 点击导航栏的主页链接
         3. 出现404错误"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: "yml-4"
     attributes:
       label: 预期行为
       description: "如果没有出现错误应当是怎样的情况"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: "yml-5"
     attributes:
@@ -54,7 +54,7 @@ body:
         - 浏览器 [e.g. edge]
         - 浏览器版本 [e.g. 138.0.3351.95]"
     validations: 
-      required: true
+      required: false
   - type: textarea
     id: "yml-7"
     attributes: 
