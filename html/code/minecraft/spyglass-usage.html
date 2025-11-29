@@ -7,7 +7,7 @@
   <meta name="keywords" content="Spyglass, SpyglassMC, Datapack, Datapack Helper Plus, DHP, 大憨批">
   <meta name="description" content="Spyglass 插件相关使用说明">
   <meta name="author" content="侃生电核2333">
-  <base target="_blank">
+  <base target="_self">
   <link rel="icon" href="../../../resources/img/avatar-ksdh2333.png">
   <link rel="stylesheet" href="../../../css/core/global.css">
   <script defer src="../../../javascript/sidebar.js"></script>
@@ -18,7 +18,7 @@
   <header>
     <nav class="header-nav">
       <div>
-        <a href="../../../index.html" title="首页" target="_self"><img src="../../../resources/img/avatar-ksdh2333.png" width="128" height="128" alt="头像"></a>
+        <a href="../../../index.html" title="首页"><img src="../../../resources/img/avatar-ksdh2333.png" width="128" height="128" alt="头像"></a>
         <div>
           <strong>侃生电核2333</strong>
           <p>
@@ -28,14 +28,14 @@
       </div>
       <div>
         <ul>
-          <li><a href="../../../index.html" target="_self">首页</a></li>
-          <li><a href="../../ks-server.html" target="_self">生电服</a></li>
-          <li><a href="../../ks-game.html" target="_self">游戏服</a></li>
-          <li><a href="../../useful-minecraftresources.html" target="_self">实用资源</a></li>
-          <li><a href="../../useful-links.html" target="_self">实用网页</a></li>
+          <li><a href="../../../index.html">首页</a></li>
+          <li><a href="../../ks-server.html">生电服</a></li>
+          <li><a href="../../ks-game.html">游戏服</a></li>
+          <li><a href="../../useful-minecraftresources.html">实用资源</a></li>
+          <li><a href="../../useful-links.html">实用网页</a></li>
         </ul>
       </div>
-      <a href="../../about-host.html" target="_self" id="about-host">关于站主</a>
+      <a href="../../about-host.html" id="about-host">关于站主</a>
     </nav>
   </header>
 
@@ -43,15 +43,89 @@
     <nav>
       <h2>目录</h2>
       <ul>
-        <li><a href="#Spyglass插件" target="_self">Spyglass 插件</a>
+        <li><a href="#Spyglass插件">Spyglass 插件</a>
           <ul>
-            <li><a href="#安装Spyglass" target="_self">安装 Spyglass</a></li>
-            <li><a href="#配置Spyglass" target="_self">配置 Spyglass</a>
+            <li><a href="#安装Spyglass">安装 Spyglass</a></li>
+            <li><a href="#配置Spyglass">配置 Spyglass</a>
               <ul>
-                <li><a href="#VSCode插件设置" target="_self">VSCode 插件设置</a></li>
-                <li><a href="#配置文件" target="_self">配置文件</a>
+                <li><a href="#VSCode插件设置">VSCode 插件设置</a></li>
+                <li><a href="#配置文件">配置文件</a>
                   <ul>
-                    <li><a href="#配置文件示例" target="_self">配置文件示例</a></li>
+                    <li><a href="#env-配置">env 配置</a></li>
+                    <li><a href="#format-配置">format 配置</a></li>
+                    <li><a href="#lint-配置">lint 配置</a></li>
+                    <li><a href="#snippet-配置">snippet 配置</a></li>
+                    <li><a href="#配置文件示例">配置文件示例</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#mcdoc的使用">Mcdoc 的使用</a>
+          <ul>
+            <li><a href="#mcdoc基本语法">基本语法</a>
+              <ul>
+                <li><a href="#mcdoc注释">注释</a>
+                  <ul>
+                    <li><a href="#mcdoc普通注释">普通注释</a></li>
+                    <li><a href="#mcdocdoc注释">Doc注释</a></li>
+                  </ul>
+                </li>
+                <li><a href="#mcdoc类型化数字">类型化数字</a></li>
+                <li><a href="#mcdoc数字范围">数字范围</a></li>
+                <li><a href="#mcdoc字符串语法">字符串语法</a></li>
+                <li><a href="#mcdoc路径">路径</a></li>
+                <li><a href="#mcdoc标识符">标识符</a></li>
+                <li><a href="#mcdoc结构体定义">结构体定义</a></li>
+                <li><a href="#mcdoc类型映射">类型映射</a></li>
+                <li><a href="#mcdoc字段的类型">字段的类型</a>
+                  <ul>
+                    <li><a href="#mcdoc类型any">any 类型</a></li>
+                    <li><a href="#mcdoc类型boolean">boolean 类型</a></li>
+                    <li><a href="#mcdoc类型string">string 类型</a></li>
+                    <li><a href="#mcdoc数值类型">数值类型</a></li>
+                    <li><a href="#mcdoc字面量类型">字面量类型</a></li>
+                    <li><a href="#mcdoc原始数组类型">原始数组类型</a></li>
+                    <li><a href="#mcdoc列表类型">列表类型</a></li>
+                    <li><a href="#mcdoc元组类型">元组类型</a></li>
+                    <li><a href="#mcdoc枚举类型">枚举类型</a></li>
+                    <li><a href="#mcdoc分派器类型">分派器类型</a></li>
+                    <li><a href="#mcdoc联合类型">联合类型</a></li>
+                    <li><a href="#mcdoc类型索引">类型索引</a></li>
+                  </ul>
+                </li>
+                <li><a href="#mcdoc类型别名语句">类型别名语句</a></li>
+                <li><a href="#mcdoc绑定类型参数">绑定类型参数</a></li>
+                <li><a href="#mcdoc使用语句">使用语句</a></li>
+                <li><a href="#mcdoc注入">注入</a>
+                  <ul>
+                    <li><a href="#mcdoc枚举注入">枚举注入</a></li>
+                    <li><a href="#mcdoc结构体注入">结构体注入</a></li>
+                  </ul>
+                </li>
+                <li><a href="#mcdoc属性">属性</a>
+                  <ul>
+                    <li><a href="#mcdoc属性canonical">canonical</a></li>
+                    <li><a href="#mcdoc属性color">color</a></li>
+                    <li><a href="#mcdoc属性command">command</a></li>
+                    <li><a href="#mcdoc属性deprecated">deprecated</a></li>
+                    <li><a href="#mcdoc属性dispatcher_key">dispatcher_key</a></li>
+                    <li><a href="#mcdoc属性divisible_by">divisible_by</a></li>
+                    <li><a href="#mcdoc属性entity">entity</a></li>
+                    <li><a href="#mcdoc属性game_rule">game_rule</a></li>
+                    <li><a href="#mcdoc属性id">id</a></li>
+                    <li><a href="#mcdoc属性match_regex">match_regex</a></li>
+                    <li><a href="#mcdoc属性nbt">nbt</a></li>
+                    <li><a href="#mcdoc属性nbt_path">nbt_path</a></li>
+                    <li><a href="#mcdoc属性objective">objective</a></li>
+                    <li><a href="#mcdoc属性regex_pattern">regex_pattern</a></li>
+                    <li><a href="#mcdoc属性score_holder">score_holder</a></li>
+                    <li><a href="#mcdoc属性since">since</a></li>
+                    <li><a href="#mcdoc属性tag">tag</a></li>
+                    <li><a href="#mcdoc属性team">team</a></li>
+                    <li><a href="#mcdoc属性text_component">text_component</a></li>
+                    <li><a href="#mcdoc属性until">until</a></li>
                   </ul>
                 </li>
               </ul>
@@ -64,20 +138,22 @@
 
   <main class="with-sidebar">
     <div class="center card-1">
+
       <h1>Spyglass 插件相关使用说明</h1>
+
       <p>
-        <a href="https://github.com/SPYGlassMC/SPYGlass">Spyglass (Datapack Helper Plus) </a>是一个强大的 Minecraft 开发工具,
-        提供语法高亮, 智能提示等功能。
+        <a href="https://github.com/SPYGlassMC/SPYGlass" target="_blank">Spyglass (Datapack Helper Plus)</a>是一个强大的 Minecraft 开发工具, 提供语法高亮, 智能提示等功能
       </p>
       <p>
-        <a href="https://spyglassmc.com/">https://spyglassmc.com/</a> 这里有 <em>Spyglass</em> 的官方文档, 提供了完整的使用说明。
+        <a href="https://spyglassmc.com/" target="_blank">https://spyglassmc.com/</a>这里有 <em>Spyglass</em> 的官方文档, 提供了完整的使用说明
       </p>
       <p>
-        <a href="spyglass-usage.md" target="_self" download="Spyglass插件用法.md">下载此页面的 Markdown 版本</a>
+        <a href="spyglass-usage.md" download="Spyglass插件用法.md">下载此页面的 Markdown 版本</a>
       </p>
     </div>
 
     <div class="left card-1">
+
       <h2 class="center" id="Spyglass插件">Spyglass 插件</h2>
 
       <h3 id="安装Spyglass">安装 Spyglass</h3>
@@ -90,17 +166,19 @@
 
       <h4 id="VSCode插件设置">VS Code 插件设置</h4>
 
-      <p><em>VS Cdoe</em> 插件设置中可以调整: </p>
+      <p>
+        <em>VS Code</em> 插件设置中可以调整:
+      </p>
       <ul>
-        <li><strong>游戏版本</strong><code>spyglassmc.env.gameVersion</code>:
-          所使用的 Minecraft 的版本。若设为自动, 则根据 <code>pack.mcmeta</code> 来推断版本。其他版本可通过配置文件指定。<ul>
+        <li><strong>游戏版本</strong><code>spyglassmc.env.gameVersion</code>: 所使用的 Minecraft 的版本。若设为自动, 则根据 <code>pack.mcmeta</code> 来推断版本。其他版本可通过配置文件指定。
+          <ul>
             <li><code>Auto</code> : 自动检测 <code>pack.mcmeta</code> 文件设置</li>
             <li><code>Latest release</code> : 最新正式版</li>
             <li><code>Latest snapshot</code> : 最新快照版</li>
           </ul>
         </li>
-        <li><strong>追踪语法服务器</strong><code>spyglassmc.trace.server</code>
-          追踪 <em>VS Code</em> 与 <em>Spyglass</em> 语法服务器之间的通信情况。<ul>
+        <li><strong>追踪语法服务器</strong><code>spyglassmc.trace.server</code> 追踪 <em>VS Code</em> 与 <em>Spyglass</em> 语法服务器之间的通信情况。
+          <ul>
             <li><code>off</code>: 关闭追踪</li>
             <li><code>message</code>: 仅追踪消息</li>
             <li><code>verbose</code>: 追踪所有信息</li>
@@ -110,9 +188,12 @@
 
       <h4 id="配置文件">配置文件</h4>
 
-      <p><a href="https://spyglassmc.com/user/config.html">Spyglass 官方配置文件说明</a></p>
       <p>
-        在<strong>工作区根目录</strong>(指用 <em>VS Ccode</em> 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件:
+        <a href="https://spyglassmc.com/user/config.html" target="_blank">Spyglass 官方配置文件说明</a>
+      </p>
+      <p>
+        在<strong>工作区根目录</strong>(指用 <em>VS Code</em> 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件:
+
       </p>
       <ul>
         <li><code>spyglass.json</code></li>
@@ -120,10 +201,12 @@
         <li><code>.spyglassrc.json</code></li>
       </ul>
       <p>
-        配置文件使用 JSON 格式, 未指定的配置项将不启用或使用默认设置。
+        配置文件使用 JSON 格式, 未指定的配置项将不启用或使用默认设置<br>
         配置主要包含以下几个部分:
       </p>
-      <h5>env 配置</h5>
+
+      <h5 id="env-配置">env 配置</h5>
+
       <p>
         <code>env</code> 对象用于配置 <em>Spyglass</em> 的<strong>运行环境</strong>, 包括:
       </p>
@@ -132,21 +215,17 @@
         <li><code>dataSource</code>: <strong>数据源</strong>, 通常为 <code>GitHub</code></li>
         <li>
           <code>dependencies</code>: <strong>依赖项列表</strong>, 原版包含
-          <code>
-<pre>
-[
+          <pre><code>[
     "@vanilla-datapack",
     "@vanilla-resourcepack",
     "@vanilla-mcdoc"
-]
-</pre>
-          </code>
-          可以添加其他<strong>资源包</strong>和<strong>数据包</strong>,
-          例如<code>"file:///D:/minecraft/map/assets/resourcepacks/"</code>
+]</code></pre>
+
+          可以添加其他<strong>资源包</strong>和<strong>数据包</strong>, 例如<code>"file:///D:/minecraft/map/assets/resourcepacks/"</code>
         </li>
         <li><code>feature</code>: 控制各种<strong>功能</strong>的启用状态
           <ul>
-            <li><code>codeActions</code>: 是否启用代码操作建议功能, 即提示、修复、重构等。</li>
+            <li><code>codeActions</code>: 是否启用代码操作建议功能, 即提示、修复、重构等</li>
             <li><code>colors</code>: 是否启用<strong>颜色</strong>高亮显示</li>
             <li><code>completions</code>: 是否启用自动<strong>补全</strong>功能</li>
             <li><code>documentHighlighting</code>: 是否启用<strong>文件高亮</strong>显示</li>
@@ -154,39 +233,42 @@
             <li><code>foldingRanges</code>: 是否启用代码<strong>折叠</strong>功能</li>
             <li><code>formatting</code>: 是否启用代码<strong>格式化</strong>功能, 使用快捷键 <code>Shift + Alt + F</code> 进行格式化</li>
             <li><code>hover</code>: 是否启用光标<strong>悬停</strong>信息显示</li>
-            <li><code>inlayHint</code>: <strong>内联提示</strong>设置<ul>
+            <li><code>inlayHint</code>: <strong>内联提示</strong>设置
+              <ul>
                 <li><code>enabledNodes</code>: 启用内联提示的<strong>节点类型</strong>列表</li>
               </ul>
             </li>
             <li><code>semanticColoring</code>: 是否启用<strong>语义着色</strong></li>
-            <li><code>selectionRanges</code>: 是否启用<strong>选择范围</strong>功能, 选择范围时按 <code>Shift + Alt + →</code> 扩大选择范围,
-              按<code>Shift + Alt + ←</code> 缩小选择范围</li>
+            <li><code>selectionRanges</code>: 是否启用<strong>选择范围</strong>功能, 选择范围时按 <code>Shift + Alt + →</code> 扩大选择范围, 按<code>Shift + Alt + ←</code> 缩小选择范围</li>
             <li><code>signatures</code>: 是否启用命令<strong>签名提示</strong>, 显示命令参数和返回值类型</li>
           </ul>
         </li>
-        <li><code>plugins</code>: <strong>插件</strong>列表, 用于扩展 <en>Spyglass</en> 功能</li>
+        <li><code>plugins</code>: <strong>插件</strong>列表, 用于扩展 <em>Spyglass</em> 功能</li>
         <li><code>mcmetaSummaryOverrides</code>: mcmeta 摘要覆盖设置, 可用于自定义数据包元数据<br>
           <div class="left block-tips">
             <strong>需要补充</strong>: <br>
-            具体功能待补充, 已知此配置可用于<strong>自定义命令树</strong>, 用来添加原版命令以外的命令。<br>
-            参见 <a href="https://github.com/SpyglassMC/Spyglass/issues/873">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899">Spyglass #1899</a>
+            具体功能待补充, 已知此配置可用于<strong>自定义命令树</strong>, 用来添加原版命令以外的命令<br>
+            参见<a href="https://github.com/SpyglassMC/Spyglass/issues/873" target="_blank">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899" target="_blank">Spyglass #1899</a>
           </div>
           <ul>
             <li><code>commands</code>: 自定义<strong>命令树</strong>
               <ul>
-                <li><code>path</code>: 自定义命令树<strong>路径</strong> (命令树写法见: <a href="#命令树">命令树</a>)</li>
+                <li>
+                  <code>path</code>: 自定义命令树<strong>路径</strong>
+                  <!-- TODO (命令树写法见:<a href="#命令树">命令树</a>) -->
+                </li>
                 <li><code>replace</code>: 是否<strong>替换</strong>原版命令树</li>
               </ul>
             </li>
           </ul>
         </li>
-        <li><code>useFilePolling</code>: 是否使用文件<strong>轮询</strong>监测文件变化, 默认为 <code>false</code>, 启用以解决使用插件时无法重命名文件夹的问题, 但可能导致检查速度减慢。</li>
+        <li><code>useFilePolling</code>: 是否使用文件<strong>轮询</strong>监测文件变化, 默认为 <code>false</code>, 启用以解决使用插件时无法重命名文件夹的问题, 但可能导致检查速度减慢</li>
         <li><code>permissionLevel</code>: <strong>权限</strong>等级, 范围为 1-4, 数据包权限通常为2, 即可以使用除了玩家管理和服务器管理命令以外的命令</li>
       </ul>
 
-      <h5>format 配置</h5>
+      <h5 id="format-配置">format 配置</h5>
 
-      <p><code>format</code> 对象控制代码格式化选项, 包括：</p>
+      <p><code>format</code> 对象控制代码格式化选项, 包括:</p>
       <ul>
         <li><code>blockStateBracketSpacing</code>: 方块状态<strong>大括号内</strong>间距设置</li>
         <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
@@ -206,7 +288,7 @@
         <li><code>nbtArraySemicolonSpacing</code>: NBT 数组<strong>分号</strong>间距设置</li>
         <li><code>after</code>: <strong>分号后</strong>的空格数</li>
         <li><code>nbtArrayTrailingComma</code>: NBT 数组<strong>末尾</strong>是否保留逗号</li>
-        <li><code>nbtByteSuffix</code>: NBT <strong>Byte</strong> 类型后缀, 默认为 "b"</li>
+        <li><code>nbtByteSuffix</code>: NBT <strong>Byte</strong> 类型后缀, 默认为 <code>b</code></li>
         <li><code>nbtCompoundBracketSpacing</code>: NBT 复合标签<strong>大括号内</strong>间距设置</li>
         <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
         <li><code>nbtCompoundColonSpacing</code>: NBT 复合标签<strong>冒号</strong>间距设置</li>
@@ -217,16 +299,16 @@
         <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
         <li><code>nbtCompoundTrailingComma</code>: NBT 复合标签<strong>末尾</strong>是否保留逗号</li>
         <li><code>nbtDoubleOmitSuffix</code>: 是否省略 NBT 双精度浮点数<strong>后缀</strong></li>
-        <li><code>nbtDoubleSuffix</code>: NBT <strong>双精度浮点数</strong>后缀, 默认为 "d"</li>
-        <li><code>nbtFloatSuffix</code>: NBT <strong>浮点数</strong>后缀, 默认为 "f"</li>
+        <li><code>nbtDoubleSuffix</code>: NBT <strong>双精度浮点数</strong>后缀, 默认为 <code>d</code></li>
+        <li><code>nbtFloatSuffix</code>: NBT <strong>浮点数</strong>后缀, 默认为 <code>f</code></li>
         <li><code>nbtListBracketSpacing</code>: NBT 列表<strong>大括号内</strong>间距设置</li>
         <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
         <li><code>nbtListCommaSpacing</code>: NBT 列表<strong>逗号</strong>间距设置</li>
         <li><code>before</code>: <strong>逗号前</strong>的空格数</li>
         <li><code>after</code>: <strong>逗号后</strong>的空格数</li>
         <li><code>nbtListTrailingComma</code>: NBT 列表<strong>末尾</strong>是否保留逗号</li>
-        <li><code>nbtLongSuffix</code>: NBT <strong>长整型</strong>后缀, 默认为 "L"</li>
-        <li><code>nbtShortSuffix</code>: NBT <strong>整型</strong>后缀, 默认为 "s"</li>
+        <li><code>nbtLongSuffix</code>: NBT <strong>长整型</strong>后缀, 默认为 <code>L</code></li>
+        <li><code>nbtShortSuffix</code>: NBT <strong>整型</strong>后缀, 默认为 <code>s</code></li>
         <li><code>selectorBracketSpacing</code>: 选择器<strong>大括号内</strong>间距设置</li>
         <li><code>inside</code>: <strong>大括号内侧</strong>的空格数</li>
         <li><code>selectorCommaSpacing</code>: 选择器<strong>逗号</strong>间距设置</li>
@@ -236,24 +318,22 @@
         <li><code>before</code>: <strong>等号前</strong>的空格数</li>
         <li><code>after</code>: <strong>等号后</strong>的空格数</li>
         <li><code>selectorTrailingComma</code>: 选择器<strong>末尾</strong>是否保留逗号</li>
-        <li><code>timeOmitTickUnit</code>: 是否省略<strong>时间单位</strong> "t"</li>
+        <li><code>timeOmitTickUnit</code>: 是否省略<strong>时间单位</strong> <code>t</code></li>
       </ul>
 
-      <h5>lint 配置</h5>
+      <h5 id="lint-配置">lint 配置</h5>
 
       <p><code>lint</code> 对象用于配置代码检查规则, 包括: </p>
       <ul>
-        <li><code>blockStateSortKeys</code>: <strong>方块状态键</strong>排序规则, 可设置为null、"alphabetically"或"convention"</li>
-        <li><code>nbtCompoundSortKeys</code>: NBT <strong>复合标签键</strong>排序规则, 可设置为null、"alphabetically"或"convention"
-        </li>
-        <li><code>selectorSortKeys</code>: <strong>选择器参数</strong>排序规则, 可设置为null、"alphabetically"或"convention"</li>
-        <li><code>commandStringQuote</code>: 命令中<strong>字符串引号</strong>使用规则, 可设置为null、"always_double"或"always_single"
-        </li>
-        <li><code>nbtKeyQuote</code>: NBT <strong>键名引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
-        <li><code>nbtPathQuote</code>: NBT <strong>路径引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
-        <li><code>nbtStringQuote</code>: NBT <strong>字符串引号</strong>使用规则, 可设置为null、"always_double"或"always_single"</li>
-        <li><code>selectorKeyQuote</code>: <strong>选择器键名</strong>引号使用规则, 可设置为null、"always_double"或"always_single"</li>
-        <li><code>idOmitDefaultNamespace</code>: 是否<strong>省略默认命名空间</strong>("minecraft:"), 可设置为null、true或false</li>
+        <li><code>blockStateSortKeys</code>: <strong>方块状态键</strong>排序规则, 可设置为<code>null</code>、<code>alphabetically</code>或<code>convention</code></li>
+        <li><code>nbtCompoundSortKeys</code>: NBT <strong>复合标签键</strong>排序规则, 可设置为<code>null</code>、<code>alphabetically</code>或<code>convention</code></li>
+        <li><code>selectorSortKeys</code>: <strong>选择器参数</strong>排序规则, 可设置为<code>null</code>、<code>alphabetically</code>或<code>convention</code></li>
+        <li><code>commandStringQuote</code>: 命令中<strong>字符串引号</strong>使用规则, 可设置为<code>null</code>、<code>always_double</code>或<code>always_single</code></li>
+        <li><code>nbtKeyQuote</code>: NBT <strong>键名引号</strong>使用规则, 可设置为<code>null</code>、<code>always_double</code>或<code>always_single</code></li>
+        <li><code>nbtPathQuote</code>: NBT <strong>路径引号</strong>使用规则, 可设置为<code>null</code>、<code>always_double</code>或<code>always_single</code></li>
+        <li><code>nbtStringQuote</code>: NBT <strong>字符串引号</strong>使用规则, 可设置为<code>null</code>、<code>always_double</code>或<code>always_single</code></li>
+        <li><code>selectorKeyQuote</code>: <strong>选择器键名</strong>引号使用规则, 可设置为<code>null</code>、<code>always_double</code>或<code>always_single</code></li>
+        <li><code>idOmitDefaultNamespace</code>: 是否<strong>省略默认命名空间</strong>("minecraft:"), 可设置为<code>null</code>、<code>true</code>或<code>false</code></li>
         <li><code>nameOfNbtKey</code>: NBT <strong>键名命名</strong>规范检查规则</li>
         <li><code>nameOfObjective</code>: <strong>记分项命名</strong>规范检查规则</li>
         <li><code>nameOfScoreHolder</code>: <strong>记分员持有者命名</strong>规范检查规则</li>
@@ -262,20 +342,19 @@
         <li><code>nbtArrayLengthCheck</code>: 是否检查 NBT <strong>数组长度</strong></li>
         <li><code>nbtBoolean</code>: NBT <strong>布尔值</strong>检查规则</li>
         <li><code>nbtListLengthCheck</code>: 是否检查 NBT <strong>列表长度</strong></li>
-        <li><code>nbtTypeCheck</code>: NBT 类型检查<strong>严格程度</strong>, 可设置为"strictly"、"loosely"或null, 默认为"loosely"</li>
+        <li><code>nbtTypeCheck</code>: NBT 类型检查<strong>严格程度</strong>, 可设置为<code>strictly</code>、<code>loosely</code>或<code>null</code>, 默认为<code>loosely</code></li>
         <li>
           <p>
             <code>undeclaredSymbol</code>: 未声明符号处理规则, 可以配置如何<strong>处理未声明的符号</strong>, 如自动声明为方块、物品等
-            <code>"declare": "block"</code> 表示<strong>声明</strong>为 <em>方块</em> , <code>"block"</code> 可以替换为
-            <code>file</code> (文件) 或 <code>"public"</code> (公共声明, 不作为特殊符号)
-            <code>"report": "warning"</code> 表示<strong>报告</strong>为 <em>警告</em> , <code>"warning"</code> 可以替换为
-            <code>"error"</code> (错误) , <code>"information"</code> (信息) , <code>"hint"</code> (提示) 或
-            <code>"inherit"</code> (继承默认)
           </p>
-          <p>除了直接使用 <code>"declare"</code> 或 <code>"report"</code> , 还可以使用 <strong>if</strong> 判断: </p>
-          <code>
-<pre>
-{
+          <ul>
+            <li><code>"declare": "block"</code> 表示<strong>声明</strong>为 <em>方块</em> , <code>"block"</code> 可以替换为 <code>file</code> (文件) 或 <code>"public"</code> (公共声明, 不作为特殊符号)</li>
+            <li><code>"report": "warning"</code> 表示<strong>报告</strong>为 <em>警告</em> , <code>"warning"</code> 可以替换为 <code>"error"</code> (错误) , <code>"information"</code> (信息) , <code>"hint"</code> (提示) 或 <code>"inherit"</code> (继承默认)</li>
+            <li>
+              <p>
+                除了直接使用 <code>"declare"</code> 或 <code>"report"</code> , 还可以使用 <strong>if</strong> 判断:
+              </p>
+              <pre><code>{
     "if": [
         {"category": ["block", "entity_type", "item"], "namespace": "minecraft"}, 
         {"category": ["advancement", "bossbar", "objective", "team"]}
@@ -284,63 +363,61 @@
 }, 
 {
     "then": {"declare": "block"},
-}
-</pre></code>
-          <p>
-            这段配置表示: 如果未声明的符号为 <em>方块, 实体, 物品</em> 且命名空间为 <code>minecraft</code> 报告为 <em>警告</em> ; 如果未声明的符号为 <em>进度,
-              bossbar, 记分项, 队伍</em> 报告为 <em>警告</em> ; 否则声明为 <em>方块</em>
-          </p>
+}</code></pre>
+              <p>
+                这段配置表示: 如果未声明的符号为 <em>方块, 实体, 物品</em> 且命名空间为 <code>minecraft</code> 报告为 <em>警告</em> ; 如果未声明的符号为 <em>进度, bossbar, 记分项, 队伍</em> 报告为 <em>警告</em> ; 否则声明为 <em>方块</em>
+              </p>
+            </li>
+          </ul>
         </li>
       </ul>
 
-      <h5>snippet 配置</h5>
+      <h5 id="snippet-配置">snippet 配置</h5>
 
       <div class="block-tips">
-        此功能可能尚未开发完成, 实际尝试也没有成功触发补全, 见 <a href="https://github.com/SpyglassMC/Spyglass/issues/1392">Spyglass #1392</a>
+        此功能可能尚未开发完成, 实际尝试也没有成功触发补全, 见 <a href="https://github.com/SpyglassMC/Spyglass/issues/1392" target="_blank">Spyglass #1392</a>
       </div>
       <p>
-        <code>snippet</code>对象定义<strong>代码片段</strong>, 用户可以通过快捷方式快速插入常用代码。
+        <code>snippet</code>对象定义<strong>代码片段</strong>, 用户可以通过快捷方式快速插入常用代码
       </p>
       <p>
-        <em>Snippet</em>（代码片段）是一种可以快速插入预定义代码模板的功能。在 <em>Spyglass</em> 中，你可以自定义代码片段，通过特定的触发词快速插入常用的命令或代码结构
+        <em>Snippet</em>(代码片段)是一种可以快速插入预定义代码模板的功能<br>
+        在 <em>Spyglass</em> 中, 你可以自定义代码片段, 通过特定的触发词快速插入常用的命令或代码结构
       </p>
       <p>
-        每个<em>snippet</em>由一个键值对组成：
+        每个<em>snippet</em>由一个键值对组成:
+      </p>
       <ul>
-        <li>键（key）是<em>snippet</em>的名称，也是调用该<em>snippet</em>时使用的标识符</li>
-        <li>值（value）是实际的代码模板，可以包含占位符</li>
+        <li>键(key)是<em>snippet</em>的名称, 也是调用该<em>snippet</em>时使用的标识符</li>
+        <li>值(value)是实际的代码模板, 可以包含占位符</li>
       </ul>
-      </p>
       <p>
-        <em>snippet</em>模板支持使用<strong>占位符</strong>来创建可编辑区域，占位符格式：
+        <em>snippet</em>模板支持使用<strong>占位符</strong>来创建可编辑区域, 占位符格式:
+      </p>
       <ul>
-        <li><code>${1:placeholder}</code> : 第一个占位符，带有默认值 <code>placeholder</code></li>
-        <li><code>${2:text}</code> : 第二个占位符，带有默认值 <code>text</code></li>
+        <li><code>${1:placeholder}</code> : 第一个占位符, 带有默认值 <code>placeholder</code></li>
+        <li><code>${2:text}</code> : 第二个占位符, 带有默认值 <code>text</code></li>
         <li><code>$0</code> : 最终光标位置</li>
       </ul>
-      </p>
       <p>
-        示例：
+        示例:
       </p>
-      <code>
-<pre>
-"snippet": {
+      <pre><code>"snippet": {
     "executeIfScoreSet": "execute if score ${1:score_holder} ${2:objective} = ${1:score_holder} ${2:objective} $0",
     "summonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}"
-}
-</pre>
-          </code>
+}</code></pre>
 
-      <h5 id="配置文件示例">配置文件示例</h5>
-      <code>
-<pre>
-{
+      <h5 id="配置文件示例">配置文件示例:</h5>
+
+      <details>
+        <summary>此部分内容过长, 点击展开</summary>
+        <pre><code>{
     "env": {
         "dataSource": "GitHub",
         "dependencies": [
-            "@vanilla-mcdoc"
+            "@vanilla-mcdoc",
             "@vanilla-datapack",
-            "@vanilla-resourcepack",
+            "@vanilla-resourcepack"
         ],
         "feature": {
             "codeActions": true,
@@ -468,9 +545,822 @@
         "executeIfScoreSet": "execute if score ${1:score_holder} ${2:objective} = ${1:score_holder} ${2:objective} $0",
         "summonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}"
     }
+}</code></pre>
+      </details>
+    </div>
+
+    <div class="left card-1">
+
+      <h2 class="center" id="mcdoc的使用">Mcdoc 的使用</h2>
+
+      <p>
+        <em>Mcdoc</em> 是一种用于<strong>描述</strong> <em>Minecraft</em> 数据包中<strong>数据结构</strong>的文档格式, 主要用于为 <em>Minecraft</em> 的 <em>storage</em>, <em>entity</em>, <em>block</em> 等数据提供类型<strong>定义</strong>和<strong>自动补全支持</strong>
+      </p>
+      <p>
+        在工作区内的任何 <code>.mcdoc</code> 文件都可以被 <em>Spyglass</em> 识别并解析, 但还是建议把项目的 <code>.mcdoc</code> 文件放在 <code>mcdoc</code> 文件夹内, 文件夹与数据包的 <code>data</code> 文件夹同级, 此时 <code>mcdoc</code> 文件夹所在的目录会被视为根目录
+      </p>
+      <p>
+        官方文档中的 <em>Mcdoc</em> 用法见: <a href="https://spyglassmc.com/user/mcdoc/" target="_blank">Mcdoc</a>
+      </p>
+
+      <h3 id="mcdoc基本语法">基本语法</h3>
+
+      <p>
+        <em>Spyglass</em> 官方文档中的 <a href="https://spyglassmc.com/user/mcdoc/specification.html" target="_blank">语法介绍</a>
+      </p>
+      <p>
+        官方文档的汉化版本见: <a href="https://alumopper.top/mcdoc%E6%A0%BC%E5%BC%8F/" target="_blank">Mcdoc格式 - 雪狐小窝</a>
+      </p>
+      <p>
+        原版 <em>Minecraft</em> 数据的 <em>Mcdco</em> 文档见: <a href="https://github.com/SpyglassMC/vanilla-mcdoc/" target="_blank">vanilla-mcdoc</a>
+      </p>
+
+      <h4 id="mcdoc注释">注释</h4>
+
+      <h5 id="mcdoc普通注释">普通注释</h5>
+
+      <p>
+        Mcdoc 使用 <code>//</code> 来表示<strong>普通注释</strong><br>
+        <code>//</code> 与后面的内容间应有一个空格
+      </p>
+      <pre><code>// 这是一个文档注释</code></pre>
+
+      <p>
+        可以使用 2 个或者 4 个及以上的 <code>/</code> 表示此行后续的内容为注释
+        但 3 个 <code>/</code> 的<code>///</code>保留用作<em>Doc注释</em>
+      </p>
+
+      <h5 id="mcdocdoc注释">Doc注释</h5>
+
+      <p>
+        使用 <code>///</code> 表示<strong>Doc 注释</strong>, 此类注释会作为在自动补全和悬停交互时<strong>字段的描述</strong>
+      </p>
+      <pre><code>/// 字段的描述</code></pre>
+
+
+      <h4 id="mcdoc类型化数字">类型化数字</h4>
+
+      <p>
+        <strong>类型化数字</strong>类似 <em>Minecraft SNBT</em> 的数字写法, 在数字后有表示数值类型的后缀
+      </p>
+      <ul>
+        <li>无后缀整数: Int</li>
+        <li>无后缀浮点数: Double</li>
+        <li><code>b</code> 后缀: Byte</li>
+        <li><code>s</code> 后缀: Short</li>
+        <li><code>l</code> 后缀: Long</li>
+        <li><code>f</code> 后缀: Float</li>
+        <li><code>d</code> 后缀: Double</li>
+      </ul>
+
+      <h4 id="mcdoc数字范围">数字范围</h4>
+
+      <p>
+        使用与 <em>Minecraft</em> 相同的数字<strong>范围</strong>表示方法, 即使用 <code>..</code> 来表示, 额外可以使用 <code>&lt;</code>表示<strong>排他性结束</strong>
+      </p>
+      <pre><code>// 等于 0
+0
+
+// 不大于 0
+..0
+
+// 不小于 0
+0..
+
+// 不小于 0 且不大于 10
+0..10
+
+// 大于 0.5 且小于 10
+0.5&lt;..&lt;10
+
+// 大于 0.5 且不大于 10
+0.5&lt;..10</code></pre>
+
+      <h4 id="mcdoc字符串语法">字符串语法</h4>
+
+      <p>
+        <strong>字符串</strong>必须用双引号包围, 部分字符需要<strong>转义</strong>:
+      </p>
+      <ul>
+        <li><code>\b</code>: 退格符</li>
+        <li><code>\f</code>: 换页符</li>
+        <li><code>\n</code>: 换行符</li>
+        <li><code>\r</code>: 回车符</li>
+        <li><code>\t</code>: 制表符</li>
+        <li><code>\\</code>: 反斜杠</li>
+        <li><code>\"</code>: 双引号</li>
+      </ul>
+
+      <h4 id="mcdoc路径">路径</h4>
+
+      <p>
+        <strong>路径</strong>用于在项目中<strong>定位</strong><em>类型定义</em>, 使用 <code>::</code> 用作路径分隔符
+        路径中的文件<strong>不包括</strong><code>.mcdoc</code>扩展名
+      </p>
+      <ul>
+        <li>
+          绝对路径: 从根目录开始解析<br>
+          <pre><code>::foo::bar</code></pre>
+
+          <code>/foo.mcdoc</code>文件中<code>bar</code>的类型定义中
+        </li>
+        <li>
+          相对路径: 从当前文件的绝对路径开始解析<br>
+          使用 super 关键字向上移动一级
+          <pre><code>super::super::foo::bar</code></pre>
+
+          定位到文件上一级的上一级文件夹中的<code>foo.mcdoc</code>文件中<code>bar</code>的定义
+        </li>
+      </ul>
+
+      <h4 id="mcdoc标识符">标识符</h4>
+
+      <p>
+        <strong>标识符</strong>区分大小写, 可以包含任何 <em>Unicode</em> 字母、数字和下划线, 但<strong>不能</strong>以<strong>数字</strong>开头
+      </p>
+
+      <h4 id="mcdoc结构体定义">结构体定义</h4>
+
+      <p>
+        使用 <code>struct</code> 关键字来<strong>定义结构体</strong>:
+      </p>
+      <pre><code>struct MyStructure {
+    field_name: field_type
+}</code></pre>
+
+      <p>
+        其中 <code>MyStructure</code> 为<strong>结构体</strong>的<em>标识符</em>, <code>field_name</code> 为<strong>字段</strong>的<em>标识符</em>, <code>field_type</code> 为<strong>字段</strong>的<em>类型</em>
+      </p>
+      <p>
+        结构体可以<strong>嵌套</strong>匿名结构体
+      </p>
+      <pre><code>struct OuterStruct {
+    inner_struct: struct {
+        field: int
+    }
+}</code></pre>
+
+      <p>
+        可以在 <strong>键和 <code>:</code> 之间</strong>添加 <code>?</code> 来表示<strong>可选字段</strong>
+      </p>
+      <pre><code>struct OuterStruct {
+    field?: int
+}</code></pre>
+      <p>
+        <strong>扩展操作符</strong><code>...</code>后跟结构体类型, 可以用于<strong>重用另一个结构体</strong>的字段
+      </p>
+      <pre><code>struct InnerStruct {
+    count: int
 }
-</pre>
-          </code>
+
+struct OuterStruct {
+    ...InnerStruct
+    field: int
+}</code></pre>
+
+      <h4 id="mcdoc类型映射">类型映射</h4>
+
+      <p>
+        使用 <code>dispatch</code> 关键字将 <em>Minecraft</em> 中的实际存储<strong>映射</strong>到定义的结构体:
+      </p>
+      <pre><code>dispatch minecraft:storage["storage_name"] to StructName</code></pre>
+      <p>
+        这条 <code>dipatch</code> 语句说明 <em>storage</em> <code>storage_name</code> 应具有 <code>StructName</code> 类型
+      </p>
+      <p>
+        也可以直接在映射时定义结构体
+      </p>
+      <pre><code>dispatch minecraft:storage["storage_name"] to struct StructName {
+    field_name: field_type
+}</code></pre>
+
+      <h4 id="mcdoc字段的类型">字段的类型</h4>
+
+      <p>
+        在 <em>Mcdoc</em> 中, 字段可以有多种不同的<strong>类型</strong>, 每种类型都有其特定的用途和语法规则<br>
+        以下是完整的字段类型说明:
+      </p>
+
+      <h5 id="mcdoc类型any">any 类型</h5>
+
+      <p>
+        <code>any</code> 类型是 <em>Mcdoc</em> 类型系统中的<strong>顶级类型</strong>, 任何其他类型(包括 <code>any</code> 本身)都可以赋值给 <code>any</code> 类型, 但 <code>any</code> 类型不能赋值给除 <code>any</code> 之外的其他类型
+      </p>
+      <pre><code>value: any</code></pre>
+
+      <h5 id="mcdoc类型boolean">boolean 类型</h5>
+
+      <p>
+        <code>boolean</code> 类型表示期望一个<strong>布尔值</strong>(<code>false</code> 或 <code>true</code>)
+      </p>
+      <pre><code>is_active: boolean</code></pre>
+
+      <h5 id="mcdoc类型string">string 类型</h5>
+
+      <p>
+        <code>string</code> 类型表示期望一个<strong>字符串</strong>值, 可以使用可选的<strong>范围</strong>来定义字符串的长度范围
+      </p>
+      <pre><code>name: string
+description: string @1..100</code></pre>
+
+      <h5 id="mcdoc数值类型">数值类型</h5>
+
+      <p>
+        <em>Mcdoc</em> 支持多种<strong>数值</strong>类型, 包括:
+      </p>
+      <ul>
+        <li><code>byte</code>: 字节类型</li>
+        <li><code>short</code>: 短整型</li>
+        <li><code>int</code>: 整型</li>
+        <li><code>long</code>: 长整型</li>
+        <li><code>float</code>: 浮点型</li>
+        <li><code>double</code>: 双精度浮点型</li>
+      </ul>
+      <p>
+        这些类型可以配合<strong>范围</strong>使用, 定义数值的<strong>有效区间</strong>
+      </p>
+      <pre><code>health: int
+damage: float @ 0.0..10.0
+count: byte @ 1..64</code></pre>
+
+      <h5 id="mcdoc字面量类型">字面量类型</h5>
+
+      <p>
+        <strong>字面量类型</strong>包括 <em>字面量布尔类型</em>、<em>字面量字符串类型</em> 和 <em>字面量数值类型</em> , 数据必须<strong>完全匹配</strong>这些字面量值才是有效的
+      </p>
+      <pre><code>// 字面量布尔类型
+is_enabled: true
+
+// 字面量字符串类型
+type: "player"
+
+// 字面量数值类型
+version: 1
+distance: 1.2f</code></pre>
+
+      <h5 id="mcdoc原始数组类型">原始数组类型</h5>
+
+      <p>
+        <strong>原始数组类型</strong>表示数据必须是某种数值类型的<strong>集合</strong>, 第一个可选范围定义<strong>值</strong>的范围, 第二个可选范围定义集合<strong>大小</strong>的范围
+      </p>
+      <pre><code>// 字节集合
+bytes: byte[]
+
+// 仅包含0或1的字节集合
+limited_values: byte#0..1[]
+
+// 包含4个整数的集合
+fixed_ints: int[] # 4
+
+// 包含至少3个非负长整数的集合
+non_negative_longs: long#0..[] # 3..</code></pre>
+
+      <h5 id="mcdoc列表类型">列表类型</h5>
+
+      <p>
+        <strong>列表</strong>类型表示数据必须是另一种类型的<strong>集合</strong>, 可选范围定义集合<strong>大小的范围</strong>
+      </p>
+      <pre><code>// 字符串集合
+tags: [string]
+
+// 字符串集合的集合
+nested_lists: [[string]]
+
+// 结构体Foo的集合
+objects: [struct Foo {}]</code></pre>
+
+      <h5 id="mcdoc元组类型">元组类型</h5>
+
+      <p>
+        <strong>元组</strong>类型表示数据必须是按<strong>指定顺序</strong>排列的某些<strong>其他类型</strong>的<strong>集合</strong>, 使用<code>[</code> <code>]</code>和<code>,</code>分隔不同类型
+      </p>
+      <pre><code>// 一个字节的元组
+[byte,]
+
+// 一个字符串后跟一个布尔值的元组
+[string, boolean]</code></pre>
+      <p>
+        为了区分只包含一个元素的元组类型与列表类型, 需要在类型后面添加一个<code>,</code>, 或者可以使用大小为<code>1</code>的列表类型来替代包含一个元素的元组, 例如<code>[byte] @ 1</code>
+      </p>
+      <p>
+        元组类型通常对NBT结构没有用, 因为NBT没有混合类型的集合
+      </p>
+
+      <h5 id="mcdoc枚举类型">枚举类型</h5>
+
+      <p>
+        <strong>枚举</strong>类型用于定义一组命名的<strong>常量值</strong>, <em>Mcdoc</em>支持基于<strong>不同基础类型</strong>的枚举, 最常见的是字符串枚举
+      </p>
+      <pre><code>// 字符串枚举
+enum(string) DamageScaling {
+    Never = "never",
+    Always = "always",
+    LivingNonPlayer = "when_caused_by_living_non_player",
+}
+
+enum(string) NarrationPriority {
+    Chat = "chat",
+    System = "system",
+}
+
+// 结构体中直接使用枚举名称
+struct Foo {
+    damage_scaling: NarrationPriority
+}</code></pre>
+
+      <h5 id="mcdoc分派器类型">分派器类型</h5>
+
+      <p>
+        <strong>分派器</strong>类型用于根据不同条件<strong>动态</strong>确定具体类型, 常用于根据某个字段的值来决定整个对象的结构
+      </p>
+      <pre><code>struct Foo {
+    id: string,
+
+    // 静态分派到cow实体类型
+    cow_data: minecraft:entity[cow],
+
+    // 动态根据id值分派实体类型
+    dynamic_entity_data: minecraft:entity[[id]],
+
+    // 嵌套分派
+    command: minecraft:block[command_block][Command],
+
+    // 多级分派
+    dynamic_memories: minecraft:entity[[id]][Brain][memories]
+}</code></pre>
+
+      <h5 id="mcdoc联合类型">联合类型</h5>
+
+      <p>
+        <strong>联合</strong>类型表示值可以是几种类型中的<strong>任意一种</strong>, 使用管道符<code>|</code>分隔不同的类型选项
+      </p>
+      <pre><code>id: string | int</code></pre>
+
+      <h5 id="mcdoc类型索引">类型索引</h5>
+
+      <p>
+        <strong>类型索引</strong>允许从复杂类型结构中<strong>提取特定部分</strong>, 类似于从对象中获取指定属性
+      </p>
+      <pre><code>// 基本用法: 从实体类型中获取特定实体的信息
+// 获取猪的相关数据结构
+minecraft:entity[pig]</code></pre>
+      <p>
+        可以同时获取多个类型的索引:
+      </p>
+      <pre><code>// 同时获取末影龙和凋零的类型信息
+minecraft:entity[ender_dragon, wither]</code></pre>
+      <p>
+        类型索引分为两种形式:
+      </p>
+      <ul>
+        <li><strong>静态索引</strong>: 在编写代码时已经确定的固定索引</li>
+        <li><strong>动态索引</strong>: 根据运行时的值来确定的索引</li>
+      </ul>
+      <pre><code>struct MobData {
+    id: string,  // 存储实体ID, 比如 "pig" 或 "cow"
+    // 静态索引: 总是指向猪的数据
+    static_pig_data: minecraft:entity[pig],
+
+    // 动态索引: 根据id字段的值来决定指向哪种实体
+    dynamic_mob_data: minecraft:entity[[id]],
+}</code></pre>
+      <p>
+        <em>Mcdoc</em>提供了几个特殊关键字来处理特殊情况:
+      </p>
+      <ul>
+        <li><code>%fallback</code>: 当没有匹配项时使用的默认值</li>
+        <li><code>%none</code>: 表示没有值的情况</li>
+        <li><code>%unknown</code>: 处理未知的输入</li>
+      </ul>
+      <pre><code>// 使用 %fallback 处理未明确指定的实体类型
+type AnyEntity = minecraft:entity[%fallback]
+
+// 结合动态索引和 %none 处理可选字段
+struct RandomIntGenerator {
+    type?: ("uniform" | "binomial" | "constant"),
+    // 当 type 有值时使用对应的生成器, 当 type 为空时使用 %none 对应的默认结构
+    ...minecraft:random_int_generator[[type]]
+}
+dispatch minecraft:random_int_generator[uniform, %none] to struct {
+    min?: int,
+    max?: int
+}</code></pre>
+      <p>
+        还有一些高级关键字:
+      </p>
+      <ul>
+        <li><code>%key</code>: 引用当前键的值</li>
+        <li><code>%parent</code>: 访问上级结构的信息</li>
+      </ul>
+      <pre><code>// 使用 %key 来动态确定类型
+struct DebugStick {
+    DebugProperty: struct {
+        // 根据键名来确定应该使用哪种方块状态类型
+        [#[id=block] string]: mcdoc:block_state_name[[%key]]
+    }
+}
+
+// 使用 %parent 来关联相关信息
+struct Item {
+    id: #[id=item] string,  // 物品ID
+    tag: struct ItemTag {
+        // 根据物品ID来确定适用的方块状态
+        BlockStateTag: mcdoc:block_item_states[[%parent.id]]
+    }
+}</code></pre>
+
+      <h4 id="mcdoc类型别名语句">类型别名语句</h4>
+
+      <p>
+        使用 <code>type</code> 关键字创建<strong>类型别名</strong>以引<strong>用另</strong>一个类型, 提高代码的可读性和可重用性
+      </p>
+      <pre><code>// 定义Integer类型为byte、short、int或long的联合类型
+type Integer = (byte | short | int | long)
+
+// 定义Float类型为float或double的联合类型
+type Float = (float | double)
+
+// 定义Number类型为Integer或Float的联合类型
+type Number = (Integer | Float)</code></pre>
+      <p>
+        如果要创建具有大致<strong>相同结构</strong>但在某些小方面有所不同的不同类型定义, 可以创建一个带有类型参数的<strong>模板</strong>类型别名<br>
+        类型别名语句的右侧可以引用这些类型参数, 当类型别名在其他地方实例化时, 这些参数将被实际类型替换
+      </p>
+      <pre><code>// 定义带类型参数T的NumericRange模板
+type NumericRange&lt;T&gt; = (
+    // 单个T类型的值
+    T |
+    // 包含两个T类型值的元组(表示范围的最小值和最大值)
+    [T, T] |
+    // 包含min和max字段的结构体
+    struct {
+        min: T, 
+        max: T
+    }
+)
+
+// 实例化NumericRange为float类型
+type FloatRange = NumericRange&lt;float&gt;
+
+// 实例化NumericRange为int类型
+type IntegerRange = NumericRange&lt;int&gt;
+
+// 实例化NumericRange为非负int类型
+type NaturalRange = NumericRange&lt;int @ 0..&gt;</code></pre>
+      <ul>
+        <li>类型参数 <code>T</code> 在尖括号中<strong>声明</strong></li>
+        <li>类型参数 <code>T</code> 现在可以在右侧<strong>引用</strong></li>
+        <li>
+          当在其他地方引用 <code>NumericRange</code> 类型别名时, 必须为类型参数提供实际类型
+          <pre><code>struct Foo {
+        range: NumericRange&lt;float&gt;
+}</code></pre>
+        </li>
+      </ul>
+
+      <h5 id="mcdoc绑定类型参数">绑定类型参数</h5>
+
+      <p>
+        所有路径引用通过路径中描述的规则解析, 类型参数引用也不例外<br>
+        当在类型别名语句中声明类型参数时, 它会被暂时绑定到当前模块, 直到语句结束<br>
+        因此, 就像其他类型定义一样, 类型参数在模块范围内应该是唯一的
+      </p>
+      <pre><code>// 文件 '/example.mcdoc'
+// 定义一个名为T的结构体
+struct T {}
+
+// 尝试声明类型参数T, 但与上面的结构体T冲突
+type List&lt;T&gt; = [T] 
+//        ^
+//        WARNING: Duplicated declaration for "::example::T"</code></pre>
+      <p>
+        <code>T</code> 的声明被警告并忽略, 右侧的 <code>T</code> 实际上引用的是上面定义的结构体 <code>T</code>
+      </p>
+      <pre><code>// 在此语句范围内声明类型参数 T
+type List&lt;T&gt; = [T] 
+
+// 这是另一个独立的类型别名, 其 T 参数不会与上面的冲突
+type Struct&lt;T&gt; = struct {
+    value: T
+}</code></pre>
+      <p>
+        这是可以的, 虽然 <code>T</code> 也在 <code>List</code> 类型别名语句中声明, 但该声明的效果仅在该语句结束前有效
+      </p>
+
+      <h4 id="mcdoc使用语句">使用语句</h4>
+
+      <p>
+        <strong>使用语句</strong>用于引入其他文件中定义的类型, 并可以给它起一个别名<br>
+        使用语句使你能够在当前文件中方便地<strong>引用其他模块</strong>中定义的类型, 而无需每次都使用完整的路径, 通常在 <em>.mcdoc</em> 文件的最开头使用
+      </p>
+      <pre><code>// 直接使用SomeType
+use ::foo::bar::SomeType
+
+// 将AnotherType引入重命名为AT
+use ::foo::bar::AnotherType as AT
+
+// 将Config重命名为AppConfig
+use ::utils::common::Config as AppConfig</code></pre>
+
+      <h4 id="mcdoc注入">注入</h4>
+
+      <p>
+        <strong>注入</strong>语句用于向<strong>已存在</strong>的类型定义中<strong>添加额外的</strong>字段或枚举值, 而无需修改原始定义, 可以用于扩展原版或其他库定义的类型, 注入的字段或值会被<strong>合并</strong>到原始类型定义中
+      </p>
+
+      <h5 id="mcdoc枚举注入">枚举注入</h5>
+
+      <p>
+        枚举注入允许你向现有的<strong>枚举</strong>类型添加新的枚举值:
+      </p>
+      <pre><code>inject enum(string) ::existing::enum::Path {
+    NEW_VALUE = "new_value_name",
+    ANOTHER_VALUE = "another_value"
+}</code></pre>
+
+      <h5 id="mcdoc结构体注入">结构体注入</h5>
+
+      <p>
+        结构体注入允许你向现有的<strong>结构体</strong>类型添加新的字段:
+      </p>
+      <pre><code>inject struct ::existing::struct::Path {
+    new_field: string,
+    another_field: int
+}</code></pre>
+
+      <h4 id="mcdoc属性">属性</h4>
+
+      <p>
+        <em>Mcdoc</em> 支持使用属性来为类型和字段添加元数据信息
+        属性使用 <code>#[attribute_name]</code> 语法, 可以应用于类型、字段或其他语言结构
+      </p>
+      <div class="block-tips">
+        此部分所有示例选项解释均为根据属性选项的命名猜测, 可能与实际语法不同, 极为不确定的解释标有 "(?)"
+      </div>
+
+      <h5 id="mcdoc属性canonical">canonical</h5>
+
+      <p>
+        特殊属性, 标记联合类型中的<strong>规范成员</strong>, 表示优先使用此类型
+        如果联合类型有<em>规范成员</em>, 读取该联合类型时将始终期望<em>规范成员</em>
+      </p>
+      <pre><code>type RGB = (
+    #[canonical] int |
+    [float] @ 3 |
+)</code></pre>
+
+      <h5 id="mcdoc属性color">color</h5>
+
+      <p>
+        表示<strong>颜色</strong>
+        此属性有一个必需的字符串选项, 指定<strong>颜色格式</strong>
+      </p>
+      <pre><code>// 十进制 RGB
+#[color="dec_rgb"] [float] @ 3
+
+// 组合 RGB
+#[color="composite_rgb"] int
+
+// 十六进制 RGB
+#[color="hex_rgb"] string</code></pre>
+
+      <h5 id="mcdoc属性command">command</h5>
+
+      <p>
+        指定字符串包含<strong>命令</strong>
+        此属性有多个选项
+      </p>
+      <pre><code>#[command(slash="allowed")] string
+
+#[command(slash="allowed", empty="allowed", max_length=32500)] string
+
+#[command(macro="implicit")] string</code></pre>
+      <ul>
+        <li>
+          slash: 指定命令是否允许使用斜杠前缀
+          <ul>
+            <li><code>chat</code>: 命令在聊天框中输入, 可以使用<code>/</code>前缀(?)</li>
+            <li><code>required</code>: 命令必须使用<code>/</code>前缀</li>
+            <li><code>allowed</code>: 允许使用<code>/</code>前缀</li>
+          </ul>
+        </li>
+        <li>
+          empty: 允许命令为空
+          <ul>
+            <li><code>allowed</code>: 命令可以为空</li>
+          </ul>
+        </li>
+        <li>max_length: 指定命令的最大长度, 以字符为单位</li>
+        <li>
+          macro: 命令是否使用宏
+          <ul>
+            <li><code>implicit</code>: 命令可以包含宏占位符</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h5 id="mcdoc属性deprecated">deprecated</h5>
+
+      <p>
+        标记字段为<strong>已弃用</strong>, 编辑器在使用时可能会对字段添加删除线
+        参数为指定弃用版本的字符串
+      </p>
+      <pre><code>#[deprecated="1.16"]
+value?: Text,</code></pre>
+
+      <h5 id="mcdoc属性dispatcher_key">dispatcher_key</h5>
+
+      <p>
+        指定字符串应匹配<strong>给定分派器的键</strong>
+      </p>
+      <pre><code>#[dispatcher_key="mcdoc:custom_data"] string</code></pre>
+
+      <h5 id="mcdoc属性divisible_by">divisible_by</h5>
+
+      <p>
+        指定数值必须能被<strong>给定数字整除</strong>
+      </p>
+      <pre><code>#[divisible_by=16] int</code></pre>
+
+      <h5 id="mcdoc属性entity">entity</h5>
+
+      <p>
+        表示<strong>选择器、玩家名或UUID</strong>
+        指定分数持有者请使用 <code>score_holder</code> 属性
+        此属性有两个选项:
+      </p>
+      <ul>
+        <li>
+          <code>amount</code>: 允许单个或多个实体
+          <ul>
+            <li><code>multiple</code>: 允许多个实体</li>
+            <li><code>single</code>: 仅允许单个实体</li>
+          </ul>
+        </li>
+        <li>
+          <code>type</code>: 实体类型是否为玩家
+          <ul>
+            <li><code>entities</code>: 类型不一定为玩家</li>
+            <li><code>players</code>: 类型为玩家</li>
+          </ul>
+        </li>
+      </ul>
+      <pre><code>#[entity(amount="single",type="entities")] string</code></pre>
+
+      <h5 id="mcdoc属性game_rule">game_rule</h5>
+
+      <p>
+        指定字符串应包含<strong>游戏规则名称</strong>
+        此属性有一个选项:
+      </p>
+      <ul>
+        <li>
+          <code>type</code>: 游戏规则接受值的类型
+          <ul>
+            <li><code>boolean</code>: 游戏规则接受布尔值</li>
+            <li><code>int</code>: 游戏规则接受整数值</li>
+          </ul>
+        </li>
+      </ul>
+      <pre><code>#[game_rule(type="int")] string</code></pre>
+
+      <h5 id="mcdoc属性id">id</h5>
+
+      <p>
+        指定字符串应包含资源位置
+        有一个必需选项 <code>registry</code>, 可以写成简写形式或带更多选项:
+      </p>
+      <ul>
+        <li><code>registry</code>: 任何注册表或包类别, 如<code>item</code>、<code>block</code>、<code>loot_table</code>等</li>
+        <li>
+          <code>tags</code>: 注册项是否允许使用标签
+          <ul>
+            <li><code>allowed</code>: 允许使用标签</li>
+            <li><code>implicit</code>: 默认使用标签(?)</li>
+            <li><code>required</code>: 必须使用标签(?)</li>
+          </ul>
+        </li>
+      </ul>
+      <pre><code>#[id="item"] string
+
+#[id(registry="item",tags="allowed")] string</code></pre>
+
+      <h5 id="mcdoc属性match_regex">match_regex</h5>
+
+      <p>
+        指定字符串需要<strong>匹配</strong>给定的<strong>正则表达式</strong>模式
+        此属性仅<strong>匹配</strong>正则表达式而不是字符串<strong>包含</strong>正则表达式, <strong>包含</strong>正则表达式使用
+        <code>regex_pattern</code> 属性
+      </p>
+      <pre><code>#[match_regex="^[a-z_]+$"] string</code></pre>
+
+      <h5 id="mcdoc属性nbt">nbt</h5>
+
+      <p>
+        包含 <strong>SNBT</strong> 的字符串
+        有一个选项, 指定字符串化 SNBT 需要匹配的类型
+      </p>
+      <pre><code>#[nbt=ItemStack] string</code></pre>
+
+      <h5 id="mcdoc属性nbt_path">nbt_path</h5>
+
+      <p>
+        包含 <strong>NBT 路径</strong>的字符串
+      </p>
+      <pre><code>#[nbt_path] string</code></pre>
+
+      <h5 id="mcdoc属性objective">objective</h5>
+
+      <p>
+        包含<strong>记分项名称</strong>的字符串
+      </p>
+      <pre><code>#[objective] string</code></pre>
+
+      <h5 id="mcdoc属性regex_pattern">regex_pattern</h5>
+
+      <p>
+        <strong>包含正则表达式模式</strong>的字符串
+        不要与 <code>match_regex</code> 混淆
+      </p>
+      <pre><code>#[regex_pattern] string</code></pre>
+
+      <h5 id="mcdoc属性score_holder">score_holder</h5>
+
+      <p>
+        允许使用<code>*</code><strong>通配符、实体选择器和玩家名</strong>
+        不要与 <code>entity</code> 混淆
+      </p>
+      <pre><code>#[score_holder] string</code></pre>
+
+      <h5 id="mcdoc属性since">since</h5>
+
+      <p>
+        使字段或联合成员仅从<strong>给定版本开始可用</strong>
+        只允许正式版本(不包括快照)
+        从给定版本不可用参见 <a href="#mcdoc属性until">until</a>
+      </p>
+      <pre><code>struct Example1 {
+   #[since="1.19"]
+   entity: string,
+}
+
+type Example2 = (
+   string |
+   #[since="1.20.5"] int |
+)</code></pre>
+      <p>
+        无效语法:
+      </p>
+      <pre><code>struct Example {
+   entity: #[since="1.19"] string,
+}</code></pre>
+
+      <h5 id="mcdoc属性tag">tag</h5>
+
+      <p>
+        包含命令<strong>标签名称</strong>的字符串(通过 <code>/tag</code> 获得或在 <code>Tags</code> 实体字段中)
+      </p>
+      <pre><code>#[tag] string</code></pre>
+
+      <h5 id="mcdoc属性team">team</h5>
+
+      <p>
+        包含<strong>队伍名称</strong>的字符串
+      </p>
+      <pre><code>#[team] string</code></pre>
+
+      <h5 id="mcdoc属性text_component">text_component</h5>
+
+      <p>
+        包含表示<strong>文本组件</strong>的字符串化 JSON 的字符串
+        注意在1.21.5及更高版本文本组件更改后, 应使用 <code>::java::util::text::Text</code> 类型而不是字符串化 JSON
+      </p>
+      <pre><code>#[text_component] string</code></pre>
+
+      <h5 id="mcdoc属性until">until</h5>
+
+      <p>
+        使字段或联合成员<strong>从给定版本开始不可用</strong>
+        只允许正式版本(不包括快照)
+        注意给定版本不包含在该字段或成员被接受的版本范围内
+        从给定版本开始可用参见 <a href="#mcdoc属性since">since</a>
+      </p>
+      <pre><code>struct Example1 {
+   #[until="1.19"]
+   entity: string,
+}
+
+type Example2 = (
+   string |
+   #[until="1.20.5"] int |
+)</code></pre>
+      <p>
+        无效语法:
+      </p>
+      <pre><code>struct Example {
+   entity: #[until="1.19"] string,
+}</code></pre>
+    </div>
   </main>
 
   <hr>
