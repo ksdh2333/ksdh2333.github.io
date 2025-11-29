@@ -6,21 +6,21 @@
 :root {
   color-scheme: light dark;
 
-  --background-color: rgb(229, 220, 255);
+  --background-color: rgb(180, 172, 201);
   --text-color: rgb(0, 0, 0);
 
   --border-color-hr: rgba(0, 0, 0, 0.3);
   --border-color-table: rgb(210, 188, 233);
 
-  --text-color-link: rgb(62, 27, 119);
+  --text-color-link: rgb(83, 45, 187);
   --text-color-link-hover: rgb(73, 23, 167);
 
-  --text-color-strong: rgb(93, 44, 207);
+  --text-color-strong: rgb(59, 28, 109);
 
   --background-color-header-nav: white;
   --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
 
-  --background-color-botton: rgba(193, 146, 255, 0.4);
+  --background-color-botton: rgba(141, 100, 194, 0.4);
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
@@ -32,21 +32,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: rgb(39, 27, 66);
+    --background-color: rgb(37, 30, 53);
     --text-color: rgb(226, 212, 241);
 
     --border-color-hr: rgba(255, 255, 255, 0.3);
     --border-color-table: rgb(56, 40, 95);
 
-    --text-color-link: rgb(173, 141, 207);
+    --text-color-link: rgb(156, 129, 231);
     --text-color-link-hover: rgb(172, 143, 253);
 
-    --text-color-strong: rgb(150, 107, 250);
+    --text-color-strong: rgb(145, 132, 175);
 
     --background-color-header-nav: black;
     --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
 
-    --background-color-botton: rgba(63, 22, 116, 0.5);
+    --background-color-botton: rgba(58, 39, 82, 0.5);
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
@@ -60,21 +60,21 @@
 /* light-dark() */
 @supports (color: light-dark(white, black)) {
   :root {
-    --background-color: light-dark(rgb(229, 220, 255), rgb(39, 27, 66));
+    --background-color: light-dark(rgb(180, 172, 201), rgb(37, 30, 53));
     --text-color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
 
     --border-color-hr: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
     --border-color-table: light-dark(rgb(210, 188, 233), rgb(56, 40, 95));
 
-    --text-color-link: light-dark(rgb(62, 27, 119), rgb(173, 141, 207));
+    --text-color-link: light-dark(rgb(83, 45, 187), rgb(156, 129, 231));
     --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
 
-    --text-color-strong: light-dark(rgb(93, 44, 207), rgb(150, 107, 250));
+    --text-color-strong: light-dark(rgb(59, 28, 109), rgb(145, 132, 175));
 
     --background-color-header-nav: light-dark(white, black);
     --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
 
-    --background-color-botton: light-dark(rgba(193, 146, 255, 0.4), rgba(63, 22, 116, 0.5));
+    --background-color-botton: light-dark(rgba(141, 100, 194, 0.4), rgba(58, 39, 82, 0.5));
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
@@ -119,6 +119,15 @@ html {
   top: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color-strong);
+}
+
 h1 {
   font-size: 45px;
 }
@@ -156,18 +165,21 @@ code {
   overflow-y: hidden;
   max-width: 100%;
   vertical-align: middle;
-  white-space: nowrap;
+  white-space: pre;
 }
 
-code:has(pre) {
-  display: block;
+pre:has(code) {
+  display: flex;
   margin: 8px 0;
-  padding: 8px;
+  padding: 0;
+  height: min-content;
 }
 
-code > pre {
-  font-family: Consolas, Monaco, monospace;
-  margin: 0;
+pre > code {
+  padding: 16px;
+  display: block;
+  flex: 1;
+  height: 100%;
 }
 
 code::-webkit-scrollbar {
