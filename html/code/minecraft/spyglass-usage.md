@@ -21,6 +21,11 @@ Spyglass 插件相关使用说明
             - [lint 配置](#lint-配置)
             - [snippet 配置](#snippet-配置)
             - [配置文件示例](#配置文件示例)
+- [命令树](#命令树)
+    - [命令树的结构](#命令树的结构)
+    - [自定义命令树](#自定义命令树)
+        - [配置自定义命令树](#配置自定义命令树)
+        - [生成命令树文件](#生成命令树文件)
 - [Mcdoc 的使用](#mcdoc的使用)
     - [基本语法](#mcdoc基本语法)
         - [注释](#mcdoc注释)
@@ -86,9 +91,9 @@ Spyglass 插件 {#Spyglass插件}
 
 #### VS Code 插件设置 {#VSCode插件设置}
 
-*VS Code* 插件设置中可以调整: 
+*VS Code* 插件设置中可以调整:
 
-- **游戏版本**`spyglassmc.env.gameVersion`: 
+- **游戏版本**`spyglassmc.env.gameVersion`:
 所使用的 Minecraft 的版本。若设为自动, 则根据 `pack.mcmeta` 来推断版本。其他版本可通过配置文件指定。
     - `Auto` : 自动检测 `pack.mcmeta` 文件设置
     - `Latest release` : 最新正式版
@@ -103,17 +108,17 @@ Spyglass 插件 {#Spyglass插件}
 
 [Spyglass 官方配置文件说明](https://spyglassmc.com/user/config.html)
 
-在**工作区根目录**(指用 *VS Code* 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件: 
+在**工作区根目录**(指用 *VS Code* 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件:
 
 - `spyglass.json`
 - `.spyglassrc`
 - `.spyglassrc.json`
 
 配置文件使用 JSON 格式, 未指定的配置项将不启用或使用默认设置
-配置主要包含以下几个部分: 
+配置主要包含以下几个部分:
 
 ##### env 配置 {#env-配置}
-`env` 对象用于配置 *Spyglass* 的**运行环境**, 包括: 
+`env` 对象用于配置 *Spyglass* 的**运行环境**, 包括:
 
 - `gameVersion`: 指定 **Minecraft 版本**
 - `dataSource`: **数据源**, 通常为 `GitHub`
@@ -142,12 +147,21 @@ Spyglass 插件 {#Spyglass插件}
     - `signatures`: 是否启用命令**签名提示**, 显示命令参数和返回值类型
 - `plugins`: **插件**列表, 用于扩展 *Spyglass* 功能
 - `mcmetaSummaryOverrides`: mcmeta 摘要覆盖设置, 可用于自定义数据包元数据
-    > **需要补充**: 
+    > **需要补充**:
     > 具体功能待补充, 已知此配置可用于**自定义命令树**, 用来添加原版命令以外的命令, 参见 [Spyglass #873](https://github.com/SpyglassMC/Spyglass/issues/873) 和 [Spyglass #1899](https://github.com/SpyglassMC/Spyglass/issues/1899)
-    - `commands`: 自定义**命令树**
+    > 方块、流体和注册表列表格式未知
+    - `commands`: 自定义**命令树**, 命令树写法见: [命令树](#命令树)
         - `path`: 自定义命令树**路径** 
-        <!-- TODO (命令树写法见: [命令树](#命令树)) -->
         - `replace`: 是否**替换**原版命令树
+    - `blocks`: 自定义方块列表
+        - `path`: 自定义方块列表**路径**
+        - `replace`: 是否**替换**原版方块列表
+    - `fluids`: 自定义流体列表
+        - `path`: 自定义流体列表**路径**
+        - `replace`: 是否**替换**原版流体列表
+    - `registries`: 自定义注册表列表
+        - `path`: 自定义注册表列表**路径**
+        - `replace`: 是否**替换**原版注册表列表
 - `useFilePolling`: 是否使用文件**轮询**监测文件变化, 默认为 `false`, 启用以解决使用插件时无法重命名文件夹的问题, 但可能导致检查速度减慢
 - `permissionLevel`: **权限**等级, 范围为 1-4, 数据包权限通常为2, 即可以使用除了玩家管理和服务器管理命令以外的命令
 
@@ -206,7 +220,7 @@ Spyglass 插件 {#Spyglass插件}
 - `timeOmitTickUnit`: 是否省略**时间单位** `t`
 
 ##### lint 配置 {#lint-配置}
-`lint` 对象用于配置代码检查规则, 包括: 
+`lint` 对象用于配置代码检查规则, 包括:
 
 - `blockStateSortKeys`: **方块状态键**排序规则, 可设置为`null`、`alphabetically`或`convention`
 - `nbtCompoundSortKeys`: NBT **复合标签键**排序规则, 可设置为`null`、`alphabetically`或`convention`
@@ -230,15 +244,15 @@ Spyglass 插件 {#Spyglass插件}
     `"declare": "block"` 表示**声明**为 *方块* , `"block"` 可以替换为 `file` (文件) 或 `"public"` (公共声明, 不作为特殊符号) 
     `"report": "warning"` 表示**报告**为 *警告* , `"warning"` 可以替换为 `"error"` (错误) , `"information"` (信息) , `"hint"` (提示) 或 `"inherit"` (继承默认)
 
-    除了直接使用 `"declare"` 或 `"report"` , 还可以使用 **if** 判断: 
+    除了直接使用 `"declare"` 或 `"report"` , 还可以使用 **if** 判断:
     ```json
     {
         "if": [
-            {"category": ["block", "entity_type", "item"], "namespace": "minecraft"}, 
+            {"category": ["block", "entity_type", "item"], "namespace": "minecraft"},
             {"category": ["advancement", "bossbar", "objective", "team"]}
-        ], 
+        ],
         "then": {"report": "warning"}
-    }, 
+    },
     {
         "then": {"declare": "block"},
     }
@@ -411,6 +425,59 @@ Spyglass 插件 {#Spyglass插件}
 }
 ```
 
+命令树 {#命令树}
+------
+
+*Spyglass* 使用**命令树**(Command Tree)来解析和验证 *Minecraft* 命令
+命令树定义了命令的语法结构, 包括**参数类型、子命令**等
+
+### 命令树的结构 {#命令树的结构}
+
+命令树由**节点**组成, 每个节点代表命令中的一个元素:
+
+- **根节点**: 代表命令**本身**(如 `/execute`)
+- **字面量节点**: 代表固定的**命令词**(如 `as`、`at`、`if`、`unless`)
+- **参数节点**: 代表可变**参数**(如 `@s` 选择器、坐标、字符串等)
+- **重定向节点**: 指向**其他命令**的子树
+
+示例: `execute` 命令树结构
+
+```
+execute
+├── run <command>
+├── as <entity>
+├── at <entity>
+├── if
+│   ├── block <pos> <block>
+│   ├── blocks <start> <end> <destination> <mode>
+│   ├── data <target>
+│   ├── entity <entity>
+│   └── score <target> <objective> <operation> <source> <sourceObjective>
+└── unless
+    ├── block <pos> <block>
+    ├── blocks <start> <end> <destination> <mode>
+    ├── data <target>
+    ├── entity <entity>
+    ├── score <target> <objective> <operation> <source> <sourceObjective>
+    └── loaded <pos>
+```
+
+### 自定义命令树 {#自定义命令树}
+
+*Spyglass* 支持**自定义**命令树, 允许用户添加原版命令以外的命令, 如**模组命令**和**服务端插件命令**
+
+#### 配置自定义命令树 {#配置自定义命令树}
+
+可以通过 `spyglass.json` 配置文件中的 `mcmetaSummaryOverrides.commands` 选项来配置自定义命令树
+
+见 [env 配置](#env-配置) 下的 `mcmetaSummaryOverrides.commands` 配置项
+
+#### 生成命令树文件 {#生成命令树文件}
+
+1. **手动编写**: 根据 *Minecraft* 命令树格式**手动编写** `commands.json` 文件, 命令树格式相关内容可以查看 [数据生成器 - 中文 Minecraft Wiki #命令报告](https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8#%E5%91%BD%E4%BB%A4%E6%8A%A5%E5%91%8A)
+2. **使用 Command Extractor 模组**: 使用**模组**从游戏中提取命令树, 模组 *Modrinth* 链接: [Command Extractor - Minecraft Mod](https://modrinth.com/mod/command_extractor)
+3. **使用原版 *Minecraft* 数据生成器获取命令报告**: 见 [数据生成器 - 中文 Minecraft Wiki](https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8), 使用数据生成器获取命令报告
+
 Mcdoc 的使用 {#mcdoc的使用}
 ------------
 
@@ -521,7 +588,7 @@ Mcdoc 使用 `//` 来表示**普通注释**
 **标识符**区分大小写, 可以包含任何 *Unicode* 字母、数字和下划线, 但**不能**以**数字**开头
 
 #### 结构体定义 {#mcdoc结构体定义}
-使用 `struct` 关键字来**定义结构体**: 
+使用 `struct` 关键字来**定义结构体**:
 
 ```mcdoc
 struct MyStructure {
@@ -564,7 +631,7 @@ struct OuterStruct {
 
 #### 类型映射 {#mcdoc类型映射}
 
-使用 `dispatch` 关键字将 *Minecraft* 中的实际存储**映射**到定义的结构体: 
+使用 `dispatch` 关键字将 *Minecraft* 中的实际存储**映射**到定义的结构体:
 
 ```mcdoc
 dispatch minecraft:storage["storage_name"] to StructName
@@ -851,7 +918,7 @@ type NumericRange<T> = (
     [T, T] |
     // 包含min和max字段的结构体
     struct {
-        min: T, 
+        min: T,
         max: T
     }
 )
