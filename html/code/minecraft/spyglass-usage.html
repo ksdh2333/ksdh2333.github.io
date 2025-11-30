@@ -62,6 +62,17 @@
             </li>
           </ul>
         </li>
+        <li><a href="#命令树">命令树</a>
+          <ul>
+            <li><a href="#命令树的结构">命令树的结构</a></li>
+            <li><a href="#自定义命令树">自定义命令树</a>
+              <ul>
+                <li><a href="#配置自定义命令树">配置自定义命令树</a></li>
+                <li><a href="#生成命令树文件">生成命令树文件</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#mcdoc的使用">Mcdoc 的使用</a>
           <ul>
             <li><a href="#mcdoc基本语法">基本语法</a>
@@ -246,18 +257,39 @@
         <li><code>plugins</code>: <strong>插件</strong>列表, 用于扩展 <em>Spyglass</em> 功能</li>
         <li><code>mcmetaSummaryOverrides</code>: mcmeta 摘要覆盖设置, 可用于自定义数据包元数据<br>
           <div class="left block-tips">
-            <strong>需要补充</strong>: <br>
+            <strong>需要补充</strong>:<br>
             具体功能待补充, 已知此配置可用于<strong>自定义命令树</strong>, 用来添加原版命令以外的命令<br>
-            参见<a href="https://github.com/SpyglassMC/Spyglass/issues/873" target="_blank">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899" target="_blank">Spyglass #1899</a>
+            参见<a href="https://github.com/SpyglassMC/Spyglass/issues/873" target="_blank">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899" target="_blank">Spyglass #1899</a><br>
+            方块、流体和注册表列表格式未知
           </div>
           <ul>
-            <li><code>commands</code>: 自定义<strong>命令树</strong>
+            <li><code>commands</code>: 自定义<strong>命令树</strong>, 命令树写法见:<a href="#命令树">命令树</a>
               <ul>
                 <li>
                   <code>path</code>: 自定义命令树<strong>路径</strong>
-                  <!-- TODO (命令树写法见:<a href="#命令树">命令树</a>) -->
                 </li>
                 <li><code>replace</code>: 是否<strong>替换</strong>原版命令树</li>
+              </ul>
+            </li>
+            <li>
+              <code>blocks</code>: 自定义方块列表
+              <ul>
+                <li><code>path</code>: 自定义方块列表<strong>路径</strong></li>
+                <li><code>replace</code>: 是否<strong>替换</strong>原版方块列表</li>
+              </ul>
+            </li>
+            <li>
+              <code>fluids</code>: 自定义流体列表
+              <ul>
+                <li><code>path</code>: 自定义流体列表<strong>路径</strong></li>
+                <li><code>replace</code>: 是否<strong>替换</strong>原版流体列表</li>
+              </ul>
+            </li>
+            <li>
+              <code>registries</code>: 自定义注册表列表
+              <ul>
+                <li><code>path</code>: 自定义注册表列表<strong>路径</strong></li>
+                <li><code>replace</code>: 是否<strong>替换</strong>原版注册表列表</li>
               </ul>
             </li>
           </ul>
@@ -323,7 +355,7 @@
 
       <h5 id="lint-配置">lint 配置</h5>
 
-      <p><code>lint</code> 对象用于配置代码检查规则, 包括: </p>
+      <p><code>lint</code> 对象用于配置代码检查规则, 包括:</p>
       <ul>
         <li><code>blockStateSortKeys</code>: <strong>方块状态键</strong>排序规则, 可设置为<code>null</code>、<code>alphabetically</code>或<code>convention</code></li>
         <li><code>nbtCompoundSortKeys</code>: NBT <strong>复合标签键</strong>排序规则, 可设置为<code>null</code>、<code>alphabetically</code>或<code>convention</code></li>
@@ -356,11 +388,11 @@
               </p>
               <pre><code>{
     "if": [
-        {"category": ["block", "entity_type", "item"], "namespace": "minecraft"}, 
+        {"category": ["block", "entity_type", "item"], "namespace": "minecraft"},
         {"category": ["advancement", "bossbar", "objective", "team"]}
-    ], 
+    ],
     "then": {"report": "warning"}
-}, 
+},
 {
     "then": {"declare": "block"},
 }</code></pre>
@@ -547,6 +579,74 @@
     }
 }</code></pre>
       </details>
+    </div>
+
+    <div class="left card-1">
+
+      <h2 id="命令树">命令树</h2>
+
+      <p>
+        <em>Spyglass</em> 使用<strong>命令树</strong>(Command Tree)来解析和验证 <em>Minecraft</em> 命令
+        命令树定义了命令的语法结构, 包括<strong>参数类型、子命令</strong>等
+      </p>
+
+      <h3 id="命令树的结构">命令树的结构</h3>
+
+
+      <p>
+        命令树由<strong>节点</strong>组成, 每个节点代表命令中的一个元素:
+      </p>
+      <ul>
+        <li><strong>根节点</strong>: 代表命令<strong>本身</strong>(如 <code>/execute</code>)</li>
+        <li><strong>字面量节点</strong>: 代表固定的<strong>命令词</strong>(如 <code>as</code>、<code>at</code>、<code>if</code>、<code>unless</code>)</li>
+        <li><strong>参数节点</strong>: 代表可变<strong>参数</strong>(如 <code>@s</code> 选择器、坐标、字符串等)</li>
+        <li><strong>重定向节点</strong>: 指向<strong>其他命令</strong>的子树</li>
+      </ul>
+      <p>
+        示例: <code>execute</code> 命令树结构
+      </p>
+      <pre><code>execute
+├── run &lt;command&gt;
+├── as &lt;entity&gt;
+├── at &lt;entity&gt;
+├── if
+│   ├── block &lt;pos&gt; &lt;block&gt;
+│   ├── blocks &lt;start&gt; &lt;end&gt; &lt;destination&gt; &lt;mode&gt;
+│   ├── data &lt;target&gt;
+│   ├── entity &lt;entity&gt;
+│   └── score &lt;target&gt; &lt;objective&gt; &lt;operation&gt; &lt;source&gt; &lt;sourceObjective&gt;
+└── unless
+    ├── block &lt;pos&gt; &lt;block&gt;
+    ├── blocks &lt;start&gt; &lt;end&gt; &lt;destination&gt; &lt;mode&gt;
+    ├── data &lt;target&gt;
+    ├── entity &lt;entity&gt;
+    ├── score &lt;target&gt; &lt;objective&gt; &lt;operation&gt; &lt;source&gt; &lt;sourceObjective&gt;
+    └── loaded &lt;pos&gt;
+</code></pre>
+
+      <h3 id="自定义命令树">自定义命令树</h3>
+
+      <p>
+        <em>Spyglass</em> 支持<strong>自定义</strong>命令树, 允许用户添加原版命令以外的命令, 如<strong>模组命令</strong>和<strong>服务端插件命令</strong>
+      </p>
+
+      <h4 id="配置自定义命令树">配置自定义命令树</h4>
+
+
+      <p>
+        可以通过 <code>spyglass.json</code> 配置文件中的 <code>mcmetaSummaryOverrides.commands</code> 选项来配置自定义命令树
+      </p>
+      <p>
+        见 <a href="#env-配置">env 配置</a> 下的 <code>mcmetaSummaryOverrides.commands</code> 配置项
+      </p>
+
+      <h4 id="生成命令树文件">生成命令树文件</h4>
+
+      <ol>
+        <li><strong>手动编写</strong>: 根据 <em>Minecraft</em> 命令树格式<strong>手动编写</strong> <code>commands.json</code> 文件, 命令树格式相关内容可以查看 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8#%E5%91%BD%E4%BB%A4%E6%8A%A5%E5%91%8A">数据生成器 - 中文 Minecraft Wiki #命令报告</a></li>
+        <li><strong>使用 Command Extractor 模组</strong>: 使用<strong>模组</strong>从游戏中提取命令树, 模组 <em>Modrinth</em> 链接: <a href="https://modrinth.com/mod/command_extractor">Command Extractor - Minecraft Mod</a></li>
+        <li><strong>使用原版 <em>Minecraft</em> 数据生成器获取命令报告</strong>: 见 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8">数据生成器 - 中文 Minecraft Wiki</a>, 使用数据生成器获取命令报告</li>
+      </ol>
     </div>
 
     <div class="left card-1">
@@ -994,7 +1094,7 @@ type NumericRange&lt;T&gt; = (
     [T, T] |
     // 包含min和max字段的结构体
     struct {
-        min: T, 
+        min: T,
         max: T
     }
 )
