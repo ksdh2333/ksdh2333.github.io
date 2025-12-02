@@ -447,7 +447,8 @@ aside.sidebar-nav ul {
 /* 卡片 */
 .card-1,
 .card-2,
-.card-3 {
+.card-3,
+.card-4 {
   padding: 30px;
   max-width: 1000px;
 
@@ -460,7 +461,8 @@ aside.sidebar-nav ul {
   background-color: var(--background-color-card-level1);
 }
 
-.card-3 {
+.card-3,
+.card-4 {
   background-color: var(--background-color-botton);
 }
 
@@ -469,7 +471,8 @@ aside.sidebar-nav ul {
   margin: 20px auto;
 }
 
-.card-2-parent {
+.card-2-parent,
+.card-4-parent {
   width: 85%;
   gap: 20px;
   /* 设置两个卡片之间的间距 */
@@ -477,7 +480,14 @@ aside.sidebar-nav ul {
   /* 将容器设置为Flex布局 */
   margin: 40px auto;
   max-width: 1000px;
+}
+
+.card-2-parent {
   flex-direction: row;
+}
+
+.card-4-parent {
+  flex-direction: column;
 }
 
 /* 移动端适配 */

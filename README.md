@@ -22,14 +22,14 @@
 
 有关一起联机玩 *Minecarft* 的内容
 
-- [Ks-server](https://www.ksdh.dpdns.org/html/ks-server.html) : 生电 服......吗? 
-- [Ks-game](https://www.ksdh.dpdns.org/html/ks-game.html) : 跟朋友联机玩 *Minecraft* 整合包
+- [Ks-server](https://www.ksdh.dpdns.org/html/server/ks-server.html) : 生电 服......吗? 
+- [Ks-game](https://www.ksdh.dpdns.org/html/server/ks-game.html) : 跟朋友联机玩 *Minecraft* 整合包
 
 ### 资源
 
 有关 *Minecraft* 的资源
 
-- [实用资源](https://www.ksdh.dpdns.org/html/useful-minecraftresources.html) : *侃生电核2333* 用到的 **模组, 资源包, 光影**等
-- [实用网站链接](https://www.ksdh.dpdns.org/html/useful-links.html) : *Minecraft* 好用的资源工具网站汇总
+- [实用资源](https://www.ksdh.dpdns.org/html/minecraft-resources/useful-minecraft-resources.html) : *侃生电核2333* 用到的 **模组, 资源包, 光影**等
+- [实用网站链接](https://www.ksdh.dpdns.org/html/minecraft-resources/useful-minecraft-links.html) : *Minecraft* 好用的资源工具网站汇总
 
 更多内容还在开发......
