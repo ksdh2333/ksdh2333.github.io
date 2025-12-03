@@ -152,17 +152,17 @@
       <h1>Spyglass 插件相关使用说明</h1>
 
       <p>
-        <a href="https://github.com/SPYGlassMC/SPYGlass" target="_blank">Spyglass (Datapack Helper Plus)</a>是一个强大的 Minecraft 开发工具, 提供语法高亮, 智能提示等功能
+        <a href="https://github.com/SPYGlassMC/SPYGlass" target="_blank" title="Spyglass github 仓库">Spyglass (Datapack Helper Plus)</a>是一个强大的 Minecraft 开发工具, 提供语法高亮, 智能提示等功能
       </p>
       <p>
-        <a href="https://spyglassmc.com/" target="_blank">https://spyglassmc.com/</a>这里有 <em>Spyglass</em> 的官方文档, 提供了完整的使用说明
+        <a href="https://spyglassmc.com/" target="_blank" title="Spyglass 官网">https://spyglassmc.com/</a>这里有 <em>Spyglass</em> 的官方文档, 提供了完整的使用说明
       </p>
       <p>
-        <a href="html/knowledge-base/spyglass-usage/spyglass-usage.md" download="Spyglass插件用法.md">下载此页面的 Markdown 版本</a>
+        <a href="html/knowledge-base/spyglass-usage/spyglass-usage.md" download="Spyglass插件用法.md" title="Spyglass插件用法.md">下载此页面的 Markdown 版本</a>
       </p>
     </div>
 
-    <div class="left card-1">
+    <section class="left card-1">
 
       <h2 class="center" id="Spyglass插件">Spyglass 插件</h2>
 
@@ -199,7 +199,7 @@
       <h4 id="配置文件">配置文件</h4>
 
       <p>
-        <a href="https://spyglassmc.com/user/config.html" target="_blank">Spyglass 官方配置文件说明</a>
+        <a href="https://spyglassmc.com/user/config.html" target="_blank" title="Spyglass 官网">Spyglass 官方配置文件说明</a>
       </p>
       <p>
         在<strong>工作区根目录</strong>(指用 <em>VS Code</em> 打开文件夹时的文件夹下) 创建文件名为下列文件名其中一种的文本文件:
@@ -258,11 +258,11 @@
           <div class="left block-tips">
             <strong>需要补充</strong>:<br>
             具体功能待补充, 已知此配置可用于<strong>自定义命令树</strong>, 用来添加原版命令以外的命令<br>
-            参见<a href="https://github.com/SpyglassMC/Spyglass/issues/873" target="_blank">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899" target="_blank">Spyglass #1899</a><br>
+            参见<a href="https://github.com/SpyglassMC/Spyglass/issues/873" target="_blank" title="github - Spyglass issues #873">Spyglass #873</a> 和 <a href="https://github.com/SpyglassMC/Spyglass/issues/1899" target="_blank" title="github - Spyglass issues #1899">Spyglass #1899</a><br>
             方块、流体和注册表列表格式未知
           </div>
           <ul>
-            <li><code>commands</code>: 自定义<strong>命令树</strong>, 命令树写法见:<a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#命令树">命令树</a>
+            <li><code>commands</code>: 自定义<strong>命令树</strong>, 命令树写法见:<a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#命令树" title="跳转到 命令树 章节">命令树</a>
               <ul>
                 <li>
                   <code>path</code>: 自定义命令树<strong>路径</strong>
@@ -406,7 +406,7 @@
       <h5 id="snippet-配置">snippet 配置</h5>
 
       <div class="block-tips">
-        此功能可能尚未开发完成, 实际尝试也没有成功触发补全, 见 <a href="https://github.com/SpyglassMC/Spyglass/issues/1392" target="_blank">Spyglass #1392</a>
+        此功能可能尚未开发完成, 实际尝试也没有成功触发补全, 见 <a href="https://github.com/SpyglassMC/Spyglass/issues/1392" target="_blank" title="github Spyglass issues #1392">Spyglass #1392</a>
       </div>
       <p>
         <code>snippet</code>对象定义<strong>代码片段</strong>, 用户可以通过快捷方式快速插入常用代码
@@ -578,9 +578,9 @@
     }
 }</code></pre>
       </details>
-    </div>
+    </section>
 
-    <div class="left card-1">
+    <section class="left card-1">
 
       <h2 class="center" id="命令树">命令树</h2>
 
@@ -636,19 +636,19 @@
         可以通过 <code>spyglass.json</code> 配置文件中的 <code>mcmetaSummaryOverrides.commands</code> 选项来配置自定义命令树
       </p>
       <p>
-        见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#env-配置">env 配置</a> 下的 <code>mcmetaSummaryOverrides.commands</code> 配置项
+        见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#env-配置" title="跳转到 env 配置 章节">env 配置</a> 下的 <code>mcmetaSummaryOverrides.commands</code> 配置项
       </p>
 
       <h4 id="生成命令树文件">生成命令树文件</h4>
 
       <ol>
-        <li><strong>手动编写</strong>: 根据 <em>Minecraft</em> 命令树格式<strong>手动编写</strong> <code>commands.json</code> 文件, 命令树格式相关内容可以查看 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8#%E5%91%BD%E4%BB%A4%E6%8A%A5%E5%91%8A">数据生成器 - 中文 Minecraft Wiki #命令报告</a></li>
-        <li><strong>使用 Command Extractor 模组</strong>: 使用<strong>模组</strong>从游戏中提取命令树, 模组 <em>Modrinth</em> 链接: <a href="https://modrinth.com/mod/command_extractor">Command Extractor - Minecraft Mod</a></li>
-        <li><strong>使用原版 <em>Minecraft</em> 数据生成器获取命令报告</strong>: 见 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8">数据生成器 - 中文 Minecraft Wiki</a>, 使用数据生成器获取命令报告</li>
+        <li><strong>手动编写</strong>: 根据 <em>Minecraft</em> 命令树格式<strong>手动编写</strong> <code>commands.json</code> 文件, 命令树格式相关内容可以查看 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8#%E5%91%BD%E4%BB%A4%E6%8A%A5%E5%91%8A" target="_blank" title="中文 Minecraft Wiki - 数据生成器 #命令报告">数据生成器 - 中文 Minecraft Wiki #命令报告</a></li>
+        <li><strong>使用 Command Extractor 模组</strong>: 使用<strong>模组</strong>从游戏中提取命令树, 模组 <em>Modrinth</em> 链接: <a href="https://modrinth.com/mod/command_extractor" target="_blank" title="Modrinth Minecraft Mod - Command Extractor">Command Extractor - Minecraft Mod</a></li>
+        <li><strong>使用原版 <em>Minecraft</em> 数据生成器获取命令报告</strong>: 见 <a href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8" target="_blank" title="中文 Minecraft Wiki - 数据生成器">数据生成器 - 中文 Minecraft Wiki</a>, 使用数据生成器获取命令报告</li>
       </ol>
-    </div>
+    </section>
 
-    <div class="left card-1">
+    <section class="left card-1">
 
       <h2 class="center" id="mcdoc的使用">Mcdoc 的使用</h2>
 
@@ -659,19 +659,19 @@
         在工作区内的任何 <code>.mcdoc</code> 文件都可以被 <em>Spyglass</em> 识别并解析, 但还是建议把项目的 <code>.mcdoc</code> 文件放在 <code>mcdoc</code> 文件夹内, 文件夹与数据包的 <code>data</code> 文件夹同级, 此时 <code>mcdoc</code> 文件夹所在的目录会被视为根目录
       </p>
       <p>
-        官方文档中的 <em>Mcdoc</em> 用法见: <a href="https://spyglassmc.com/user/mcdoc/" target="_blank">Mcdoc</a>
+        官方文档中的 <em>Mcdoc</em> 用法见: <a href="https://spyglassmc.com/user/mcdoc/" target="_blank" title="Spyglass 官网">Mcdoc</a>
       </p>
 
       <h3 id="mcdoc基本语法">基本语法</h3>
 
       <p>
-        <em>Spyglass</em> 官方文档中的 <a href="https://spyglassmc.com/user/mcdoc/specification.html" target="_blank">语法介绍</a>
+        <em>Spyglass</em> 官方文档中的 <a href="https://spyglassmc.com/user/mcdoc/specification.html" target="_blank" title="Spyglass 官网 Mcdoc">语法介绍</a>
       </p>
       <p>
-        官方文档的汉化版本见: <a href="https://alumopper.top/mcdoc%E6%A0%BC%E5%BC%8F/" target="_blank">Mcdoc格式 - 雪狐小窝</a>
+        官方文档的汉化版本见: <a href="https://alumopper.top/mcdoc%E6%A0%BC%E5%BC%8F/" target="_blank" title="雪狐小窝 博客 - Mcdoc格式">Mcdoc格式 - 雪狐小窝</a>
       </p>
       <p>
-        原版 <em>Minecraft</em> 数据的 <em>Mcdco</em> 文档见: <a href="https://github.com/SpyglassMC/vanilla-mcdoc/" target="_blank">vanilla-mcdoc</a>
+        原版 <em>Minecraft</em> 数据的 <em>Mcdco</em> 文档见: <a href="https://github.com/SpyglassMC/vanilla-mcdoc/" target="_blank" title="github - vanilla-mcdoc">vanilla-mcdoc</a>
       </p>
 
       <h4 id="mcdoc注释">注释</h4>
@@ -1396,7 +1396,7 @@ value?: Text,</code></pre>
       <p>
         使字段或联合成员仅从<strong>给定版本开始可用</strong>
         只允许正式版本(不包括快照)
-        从给定版本不可用参见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#mcdoc属性until">until</a>
+        从给定版本不可用参见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#mcdoc属性until" title="跳转到 属性 until">until</a>
       </p>
       <pre><code>struct Example1 {
    #[since="1.19"]
@@ -1442,7 +1442,7 @@ type Example2 = (
         使字段或联合成员<strong>从给定版本开始不可用</strong>
         只允许正式版本(不包括快照)
         注意给定版本不包含在该字段或成员被接受的版本范围内
-        从给定版本开始可用参见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#mcdoc属性since">since</a>
+        从给定版本开始可用参见 <a href="html/knowledge-base/spyglass-usage/spyglass-usage.html#mcdoc属性since" title="跳转到 属性 since">since</a>
       </p>
       <pre><code>struct Example1 {
    #[until="1.19"]
@@ -1459,7 +1459,7 @@ type Example2 = (
       <pre><code>struct Example {
    entity: #[until="1.19"] string,
 }</code></pre>
-    </div>
+    </section>
   </main>
 
   <hr>
@@ -1469,7 +1469,7 @@ type Example2 = (
       <br>
       页面由 侃生电核2333 设计
       <br>
-      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank">https://github.com/ksdh2333/ksdh2333.github.io/</a>
+      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank" title="github - ksdh2333.github.io">https://github.com/ksdh2333/ksdh2333.github.io/</a>
     </p>
   </footer>
 </body>
