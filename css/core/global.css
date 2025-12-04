@@ -372,13 +372,12 @@ nav.header-nav ul {
   list-style-type: none;
 }
 
-nav.header-nav li>a,
+nav.header-nav li > a,
 .about-host>a {
   display: flex;
   /* padding: 25px 1em 24px 1em; */
   padding-left: 1em;
   padding-right: 1em;
-  line-height: 60px;
 
   align-items: center;
   text-align: center;
@@ -391,6 +390,59 @@ nav.header-nav div.about-host {
 nav.header-nav a:hover,
 .about-host:hover {
   background-color: var(--background-color-header-nav-hover);
+}
+
+nav.header-nav details > summary:first-of-type {
+  list-style-type: none;
+}
+
+nav.header-nav details {
+  display: none;
+  float: right;
+  height: 100%;
+  width: 80px;
+}
+
+nav.header-nav details[open] {
+  background-color: var(--text-color-link-hover);
+}
+nav.header-nav details[open] > summary {
+  color: var(--text-color-highlight);
+}
+
+nav.header-nav summary {
+  margin-left: auto;
+  font-size: xx-large;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+nav.header-nav details > ul {
+  position: fixed;
+  right: 0;
+  top: var(--header-height);
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+nav.header-nav details > ul > li {
+  float: none;
+  background-color: var(--background-color-header-nav);
+  height: 50px;
+}
+
+@media screen and (max-width: 800px) {
+  nav.header-nav .nav-links,
+  nav.header-nav .about-host {
+    display: none;
+  }
+  nav.header-nav details {
+    display: block;
+  }
 }
 
 /* 主要内容区域添加顶部边距, 避免被导航栏遮挡 */
