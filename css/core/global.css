@@ -8,6 +8,7 @@
 
   --background-color: rgb(180, 172, 201);
   --text-color: rgb(0, 0, 0);
+  --text-color-highlight: rgb(203, 182, 241);
 
   --border-color-hr: rgba(0, 0, 0, 0.3);
   --border-color-table: rgb(210, 188, 233);
@@ -21,6 +22,7 @@
   --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
 
   --background-color-botton: rgba(141, 100, 194, 0.4);
+  --background-color-botton-hover: rgb(64, 48, 104);
   --background-color-botton-back: rgba(255, 255, 255, 0.8);
 
   --background-color-card-level1: rgba(255, 255, 255, 0.8);
@@ -34,6 +36,7 @@
   :root {
     --background-color: rgb(37, 30, 53);
     --text-color: rgb(226, 212, 241);
+    --text-color-highlight: rgb(37, 30, 53);
 
     --border-color-hr: rgba(255, 255, 255, 0.3);
     --border-color-table: rgb(56, 40, 95);
@@ -47,6 +50,7 @@
     --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
 
     --background-color-botton: rgba(58, 39, 82, 0.5);
+    --background-color-botton-hover: rgba(148, 85, 224, 0.5);
     --background-color-botton-back: rgba(0, 0, 0, 0.7);
 
     --background-color-card-level1: rgba(0, 0, 0, 0.7);
@@ -62,6 +66,7 @@
   :root {
     --background-color: light-dark(rgb(180, 172, 201), rgb(37, 30, 53));
     --text-color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
+    --text-color-highlight: light-dark(rgb(203, 182, 241), rgb(49, 24, 95));
 
     --border-color-hr: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
     --border-color-table: light-dark(rgb(210, 188, 233), rgb(56, 40, 95));
@@ -75,6 +80,7 @@
     --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
 
     --background-color-botton: light-dark(rgba(141, 100, 194, 0.4), rgba(58, 39, 82, 0.5));
+    --background-color-botton-hover: light-dark(rgb(64, 48, 104), rgba(148, 85, 224, 0.5));
     --background-color-botton-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
 
     --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
@@ -390,6 +396,24 @@ main {
   text-align: center;
 }
 
+.botton:hover {
+  color: var(--text-color-highlight);
+  background-color: var(--text-color-strong);
+}
+
+.botton:hover * {
+  color: var(--text-color-highlight);
+}
+
+.botton:active {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-botton);
+}
+
+.botton:active * {
+  color: var(--text-color-link-hover);
+}
+
 .back {
   background-color: var(--background-color-botton-back);
   position: sticky;
@@ -466,6 +490,50 @@ aside.sidebar-nav ul {
   background-color: var(--background-color-botton);
 }
 
+.card-1.floating:hover,
+.card-2.floating:hover {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-botton);
+}
+
+.card-1.floating:hover *,
+.card-2.floating:hover * {
+  color: var(--text-color-link-hover);
+}
+
+.card-1.floating:active,
+.card-2.floating:active {
+  color: var(--text-color-strong);
+  background-color: var(--border-color-hr);
+}
+
+.card-1.floating:active *,
+.card-2.floating:active * {
+  color: var(--text-color-strong);
+}
+
+.card-3.floating:hover,
+.card-4.floating:hover {
+  color: var(--text-color-highlight);
+  background-color: var(--text-color-strong);
+}
+
+.card-3.floating:hover *,
+.card-4.floating:hover * {
+  color: var(--text-color-highlight);
+}
+
+.card-3.floating:active,
+.card-4.floating:active {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-botton);
+}
+
+.card-3.floating:active *,
+.card-4.floating:active * {
+  color: var(--text-color-link-hover);
+}
+
 .card-1 {
   width: 85%;
   margin: 20px auto;
@@ -504,8 +572,10 @@ aside.sidebar-nav ul {
 }
 
 /* 浮动卡片 */
-.floating {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.floating,
+.floating * {
+  transition-property: all;
+  transition-duration: 0.2s;
 }
 
 .floating:hover {
