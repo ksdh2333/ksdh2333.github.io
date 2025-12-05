@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light dark;
+
+  --background-color: rgb(180, 172, 201);
+  --text-color: rgb(0, 0, 0);
+  --text-color-highlight: rgb(203, 182, 241);
+
+  --border-color-hr: rgba(0, 0, 0, 0.3);
+  --border-color-table: rgb(210, 188, 233);
+
+  --text-color-link: rgb(83, 45, 187);
+  --text-color-link-hover: rgb(73, 23, 167);
+
+  --text-color-strong: rgb(59, 28, 109);
+
+  --background-color-header-nav: white;
+  --background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
+
+  --background-color-button: rgba(141, 100, 194, 0.4);
+  --background-color-button-hover: rgb(64, 48, 104);
+  --background-color-button-back: rgba(255, 255, 255, 0.8);
+
+  --background-color-card-level1: rgba(255, 255, 255, 0.8);
+  --background-color-block-tips: rgba(0, 0, 0, 0.1);
+  --background-color-code: rgba(0, 0, 0, 0.1);
+
+  --text-color-footer: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgb(37, 30, 53);
+    --text-color: rgb(226, 212, 241);
+    --text-color-highlight: rgb(37, 30, 53);
+
+    --border-color-hr: rgba(255, 255, 255, 0.3);
+    --border-color-table: rgb(56, 40, 95);
+
+    --text-color-link: rgb(156, 129, 231);
+    --text-color-link-hover: rgb(172, 143, 253);
+
+    --text-color-strong: rgb(145, 132, 175);
+
+    --background-color-header-nav: black;
+    --background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
+
+    --background-color-button: rgba(58, 39, 82, 0.5);
+    --background-color-button-hover: rgba(148, 85, 224, 0.5);
+    --background-color-button-back: rgba(0, 0, 0, 0.7);
+
+    --background-color-card-level1: rgba(0, 0, 0, 0.7);
+    --background-color-block-tips: rgba(255, 255, 255, 0.1);
+    --background-color-code: rgba(255, 255, 255, 0.1);
+
+    --text-color-footer: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* light-dark() */
+@supports (color: light-dark(white, black)) {
+  :root {
+    --background-color: light-dark(rgb(180, 172, 201), rgb(37, 30, 53));
+    --text-color: light-dark(rgb(0, 0, 0), rgb(226, 212, 241));
+    --text-color-highlight: light-dark(rgb(203, 182, 241), rgb(49, 24, 95));
+
+    --border-color-hr: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+    --border-color-table: light-dark(rgb(210, 188, 233), rgb(56, 40, 95));
+
+    --text-color-link: light-dark(rgb(83, 45, 187), rgb(156, 129, 231));
+    --text-color-link-hover: light-dark(rgb(73, 23, 167), rgb(172, 143, 253));
+
+    --text-color-strong: light-dark(rgb(59, 28, 109), rgb(145, 132, 175));
+
+    --background-color-header-nav: light-dark(white, black);
+    --background-color-header-nav-hover: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.123));
+
+    --background-color-button: light-dark(rgba(141, 100, 194, 0.4), rgba(58, 39, 82, 0.5));
+    --background-color-button-hover: light-dark(rgb(64, 48, 104), rgba(148, 85, 224, 0.5));
+    --background-color-button-back: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+
+    --background-color-card-level1: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+    --background-color-block-tips: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    --background-color-code: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+
+    --text-color-footer: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+  }
+}
