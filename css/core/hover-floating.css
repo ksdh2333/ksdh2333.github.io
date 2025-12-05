@@ -1,0 +1,16 @@
+/* 浮动卡片 */
+.floating,
+.floating * {
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+
+.floating:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.floating:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}

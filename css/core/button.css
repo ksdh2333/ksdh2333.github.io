@@ -1,0 +1,38 @@
+
+
+/* 按钮 */
+.button {
+  background-color: var(--background-color-button);
+  display: block;
+  margin: 20px;
+  padding: 7px;
+
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.button:hover {
+  color: var(--text-color-highlight);
+  background-color: var(--text-color-strong);
+}
+
+.button:hover * {
+  color: var(--text-color-highlight);
+}
+
+.button:active {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-button);
+}
+
+.button:active * {
+  color: var(--text-color-link-hover);
+}
+
+.back {
+  background-color: var(--background-color-button-back);
+  position: sticky;
+  width: 150px;
+  top: calc(var(--header-height) + 20px);
+}

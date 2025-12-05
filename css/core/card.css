@@ -1,0 +1,102 @@
+/* 卡片 */
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+  padding: 30px;
+  max-width: 1000px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-1,
+.card-2 {
+  background-color: var(--background-color-card-level1);
+}
+
+.card-3,
+.card-4 {
+  background-color: var(--background-color-button);
+}
+
+.card-1.floating:hover,
+.card-2.floating:hover {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-button);
+}
+
+.card-1.floating:hover *,
+.card-2.floating:hover * {
+  color: var(--text-color-link-hover);
+}
+
+.card-1.floating:active,
+.card-2.floating:active {
+  color: var(--text-color-strong);
+  background-color: var(--border-color-hr);
+}
+
+.card-1.floating:active *,
+.card-2.floating:active * {
+  color: var(--text-color-strong);
+}
+
+.card-3.floating:hover,
+.card-4.floating:hover {
+  color: var(--text-color-highlight);
+  background-color: var(--text-color-strong);
+}
+
+.card-3.floating:hover *,
+.card-4.floating:hover * {
+  color: var(--text-color-highlight);
+}
+
+.card-3.floating:active,
+.card-4.floating:active {
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-button);
+}
+
+.card-3.floating:active *,
+.card-4.floating:active * {
+  color: var(--text-color-link-hover);
+}
+
+.card-1 {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.card-2-parent,
+.card-4-parent {
+  width: 85%;
+  gap: 20px;
+  /* 设置两个卡片之间的间距 */
+  display: flex;
+  /* 将容器设置为Flex布局 */
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.card-2-parent {
+  flex-direction: row;
+}
+
+.card-4-parent {
+  flex-direction: column;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 800px) {
+  .card-2-parent {
+    flex-direction: column;
+  }
+}
+
+.card-2,
+.card-3 {
+  display: block;
+  flex: 1;
+}

@@ -1,0 +1,46 @@
+/* 侧边栏导航 */
+.with-sidebar {
+  padding-right: 0;
+}
+
+aside.sidebar-nav {
+  background-color: var(--background-color-card-level1);
+  display: block;
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  float: right;
+  margin: 0 20px;
+  padding: 20px;
+  width: auto;
+  min-width: 200px;
+  z-index: 990;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--header-height) - 20px - 20px);
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+aside.sidebar-nav ul {
+  padding: 0 0 0 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .with-sidebar {
+    padding-right: 0;
+  }
+
+  aside.sidebar-nav {
+    background-color: var(--background-color-card-level1);
+    display: block;
+    position: relative;
+    top: var(--header-height);
+    float: none;
+    width: 85%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
