@@ -1,0 +1,6 @@
+@import url("/css/core/has-background-image.css");
+
+#server {
+  background-image: url("/resources/img/background/minecraft-dark-1.webp");
+  background-position: 50% 50%;
+}

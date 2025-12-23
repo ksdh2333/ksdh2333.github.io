@@ -1,0 +1,14 @@
+@import url("/css/core/has-background-image.css");
+
+@import url("/css/svg-img/background-img/plugins-background.css");
+@import url("/css/svg-img/background-img/web-page-background.css");
+
+#useful-minecraft-resources {
+  background-image: var(--plugins-background-svg-img);
+  background-position: right 40%;
+}
+
+#useful-minecraft-links {
+  background-image: var(--web-page-background-svg-img);
+  background-position: right 40%;
+}

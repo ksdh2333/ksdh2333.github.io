@@ -1,12 +1,12 @@
 /* 浮动卡片 */
 .floating,
 .floating * {
-  transition-property: all;
+  transition-property: color, background-color, box-shadow, transform;
   transition-duration: 0.2s;
 }
 
 .floating:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 

@@ -1,9 +1,13 @@
 /* 卡片 */
+:root {
+  --card-padding: 30px
+}
+
 .card-1,
 .card-2,
 .card-3,
 .card-4 {
-  padding: 30px;
+  padding: var(--card-padding);
   max-width: 1000px;
 
   border-radius: 12px;
@@ -22,30 +26,30 @@
 
 .card-1.floating:hover,
 .card-2.floating:hover {
-  color: var(--text-color-link-hover);
-  background-color: var(--background-color-button);
+  color: var(--text-color-highlight);
+  background-color: var(--background-color-card-hover);
 }
 
 .card-1.floating:hover *,
 .card-2.floating:hover * {
-  color: var(--text-color-link-hover);
+  color: var(--text-color-highlight);
 }
 
 .card-1.floating:active,
 .card-2.floating:active {
-  color: var(--text-color-strong);
-  background-color: var(--border-color-hr);
+  color: var(--text-color-link-hover);
+  background-color: var(--background-color-card-active);
 }
 
 .card-1.floating:active *,
 .card-2.floating:active * {
-  color: var(--text-color-strong);
+  color: var(--text-color-link-hover);
 }
 
 .card-3.floating:hover,
 .card-4.floating:hover {
   color: var(--text-color-highlight);
-  background-color: var(--text-color-strong);
+  background-color: var(--background-color-card-hover);
 }
 
 .card-3.floating:hover *,
@@ -56,7 +60,7 @@
 .card-3.floating:active,
 .card-4.floating:active {
   color: var(--text-color-link-hover);
-  background-color: var(--background-color-button);
+  background-color: var(--background-color-card-active);
 }
 
 .card-3.floating:active *,

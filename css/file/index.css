@@ -1,0 +1,25 @@
+@import url("/css/core/has-background-image.css");
+
+@import url("/css/svg-img/background-img/plugins-background.css");
+@import url("/css/svg-img/background-img/contact-background.css");
+@import url("/css/svg-img/background-img/web-page-background.css");
+
+#server {
+  background-image: url("/resources/img/background/minecraft-dark-1.webp");
+  background-position: 50% 50%;
+}
+
+#useful-minecraft-resources {
+  background-image: var(--plugins-background-svg-img);
+  background-position: right 40%;
+}
+
+#useful-minecraft-links {
+  background-image: var(--web-page-background-svg-img);
+  background-position: right 40%;
+}
+
+#contact-ksdh2333 {
+  background-image: var(--contact-background-svg-img);
+  background-position: right 40%;
+}
