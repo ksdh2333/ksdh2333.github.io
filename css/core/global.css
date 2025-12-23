@@ -38,6 +38,10 @@ html {
   top: 0;
 }
 
+p {
+  color: var(--text-color);
+}
+
 h1,
 h2,
 h3,
@@ -127,11 +131,6 @@ th {
   text-align: left;
 }
 
-a::before,
-a::after {
-  content: " ";
-}
-
 em,
 strong{
   color: var(--text-color-strong);
@@ -171,7 +170,9 @@ code::-webkit-scrollbar-thumb:active {
 
 /* 链接 */
 a,
-summary {
+a p,
+summary,
+summary p {
   color: var(--text-color-link);
   text-decoration: none;
   cursor: pointer;
@@ -181,6 +182,11 @@ a:hover,
 summary:hover {
   color: var(--text-color-link-hover);
   text-decoration: underline;
+}
+
+a::before,
+a::after {
+  content: " ";
 }
 
 /* 块引用 */
@@ -202,12 +208,11 @@ blockquote {
 }
 
 /* 页脚 */
-/* footer, footer a {color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));} */
 footer {
   margin: 20px
 }
 
 footer,
-footer a {
+footer * {
   color: var(--text-color-footer);
 }

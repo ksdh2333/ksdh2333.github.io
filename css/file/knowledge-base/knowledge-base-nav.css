@@ -1,0 +1,8 @@
+@import url("/css/core/has-background-image.css");
+
+@import url("/css/svg-img/background-img/plugins-background.css");
+
+#spyglass-usage {
+  background-image: var(--plugins-background-svg-img);
+  background-position: right 40%;
+}

@@ -1,0 +1,25 @@
+@import url("/css/core/has-background-image.css");
+
+#avatar-ksdh2333-1 {
+  border-radius: 50%;
+  border: 6px solid var(--text-color-strong);
+}
+
+#cyber-man-machine {
+  padding: 0;
+}
+
+#cyber-man-machine > div {
+  margin: var(--card-padding);
+  overflow: hidden;
+}
+
+#personalities-logician {
+  background-image: url("https://www.16personalities.com/static/images/types/headers/logician-desktop2.svg");
+  background-position: 45% center;
+}
+
+#game-zone {
+  background-image: url("/resources/img/background/minecraft-light-1.webp");
+  background-position: center 20%;
+}
