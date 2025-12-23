@@ -7,9 +7,9 @@
   <meta name="keywords" content="Minecraft网站, Minecraft">
   <meta name="description" content="Minecraft实用链接">
   <meta name="author" content="侃生电核2333">
-  <base target="_self" href="../../">
-  <link rel="icon" href="resources/img/avatar-ksdh2333.png">
-  <link rel="stylesheet" href="css/core/global.css">
+  <base target="_self" href="/">
+  <link rel="icon" href="resources/img/icon/avatar-ksdh2333.webp">
+  <link rel="stylesheet" href="css/main.css">
   <title>Minecraft实用链接 - 侃生电核2333</title>
 </head>
 
@@ -17,7 +17,7 @@
   <header>
     <nav class="header-nav">
       <div>
-        <a href="index.html" title="首页"><img src="resources/img/avatar-ksdh2333.png" width="128" height="128" alt="头像"></a>
+        <a href="index.html" title="首页"><img src="resources/img/icon/avatar-ksdh2333.webp" width="128" height="128" alt="头像"></a>
         <div>
           <strong>侃生电核2333</strong>
           <p>
@@ -25,15 +25,27 @@
           </p>
         </div>
       </div>
-      <div>
+      <div class="nav-links">
         <ul>
           <li><a href="index.html">首页</a></li>
           <li><a href="html/server/server-nav.html">Minecraft联机</a></li>
-          <li><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
+          <li class="active"><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
           <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
         </ul>
       </div>
-      <a href="html/about-host.html" id="about-host">关于站主</a>
+      <div class="about-host">
+        <a href="html/about-host.html">关于站主</a>
+      </div>
+      <details>
+        <summary>☰</summary>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="html/server/server-nav.html">Minecraft联机</a></li>
+          <li class="active"><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
+          <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
+          <li><a href="html/about-host.html">关于站主</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
@@ -46,14 +58,14 @@
     </div>
 
     <div class="card-2-parent">
-      <a href="https://www.minecraft.net" target="_blank" class="center card-2 floating">
+      <a href="https://www.minecraft.net" target="_blank" title="Minecraft 官方网站" class="center card-2 floating">
         <h3>Minecraft官网</h3>
         <p>
           Minecraft游戏官网
         </p>
       </a>
-      <a href="https://zh.minecraft.wiki" target="_blank" class="center card-2 floating">
-        <h3>中文Minecraft Wiki</h3>
+      <a href="https://zh.minecraft.wiki" target="_blank" title="中文 Minecraft Wiki" class="center card-2 floating">
+        <h3>中文 Minecraft Wiki</h3>
         <p>
           完全公开、可自由编辑的Wiki
           <br>
@@ -62,7 +74,7 @@
           任何人都可以为Wiki作出贡献!
         </p>
       </a>
-      <a href="https://www.mcmod.cn" target="_blank" class="center card-2 floating">
+      <a href="https://www.mcmod.cn" target="_blank" title="MC百科" class="center card-2 floating">
         <h3>MC百科</h3>
         <p>
           全方面的Minecraft信息浏览
@@ -75,22 +87,20 @@
     </div>
 
     <div class="card-2-parent">
-      <a href="https://modrinth.com" target="_blank" class="center card-2 floating">
-        <h3>modrinth</h3>
+      <a href="https://modrinth.com" target="_blank" title="Modrinth" class="center card-2 floating">
+        <h3>Modrinth</h3>
         <p>
-          新兴资源网站, 无中文
+          无中文
           <br>
           界面整洁, 响应迅速
           <br>
-          mrpack整合包极致轻量, 下载稳定
+          下载速度可能较慢
         </p>
       </a>
-      <a href="https://www.curseforge.com/minecraft" target="_blank" class="center card-2 floating">
-        <h3>curseforge</h3>
+      <a href="https://www.curseforge.com/minecraft" target="_blank" title="Minecraft Mods & Modpacks - CurseForge" class="center card-2 floating">
+        <h3>CurseForge</h3>
         <p>
-          老牌资源网站, 无中文
-          <br>
-          资源丰富, 曾一度垄断Minecraft资源
+          无中文
           <br>
           国内安装整合包可能会由于网络问题失败
         </p>
@@ -98,17 +108,15 @@
     </div>
 
     <div class="card-2-parent">
-      <a href="https://klpbbs.com" target="_blank" class="center card-2 floating">
+      <a href="https://klpbbs.com" target="_blank" title="Minecraft(我的世界)苦力怕论坛" class="center card-2 floating">
         <h3>苦力怕论坛</h3>
         <p>
           基岩版资源网站
           <br>
           地图、材质包一应俱全
-          <br>
-          Java版资源略微逊色
         </p>
       </a>
-      <a href="https://www.minecraftmaps.com" target="_blank" class="center card-2 floating">
+      <a href="https://www.minecraftmaps.com" target="_blank" title="Minecraft Maps" class="center card-2 floating">
         <h3>Minecraft Maps</h3>
         <p>
           地图资源站, 无中文
@@ -121,22 +129,22 @@
     </div>
 
     <div class="card-2-parent">
-      <a href="https://www.chunkbase.com/apps/" target="_blank" class="center card-2 floating">
+      <a href="https://www.chunkbase.com/apps/" target="_blank" title="Chunkbase - Minecraft Apps" class="center card-2 floating">
         <h3>Chunkbase Seedmap</h3>
         <p>
           可以查询各种版本的所有种子的地形、群系和结构位置
           <br>
           清晰地图一目了然
           <br>
-          可选显示项目不迷茫
+          可选显示结构/生物群系
         </p>
       </a>
-      <a href="https://minecraft-server-status.com/cn" target="_blank" class="center card-2 floating">
-        <h3>Minecraft服务器状态检查器</h3>
+      <a href="https://minecraft-server-status.com/cn" target="_blank" title="Minecraft 服务器状态检查器" class="center card-2 floating">
+        <h3>Minecraft 服务器状态检查器</h3>
         <p>
-          输入服务器ip即可查看服务器状态
+          输入服务器 IP 即可查看服务器状态
           <br>
-          支持Java版和基岩版
+          支持 Java 版和基岩版 IPv4 地址
         </p>
       </a>
     </div>
@@ -145,11 +153,11 @@
   <hr>
   <footer>
     <p>
-      &copy; 2025 侃生电核2333 Minecraft实用资源
+      &copy; 2025 侃生电核2333 Minecraft实用链接
       <br>
       页面由 侃生电核2333 设计
       <br>
-      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank">https://github.com/ksdh2333/ksdh2333.github.io/</a>
+      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank" title="github - ksdh2333.github.io">https://github.com/ksdh2333/ksdh2333.github.io/</a>
     </p>
   </footer>
 </body>

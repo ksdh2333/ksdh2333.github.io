@@ -7,9 +7,10 @@
   <meta name="keywords" content="Minecraft资源, Minecraft">
   <meta name="description" content="Minecraft资源">
   <meta name="author" content="侃生电核2333">
-  <base target="_self" href="../../">
-  <link rel="icon" href="resources/img/avatar-ksdh2333.png">
-  <link rel="stylesheet" href="css/core/global.css">
+  <base target="_self" href="/">
+  <link rel="icon" href="resources/img/icon/avatar-ksdh2333.webp">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/file/minecraft-resources/minecraft-resources-nav.css">
   <title>Minecraft资源 - 侃生电核2333</title>
 </head>
 
@@ -17,7 +18,7 @@
   <header>
     <nav class="header-nav">
       <div>
-        <a href="index.html" title="首页"><img src="resources/img/avatar-ksdh2333.png" width="128" height="128" alt="头像"></a>
+        <a href="index.html" title="首页"><img src="resources/img/icon/avatar-ksdh2333.webp" width="128" height="128" alt="头像"></a>
         <div>
           <strong>侃生电核2333</strong>
           <p>
@@ -25,15 +26,27 @@
           </p>
         </div>
       </div>
-      <div>
+      <div class="nav-links">
         <ul>
           <li><a href="index.html">首页</a></li>
           <li><a href="html/server/server-nav.html">Minecraft联机</a></li>
-          <li><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
+          <li class="active"><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
           <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
         </ul>
       </div>
-      <a href="html/about-host.html" id="about-host">关于站主</a>
+      <div class="about-host">
+        <a href="html/about-host.html">关于站主</a>
+      </div>
+      <details>
+        <summary>☰</summary>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="html/server/server-nav.html">Minecraft联机</a></li>
+          <li class="active"><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
+          <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
+          <li><a href="html/about-host.html">关于站主</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
@@ -46,29 +59,33 @@
         一些与 <em>Minecraft</em> 相关的资源
       </p>
       <div class="card-4-parent">
-        <a href="html/minecraft-resources/useful-minecraft-resources.html" title="Ks-server" class="card-4 floating">
+        <a href="html/minecraft-resources/useful-minecraft-resources.html" title="Ks-server 介绍" class="card-4 floating has-background-image" id="useful-minecraft-resources">
+          <div class="cover-background-image">
 
-          <h3>实用资源</h3>
+            <h3>实用资源</h3>
 
-          <p>
-            模组、光影、资源包
-            <br>
-            贴近原版, 提升生存、生电体验
-            <br>
-            点击查看详情&gt;&gt;
-          </p>
+            <p>
+              模组、光影、资源包
+              <br>
+              贴近原版, 提升生存、生电体验
+              <br>
+              点击查看详情&gt;&gt;
+            </p>
+          </div>
         </a>
-        <a href="html/minecraft-resources/useful-minecraft-links.html" title="ks-game" class="card-4 floating">
+        <a href="html/minecraft-resources/useful-minecraft-links.html" title="ks-game" class="card-4 floating has-background-image" id="useful-minecraft-links">
+          <div class="cover-background-image">
 
-          <h3>实用网页</h3>
+            <h3>实用网页</h3>
 
-          <p>
-            官网、Wiki、资源站、工具
-            <br>
-            值得收藏的实用网站
-            <br>
-            点击查看详情&gt;&gt;
-          </p>
+            <p>
+              官网、Wiki、资源站、工具
+              <br>
+              值得收藏的实用网站
+              <br>
+              点击查看详情&gt;&gt;
+            </p>
+          </div>
         </a>
       </div>
     </div>
@@ -77,11 +94,11 @@
   <hr>
   <footer>
     <p>
-      &copy; 2025 侃生电核2333 Minecraft实用资源
+      &copy; 2025 侃生电核2333 Minecraft资源导航
       <br>
       页面由 侃生电核2333 设计
       <br>
-      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank">https://github.com/ksdh2333/ksdh2333.github.io/</a>
+      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank" title="github - ksdh2333.github.io">https://github.com/ksdh2333/ksdh2333.github.io/</a>
     </p>
   </footer>
 </body>

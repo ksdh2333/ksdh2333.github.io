@@ -7,9 +7,10 @@
   <meta name="keywords" content="Ks-server, Ks服, Ks-game, Minecraft生电服, Minecraft联机">
   <meta name="description" content="侃生电核2333联机">
   <meta name="author" content="侃生电核2333">
-  <base target="_self" href="../../">
-  <link rel="icon" href="resources/img/avatar-ksdh2333.png">
-  <link rel="stylesheet" href="css/core/global.css">
+  <base target="_self" href="/">
+  <link rel="icon" href="resources/img/icon/avatar-ksdh2333.webp">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/file/server/server-nav.css">
   <script defer src="javascript/sidebar.js"></script>
   <title>联机 Server - 侃生电核2333</title>
 </head>
@@ -18,7 +19,7 @@
   <header>
     <nav class="header-nav">
       <div>
-        <a href="index.html" title="首页"><img src="resources/img/avatar-ksdh2333.png" width="128" height="128" alt="头像"></a>
+        <a href="index.html" title="首页"><img src="resources/img/icon/avatar-ksdh2333.webp" width="128" height="128" alt="头像"></a>
         <div>
           <strong>侃生电核2333</strong>
           <p>
@@ -26,15 +27,27 @@
           </p>
         </div>
       </div>
-      <div>
+      <div class="nav-links">
         <ul>
           <li><a href="index.html">首页</a></li>
-          <li><a href="html/server/server-nav.html">Minecraft联机</a></li>
+          <li class="active"><a href="html/server/server-nav.html">Minecraft联机</a></li>
           <li><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
           <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
         </ul>
       </div>
-      <a href="html/about-host.html" id="about-host">关于站主</a>
+      <div class="about-host">
+        <a href="html/about-host.html">关于站主</a>
+      </div>
+      <details>
+        <summary>☰</summary>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li class="active"><a href="html/server/server-nav.html">Minecraft联机</a></li>
+          <li><a href="html/minecraft-resources/minecraft-resources-nav.html">Minecraft资源</a></li>
+          <li><a href="html/knowledge-base/knowledge-base-nav.html">知识库</a></li>
+          <li><a href="html/about-host.html">关于站主</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
@@ -47,38 +60,43 @@
         联机玩 <em>Minecraft</em>
       </p>
     </div>
-    <div class="center card-1">
-      <h2>服务端联机</h2>
-      <p>
-        真会有人来吗?
-      </p>
-      <div class="card-4-parent">
-        <a href="html/server/ks-server.html" title="Ks-server" class="card-4 floating">
-          <img src="resources/img/ks-server-icon.png" width="64" height="64" alt="Ks服图标">
 
-          <h3>Ks-server</h3>
+    <div class="center card-1 has-background-image" id="server">
+      <div class=" cover-background-image">
 
-          <p>
-            Minecraft Java版1.21生电服
-            <br>
-            致力于在最前期的基础发展最高的产量
-            <br>
-            点击查看详情&gt;&gt;
-          </p>
-        </a>
-        <a href="html/server/ks-game.html" title="ks-game" class="card-4 floating">
-          <img src="resources/img/ks-game-icon.png" width="64" height="64" alt="Ks-game图标">
+        <h2>服务端联机</h2>
 
-          <h3>Ks-game</h3>
+        <p>
+          真会有人来吗?
+        </p>
+        <div class="card-4-parent">
+          <a href="html/server/ks-server.html" title="Ks-server 介绍" class="card-4 floating">
+            <img src="resources/img/icon/ks-server-icon.webp" width="64" height="64" alt="Ks服图标">
 
-          <p>
-            Minecraft整合包/地图联机
-            <br>
-            不定期与好友联机游玩整合包/地图等
-            <br>
-            点击查看详情&gt;&gt;
-          </p>
-        </a>
+            <h3>Ks-server</h3>
+
+            <p>
+              Minecraft Java 版 1.21 生电服
+              <br>
+              致力于在最前期的基础发展最高的产量
+              <br>
+              点击查看详情&gt;&gt;
+            </p>
+          </a>
+          <a href="html/server/ks-game.html" title="ks-game" class="card-4 floating">
+            <img src="resources/img/icon/ks-game-icon.webp" width="64" height="64" alt="Ks-game图标">
+
+            <h3>Ks-game</h3>
+
+            <p>
+              Minecraft 整合包/地图联机
+              <br>
+              不定期与好友联机游玩整合包/地图等
+              <br>
+              点击查看详情&gt;&gt;
+            </p>
+          </a>
+        </div>
       </div>
     </div>
   </main>
@@ -86,11 +104,11 @@
   <hr>
   <footer>
     <p>
-      &copy; 2025 侃生电核2333 Ks-server介绍
+      &copy; 2025 侃生电核2333 Minecraft联机导航
       <br>
       页面由 侃生电核2333 设计
       <br>
-      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank">https://github.com/ksdh2333/ksdh2333.github.io/</a>
+      网页开源项目:<a href="https://github.com/ksdh2333/ksdh2333.github.io/" target="_blank" title="github - ksdh2333.github.io">https://github.com/ksdh2333/ksdh2333.github.io/</a>
     </p>
   </footer>
 </body>

@@ -1,0 +1,173 @@
+:root {
+  /* 背景 */
+  --light-background-color: rgb(180, 172, 201);
+  --dark-background-color: rgb(37, 30, 53);
+  
+  /* 文字 */
+  --light-text-color: rgb(0, 0, 0);
+  --dark-text-color: rgb(226, 212, 241);
+  
+  --light-text-color-highlight: rgb(203, 182, 241);
+  --dark-text-color-highlight: rgb(49, 24, 95);
+
+  /* 边框 */
+  --light-border-color-hr: rgba(0, 0, 0, 0.3);
+  --dark-border-color-hr: rgba(255, 255, 255, 0.3);
+  
+  --light-border-color-table: rgb(210, 188, 233);
+  --dark-border-color-table: rgb(56, 40, 95);
+
+  /* 链接 */
+  --light-text-color-link: rgb(69, 34, 151);
+  --dark-text-color-link: rgb(156, 129, 231);
+  
+  --light-text-color-link-hover: rgb(73, 23, 167);
+  --dark-text-color-link-hover: rgb(172, 143, 253);
+
+  /* 强调 */
+  --light-text-color-strong: rgb(57, 30, 100);
+  --dark-text-color-strong: rgb(145, 132, 175);
+
+  /* 背景图片覆盖层 */
+  --light-background-color-above-img: rgba(226, 202, 255, 0.6);
+  --dark-background-color-above-img: rgba(0, 0, 0, 0.6);
+  
+  --light-background-color-card-hover: rgba(45, 5, 90, 0.8);
+  --dark-background-color-card-hover: rgba(214, 183, 255, 0.7);
+  
+  --light-background-color-card-active: rgba(187, 148, 238, 0.4);
+  --dark-background-color-card-active: rgba(88, 57, 129, 0.7);
+
+  /* 顶部导航栏 */
+  --light-background-color-header-nav: white;
+  --dark-background-color-header-nav: black;
+  
+  --light-background-color-header-nav-hover: rgba(0, 0, 0, 0.11);
+  --dark-background-color-header-nav-hover: rgba(255, 255, 255, 0.123);
+
+  /* 按钮 */
+  --light-background-color-button: rgba(196, 172, 226, 0.9);
+  --dark-background-color-button: rgba(43, 21, 70, 0.9);
+  
+  --light-background-color-button-hover: rgb(64, 48, 104);
+  --dark-background-color-button-hover: rgba(148, 85, 224, 0.5);
+  
+  --light-background-color-button-back: rgba(255, 255, 255, 0.8);
+  --dark-background-color-button-back: rgba(0, 0, 0, 0.7);
+
+  /* 其他 */
+  --light-background-color-card-level1: rgba(255, 255, 255, 0.8);
+  --dark-background-color-card-level1: rgba(0, 0, 0, 0.7);
+  
+  --light-background-color-block-tips: rgba(0, 0, 0, 0.1);
+  --dark-background-color-block-tips: rgba(255, 255, 255, 0.1);
+  
+  --light-background-color-code: rgba(0, 0, 0, 0.1);
+  --dark-background-color-code: rgba(255, 255, 255, 0.1);
+
+  /* 页脚 */
+  --light-text-color-footer: rgba(0, 0, 0, 0.3);
+  --dark-text-color-footer: rgba(255, 255, 255, 0.3);
+
+
+  /* 媒体查询 */
+  color-scheme: light dark;
+
+  /* ligth */
+  --background-color: var(--light-background-color);
+  --text-color: var(--light-text-color);
+  --text-color-highlight: var(--light-text-color-highlight);
+
+  --border-color-hr: var(--light-border-color-hr);
+  --border-color-table: var(--light-border-color-table);
+
+  --text-color-link: var(--light-text-color-link);
+  --text-color-link-hover: var(--light-text-color-link-hover);
+
+  --text-color-strong: var(--light-text-color-strong);
+
+  --background-color-above-img: var(--light-background-color-above-img);
+  --background-color-card-hover: var(--light-background-color-card-hover);
+  --background-color-card-active: var(--light-background-color-card-active);
+
+  --background-color-header-nav: var(--light-background-color-header-nav);
+  --background-color-header-nav-hover: var(--light-background-color-header-nav-hover);
+
+  --background-color-button: var(--light-background-color-button);
+  --background-color-button-hover: var(--light-background-color-button-hover);
+  --background-color-button-back: var(--light-background-color-button-back);
+
+  --background-color-card-level1: var(--light-background-color-card-level1);
+  --background-color-block-tips: var(--light-background-color-block-tips);
+  --background-color-code: var(--light-background-color-code);
+
+  --text-color-footer: var(--light-text-color-footer);
+}
+
+/* */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+    --text-color-highlight: var(--dark-text-color-highlight);
+
+    --border-color-hr: var(--dark-border-color-hr);
+    --border-color-table: var(--dark-border-color-table);
+
+    --text-color-link: var(--dark-text-color-link);
+    --text-color-link-hover: var(--dark-text-color-link-hover);
+
+    --text-color-strong: var(--dark-text-color-strong);
+
+    --background-color-above-img: var(--dark-background-color-above-img);
+    --background-color-card-hover: var(--dark-background-color-card-hover);
+    --background-color-card-active: var(--dark-background-color-card-active);
+
+    --background-color-header-nav: var(--dark-background-color-header-nav);
+    --background-color-header-nav-hover: var(--dark-background-color-header-nav-hover);
+
+    --background-color-button: var(--dark-background-color-button);
+    --background-color-button-hover: var(--dark-background-color-button-hover);
+    --background-color-button-back: var(--dark-background-color-button-back);
+
+    --background-color-card-level1: var(--dark-background-color-card-level1);
+    --background-color-block-tips: var(--dark-background-color-block-tips);
+    --background-color-code: var(--dark-background-color-code);
+
+    --text-color-footer: var(--dark-text-color-footer);
+  }
+}
+
+/* light-dark() */
+@supports (color: light-dark(white, black)) {
+  :root {
+    --background-color: light-dark(var(--light-background-color), var(--dark-background-color));
+    --text-color: light-dark(var(--light-text-color), var(--dark-text-color));
+    --text-color-highlight: light-dark(var(--light-text-color-highlight), var(--dark-text-color-highlight));
+
+    --border-color-hr: light-dark(var(--light-border-color-hr), var(--dark-border-color-hr));
+    --border-color-table: light-dark(var(--light-border-color-table), var(--dark-border-color-table));
+
+    --text-color-link: light-dark(var(--light-text-color-link), var(--dark-text-color-link));
+    --text-color-link-hover: light-dark(var(--light-text-color-link-hover), var(--dark-text-color-link-hover));
+
+    --text-color-strong: light-dark(var(--light-text-color-strong), var(--dark-text-color-strong));
+
+    --background-color-above-img: light-dark(var(--light-background-color-above-img), var(--dark-background-color-above-img));
+    --background-color-card-hover: light-dark(var(--light-background-color-card-hover), var(--dark-background-color-card-hover));
+    --background-color-card-active: light-dark(var(--light-background-color-card-active), var(--dark-background-color-card-active));
+
+    --background-color-header-nav: light-dark(var(--light-background-color-header-nav), var(--dark-background-color-header-nav));
+    --background-color-header-nav-hover: light-dark(var(--light-background-color-header-nav-hover), var(--dark-background-color-header-nav-hover));
+
+    --background-color-button: light-dark(var(--light-background-color-button), var(--dark-background-color-button));
+    --background-color-button-hover: light-dark(var(--light-background-color-button-hover), var(--dark-background-color-button-hover));
+    --background-color-button-back: light-dark(var(--light-background-color-button-back), var(--dark-background-color-button-back));
+
+    --background-color-card-level1: light-dark(var(--light-background-color-card-level1), var(--dark-background-color-card-level1));
+    --background-color-block-tips: light-dark(var(--light-background-color-block-tips), var(--dark-background-color-block-tips));
+    --background-color-code: light-dark(var(--light-background-color-code), var(--dark-background-color-code));
+
+    --text-color-footer: light-dark(var(--light-text-color-footer), var(--dark-text-color-footer));
+  }
+}
