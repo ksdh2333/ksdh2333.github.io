@@ -5,7 +5,7 @@ Spyglass 插件相关使用说明
 
 <https://spyglassmc.com/> 这里有 *Spyglass* 的官方文档, 提供了完整的使用说明
 
-[查看此文档的网页版本](https://ksdh.dpdns.org/html/knowledge-base/spyglass-usage/spyglass-usage.html)
+[查看此文档的网页版本](https://ksdh.top/html/knowledge-base/spyglass-usage/spyglass-usage.html)
 
 ---
 
